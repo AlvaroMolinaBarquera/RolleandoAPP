@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <arch-dice-roller [faces]="4" [toString]="true" (dicesRolled)="handleDicesRolled($event)"></arch-dice-roller>
+      <arch-dice-roller [faces]="6" [toString]="true" (dicesRolled)="handleDicesRolled($event)"></arch-dice-roller>
+      <arch-dice-roller [faces]="8" [toString]="true" (dicesRolled)="handleDicesRolled($event)" ></arch-dice-roller>
+      <arch-dice-roller [faces]="10" [toString]="true" (dicesRolled)="handleDicesRolled($event)" ></arch-dice-roller>
+      <arch-dice-roller [faces]="12" [toString]="true" (dicesRolled)="handleDicesRolled($event)" ></arch-dice-roller>
+      <arch-dice-roller [faces]="20" [toString]="true" (dicesRolled)="handleDicesRolled($event)" ></arch-dice-roller>
+      <arch-dice-roller [faces]="100" [toString]="true" (dicesRolled)="handleDicesRolled($event)" ></arch-dice-roller>
+      <arch-dice-roller [toString]="true" (dicesRolled)="handleDicesRolled($event)" ></arch-dice-roller>
+    </div>
+    <div class="col-8">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let rr of rollResults">{{rr}}</li>
+      </ul>
+    </div>
+  </div>

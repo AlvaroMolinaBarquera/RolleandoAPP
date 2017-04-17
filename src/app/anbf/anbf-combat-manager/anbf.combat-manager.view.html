@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          Anima Beyond Fantasy: Gestor de Combate
+        </div>
+        <div class="card-block">
+          <div class="form-inline">
+            <div class="form-group">
+              <label> Nombre </label>
+              <input class="form-control mx-sm-3" [(ngModel)]="characterName">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input mx-md-3" [(ngModel)]="oponent">
+                Oponente
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title"> General </h4>
+          <div class="form-inline">
+            <div class="form-group">
+              <label> Rang. Pifia </label>
+              <input type="text" class="form-control mx-md-3" [(ngModel)]="botchRange">
+            </div>
+            <div class="form-group">
+              <label> Rang. Tir. Abierta    </label>
+              <input type="text" class="form-control mx-md-3" [(ngModel)]="openRollRange" [disabled]="withoutOpenRoll">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input mx-md-3" [(ngModel)]="withoutOpenRoll">
+                Sin Tir. Abierta
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">Turno</h4>
+            <div class="form-group">
+              <label> Modificadores ( Base / Agilidad / Destreza / Arma / Armadura / Categoria / Otros) </label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Base" (ngModelChange)="turnBaseChange($event)" [(ngModel)]="turnModBase" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Agilidad" (ngModelChange)="turnAgilityChange($event)" [(ngModel)]="turnModAgility" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Destreza" (ngModelChange)="turnDexteryChange($event)" [(ngModel)]="turnModDextery" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Arma" (ngModelChange)="turnWeaponChange($event)" [(ngModel)]="turnModWeapon" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Armadura" (ngModelChange)="turnArmorChange($event)" [(ngModel)]="turnModArmor" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Categoria" (ngModelChange)="turnCategoryChange($event)" [(ngModel)]="turnModCategory" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Otros" (ngModelChange)="turnOthersChange($event)" [(ngModel)]="turnModOthers" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-inline">
+              <div class="form-group">
+                <label> Total </label>
+                <input type="text" class="form-control mx-md-3" [(ngModel)]="turnTotal">
+              </div>
+            </div>
+          </div>
+          <div class="card-block">
+            <button class="btn btn-primary" (click)="addNewFigther()"> Añadir </button>
+          </div>
+          <div class="card-block">
+            <arch-table [tableConfiguration]="combatTableConfig" [tableData]="combatTableData" [tableColumns]="combatTableColumns"></arch-table>
+            <button class="btn btn-default" (click)="newInitiatives()"> Nuevas Iniciativas </button>
+          <div>
+      </div>
+    </div>
+  </div>
+</div>

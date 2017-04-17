@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">
+    Seguimiento de Iniciativas:
+  </div>
+  <div class="card-block">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div  class="col-5">
+            <div class="form-group">
+              <label>Nombre</label>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="Jugador" [(ngModel)]="playerCharacter">
+                </span>
+                <span class="input-group-addon">¿Jugador?</span>
+                <input type="text" [(ngModel)]="characterName" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="form-group">
+              <label>Tirada</label>
+              <div class="input-group">
+                <input type="text" [(ngModel)]="numberOfDices" class="form-control">
+                <span class="input-group-addon">D</span>
+                <input type="text" [(ngModel)]="faces" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="form-group">
+              <label>Modificador</label>
+              <input type="text" [(ngModel)]="modifier" class="form-control">
+            </div>
+          </div>
+          <div class="col-2">
+            <label>&nbsp;</label>
+            <button class="btn btn-primary" (click)="addCharacter()" [disabled]="!characterName || !numberOfDices || !faces">Añadir</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <arch-table [tableConfiguration]="initiativeTableConfig" [tableData]="initiativeTableData" [tableColumns]="initiativeTableColumns"></arch-table>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let i of iniativesOrder | orderBy: ['-initiative']" [ngClass]="{'list-group-item-success': i.character, 'list-group-item-danger': !i.character }">{{i.charName}} - {{i.numberOfDices}}D{{i.faces}} +{{i.modifier}}: {{i.initiative}} </li>
+        </ul>
+        <button class="btn btn-primary" (click)="newInitiatives()" >Nuevas Iniciativas</button>
+        <button class="btn btn-primary" (click)="deleteNonPlayerCharacters()" >Borrar No Jugadores</button>
+
+      </div>
+    </div>
+  </div>
+</div>

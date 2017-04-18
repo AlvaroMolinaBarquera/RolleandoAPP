@@ -30,6 +30,7 @@ import { Component } from '@angular/core';
     </ul>
   </div>
 </nav>
+  <tols-random-name-generator></tols-random-name-generator>
   <anbf-combat-manager></anbf-combat-manager>
   <tols-initiative-tracker></tols-initiative-tracker><tols-dice-roller></tols-dice-roller><arch-table [tableConfiguration]="config"></arch-table>`,
 })

@@ -14,21 +14,26 @@ export class ArchRandomName {
 
     }
 
-    getBehindNameRandomName(): Promise<string> {
-      /* Llama al servicio de Behind the name;
-      * @Params {string} key: La API Key
-      * @Params {string} gender: El genero, 'f' para femeninos
-      * @Params {string} usage: Usado para nombres restringidos.
-      * @Params {string} number: El numero de nombres devueltos, 2 por defecto, maximo 6.
-      * @Params {string} randomsurname: Introducir 'yes' para que aparezca un apellido aleatorio.
-      */
-      let url = this.behindNameURL + this.behindNameURLRandom + this.apiKey;
+    /* Llama al servicio de Behind the name;
+    * @Params {string} key: La API Key
+    * @Params {string} gender: El genero, 'f' para femeninos
+    * @Params {string} usage: Usado para nombres restringidos.
+    * @Params {string} number: El numero de nombres devueltos, 6 por defecto, maximo 6.
+    * @Params {string} surname: Introducir 'yes' para que aparezca un apellido aleatorio.
+    */
+    getBehindNameRandomName(gender?: string, usage?: string, number?: string, surname?: boolean): Promise<any> {
+      let gen = (gender) ? '&gender=' + gender : '';
+      let use = (usage) ? '&usage=' + usage : '';
+      let sur = (surname) ? '&surname=yes' : '';
+      let num = (number) ? '&number='+ number : '&number=6';
+
+
+
+      let url = this.behindNameURL + this.behindNameURLRandom + this.apiKey + gen + use + sur + num;
       return this.http.get(url)
            .toPromise()
            .then((response: any) => {
-             // TODO Implementar la transformación de JSON a XML;
-             console.log(response);
-             return response
+             return this.getNames(response._body);
            })
            .catch(this.handleError);
     }
@@ -37,4 +42,10 @@ export class ArchRandomName {
       console.error('An error occurred', error); // for demo purposes only
       return Promise.reject(error.message || error);
     }
+
+    getNames(response: string) {
+      return response.match(/([A-Z])\w+/g);
+    }
+
+
 }

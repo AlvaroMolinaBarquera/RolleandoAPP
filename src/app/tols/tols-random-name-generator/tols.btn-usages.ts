@@ -1,3 +1,4 @@
+// https://www.behindthename.com/api/appendix2.php
 export const BEHIND_THE_NAME_USAGES = [
   {CODE: 'afk', FULL: 'Afrikaans', DESCRIPTION: 'Afrikaans names are used by Afrikaans speakers in the countries of South Africa and Namibia.'},
   {CODE: 'afr', FULL: 'African', DESCRIPTION: 'African names are used in various places on the continent of Africa.'},

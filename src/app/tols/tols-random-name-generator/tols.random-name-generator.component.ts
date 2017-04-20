@@ -5,21 +5,34 @@ import { BEHIND_THE_NAME_USAGES } from './tols.btn-usages';
 
 @Component({
   selector: 'tols-random-name-generator',
-  template: `<button class="btn btn-success" (click)="getRandomName()"> Generar </button>
-  <select>
-    <optgroup label="usages">
-      <option *ngFor="let usage of usages">{{usage.FULL}}</option>
-    </optgroup>
-  </select>
-  `,
+  templateUrl: './tols.random-name-generator.view.html'
 })
 export class TolsRandomNameGenerator {
-  usages: any[];
+  usagesList: any[];
+  usage: string;
+  genderList: any[];
+  gender: string;
+  numNames: string;
+  surname: boolean;
+  suggestedNames: any[]
   constructor(private archRandomName: ArchRandomName) {
-    this.usages = BEHIND_THE_NAME_USAGES;
+    this.numNames = '6';
+    this.usagesList = BEHIND_THE_NAME_USAGES;
+    this.genderList = [
+      {code: 'm', name: 'masculinos'},
+      {code: 'f', name: 'feminos'},
+      {code: undefined, name: 'ambos'}
+
+    ]
   }
   getRandomName() {
-    let randomName = this.archRandomName.getBehindNameRandomName();
-    console.log(randomName);
+    this.suggestedNames = [];
+    this.archRandomName.getBehindNameRandomName(this.gender, this.usage, this.surname, this.numNames)
+      .then((response: any[]) => {
+        for (let rN of response) {
+          this.suggestedNames.push(rN)
+        }
+    })
+
   }
 }

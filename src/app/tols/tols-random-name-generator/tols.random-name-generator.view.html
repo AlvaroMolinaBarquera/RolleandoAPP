@@ -1,0 +1,40 @@
+  <div class="row">
+    <div class="col">
+      <select class="form-control" [(ngModel)]="gender">
+           <option *ngFor="let gen of genderList" value="{{gen.code}}">{{gen.name}}</option>
+      </select>
+    </div>
+    <div class="col">
+      <select class="form-control" [(ngModel)]="usage">
+           <option *ngFor="let usa of usagesList" value="{{usa.CODE}}" >{{usa.FULL}}</option>
+      </select>
+    </div>
+    <div class="col">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input mx-md-3" [(ngModel)]="surname">
+          Apellido
+        </label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-inline">
+        <div class="form-group">
+          <label>Numero de Nombres</label>
+          <input type="number" min="1" max="6" class="form-control  mx-md-3" [(ngModel)]="numNames">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-success" (click)="getRandomName()"> Generar </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-success'" *ngFor="let name of suggestedNames">{{name}}</li>
+      </ul>
+    </div>
+  </div>

@@ -21,7 +21,7 @@ export class ArchRandomName {
     * @Params {string} number: El numero de nombres devueltos, 6 por defecto, maximo 6.
     * @Params {string} surname: Introducir 'yes' para que aparezca un apellido aleatorio.
     */
-    getBehindNameRandomName(gender?: string, usage?: string, number?: string, surname?: boolean): Promise<any> {
+    getBehindNameRandomName(gender?: string, usage?: string, surname?: boolean, number?: string): Promise<any> {
       let gen = (gender) ? '&gender=' + gender : '';
       let use = (usage) ? '&usage=' + usage : '';
       let sur = (surname) ? '&surname=yes' : '';

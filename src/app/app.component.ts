@@ -20,18 +20,18 @@ import { Component } from '@angular/core';
       </li>
       <li class="nav-item dropdown">
       <div ngbDropdown class="d-inline-block nav-link">
-        <a  id="actionsDropdownds" ngbDropdownToggle>Herramientas</a>
+        <a  id="actionsDropdownds" ngbDropdownToggle>Genericas</a>
         <div class="dropdown-menu" aria-labelledby="actionsDropdownds">
-          <button class="dropdown-item"> Seguimiento de Iniciativas </button>
-          <button class="dropdown-item"> Lanzador de Dados </button>
+          <button class="dropdown-item"> <a routerLink="generic-initiative-tracker">Seguimiento de Iniciativas </a></button>
+          <button class="dropdown-item" > <a routerLink="generic-dice-roller">Lanzador de Dados </a> </button>
+          <button class="dropdown-item" > <a routerLink="generic-random-name-generator">Generador de Nombres </a> </button>
+
         </div>
       </div>
       </li>
     </ul>
   </div>
 </nav>
-  <tols-random-name-generator></tols-random-name-generator>
-  <anbf-combat-manager></anbf-combat-manager>
-  <tols-initiative-tracker></tols-initiative-tracker><tols-dice-roller></tols-dice-roller><arch-table [tableConfiguration]="config"></arch-table>`,
+<router-outlet></router-outlet>`,
 })
 export class AppComponent  { config = {allowEdit: true, allowDelete: true} }

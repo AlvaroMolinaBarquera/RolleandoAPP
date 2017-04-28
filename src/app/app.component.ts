@@ -16,7 +16,7 @@ import { Component } from '@angular/core';
         <a class="nav-link" href="#">TODO</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">TODO</a>
+        <a class="nav-link" routerLink="test">TEST</a>
       </li>
       <li class="nav-item dropdown">
       <div ngbDropdown class="d-inline-block nav-link">
@@ -25,6 +25,7 @@ import { Component } from '@angular/core';
           <button class="dropdown-item"> <a routerLink="generic-initiative-tracker">Seguimiento de Iniciativas </a></button>
           <button class="dropdown-item" > <a routerLink="generic-dice-roller">Lanzador de Dados </a> </button>
           <button class="dropdown-item" > <a routerLink="generic-random-name-generator">Generador de Nombres </a> </button>
+          <button class="dropdown-item" > <a routerLink="generic-character-manager"> Gestionador de Personajes </a> </button>
 
         </div>
       </div>
@@ -32,6 +33,7 @@ import { Component } from '@angular/core';
     </ul>
   </div>
 </nav>
+<arch-game-selector></arch-game-selector>
 <router-outlet></router-outlet>`,
 })
-export class AppComponent  { config = {allowEdit: true, allowDelete: true} }
+export class AppComponent  {}

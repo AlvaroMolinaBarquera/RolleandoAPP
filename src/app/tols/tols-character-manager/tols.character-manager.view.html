@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    Gestionador de Personajes
+  </div>
+  <!-- Seleccionar o crear grupo -->
+  <div class="card-block">
+    <h4 class="card-title">Selección de Grupo</h4>
+    <div class="form-inline">
+      <div class="form-group" *ngIf="!showNewGroup">
+        <label>Selecciona Grupo</label>
+        <select class="form-control" [(ngModel)]="groupSelected">
+          <option value=""></option>
+          <option value="group.groupName" *ngFor="let group of characterGroups">{{group.groupName}}</option>
+        </select>
+      </div>
+      <button class="btn btn-outline-success" (click)="showNewGroup = true"> + </button>
+      <div class="input-group" *ngIf="showNewGroup">
+        <input type="text" class="form-control" placeholder="Nombre del grupo" [(ngModel)]="groupName">
+        <span class="input-group-btn">
+          <button class="btn btn-outline-success" type="button" (click)="newGroup()" [disabled]="!groupName">Crear</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Adición de Personajes</h4>
+    <div class="form-inline">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Nombre del personaje" [disabled]="!groupSelected">
+        <span class="input-group-btn">
+          <button class="btn btn-outline-success" type="button" [disabled]="!groupSelected">+</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Adición de Atributos</h4>
+    <!-- Añadir relación atributo personaje -->
+  </div>
+</div>

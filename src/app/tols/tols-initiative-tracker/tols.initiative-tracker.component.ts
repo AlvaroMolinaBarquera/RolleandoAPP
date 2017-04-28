@@ -3,6 +3,8 @@ import { ArchDiceRollerService } from './../../arch/services/arch.dice-roller.se
 import { ArchSystemDiceRollerService } from './../../arch/services/arch.system-dice-roller.service';
 import { tableConfiguration, tableColumns } from './../../arch/components/arch-table/arch.table.component';
 
+import { ArchGenericModalService } from './../../arch/services/arch.generic-modal.service';
+
 @Component({
   selector: 'tols-initiative-tracker',
   templateUrl: './tols.initiative-tracker.view.html',
@@ -76,14 +78,5 @@ export class TolsInitiativeTracker {
         this.initiativeTableData.splice(Number(itd), 1);
       }
     }
-  }
-
-  test() {
-      let animaConfiguration = {
-      openRoll: 95,
-      openRollAllowed: true,
-      botch: 80
-    }
-    this.archSystemDiceRollerService.systemRoll(0, 1, 100, animaConfiguration);
   }
 }

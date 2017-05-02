@@ -1,36 +1,42 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th *ngIf="tableConfiguration.allowDelete || tableConfiguration.allowEdit"> Acciones </th>
+      <th *ngIf="tableConfiguration.allowDelete || tableConfiguration.allowEdit || isInEditing"> Acciones </th>
       <th *ngFor="let column of tableColumns"> {{column.text}} <span (click)="sortBy(column.key)"> &#9660;</span></th>
     </tr>
   </thead>
   <tbody>
+
     <tr *ngFor="let row of tableData | orderBy: sortedBy; let idx = index">
-      <td *ngIf="tableConfiguration.allowDelete && !tableConfiguration.allowEdit"> Eliminar </td>
-      <td *ngIf="tableConfiguration.allowEdit && !tableConfiguration.allowDelete"> Editar </td>
+      <td *ngIf="tableConfiguration.allowDelete && !tableConfiguration.allowEdit && !isInEditing"> <button class="btn btn-primary btn-sm" (click)="deleteRow(idx)"> Eliminar </button></td>
+      <td *ngIf="tableConfiguration.allowEdit && !tableConfiguration.allowDelete  && !isInEditing"> <button class="btn btn-primary btn-sm" (click)="editRow(idx, row)">Editar</button> </td>
       <td *ngIf="row.isInEditing">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary" (click)="finishEditRow(idx, 0)">Aceptar</button>
-          <button type="button" class="btn btn-secondary" (click)="finishEditRow(idx, 1)">Cancelar</button>
+          <button type="button" class="btn btn-primary btn-sm" (click)="finishEditRow(idx, 0)">Aceptar</button>
+          <button type="button" class="btn btn-secondary btn-sm" (click)="finishEditRow(idx, 1)">Cancelar</button>
         </div>
       </td>
 
-      <td *ngIf="tableConfiguration.allowDelete && tableConfiguration.allowEdit && !row.isInEditing">
+      <td *ngIf="tableConfiguration.allowDelete && tableConfiguration.allowEdit && !isInEditing">
         <div ngbDropdown class="d-inline-block">
           <a  id="actionsDropdownds" ngbDropdownToggle>Acciones</a>
           <div class="dropdown-menu" aria-labelledby="actionsDropdownds">
+            <div *ngFor="let act of tableConfiguration.rowActions">
+              <button class="dropdown-item" (click)="act.action(row)"> {{act.text}} </button>
+            </div>
             <button class="dropdown-item" *ngIf="tableConfiguration.allowEdit" (click)="editRow(idx, row)"> Editar </button>
             <button class="dropdown-item" *ngIf="tableConfiguration.allowDelete" (click)="deleteRow(idx)"> Eliminar </button>
           </div>
         </div>
       </td>
+      <td *ngIf="!row.isInEditing && isInEditing"><span>&nbsp;</span>
 
       <td *ngFor="let column of tableColumns">
-        <span *ngIf="!isInEditing">{{row[column.key]}}</span>
-        <input *ngIf="row.isInEditing" [(ngModel)]="row[column.key]" class="form-control">
+        <span *ngIf="!row.isInEditing && isInEditing ||!isInEditing">{{row[column.key]}}</span>
+        <input *ngIf="row.isInEditing" [(ngModel)]="row[column.key]" class="form-control form-control-sm">
       </td>
     </tr>
 
   </tbody>
 </table>
+<button class="btn btn-primary btn-sm btn-block" (click)="addRow()">Añadir</button>

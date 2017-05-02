@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+    Prueba: Tablas
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Tabla Generica</h4>
+    <arch-table [tableData]="mockTableData1" [tableColumns]="mockTableColumns" [tableConfiguration]="{}"></arch-table>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Tabla Con Acción Editar</h4>
+    <arch-table [tableData]="mockTableData2" [tableColumns]="mockTableColumns" [tableConfiguration]="tableConfigEdit"></arch-table>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Tabla Con Acción Eliminar</h4>
+    <arch-table [tableData]="mockTableData3" [tableColumns]="mockTableColumns" [tableConfiguration]="tableConfigDelete"></arch-table>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Tabla Con Acción Añadir</h4>
+    <arch-table [tableData]="mockTableData4" [tableColumns]="mockTableColumns" [tableConfiguration]="tableConfigAdd"></arch-table>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Tabla Con Acciones</h4>
+    <arch-table [tableData]="mockTableData5" [tableColumns]="mockTableColumns" [tableConfiguration]="tableConfigActions"></arch-table>
+  </div>
+  <div class="card-block">
+    <h4 class="card-title">Tabla Con Acciones Personalizadas</h4>
+    <arch-table [tableData]="mockTableData6" [tableColumns]="mockTableColumns" [tableConfiguration]="tableConfigCustomActions"></arch-table>
+  </div>
+</div>

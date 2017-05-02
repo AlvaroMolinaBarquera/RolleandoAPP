@@ -8,12 +8,12 @@
     <div class="form-inline">
       <div class="form-group" *ngIf="!showNewGroup">
         <label>Selecciona Grupo</label>
-        <select class="form-control" [(ngModel)]="groupSelected">
+        <select class="form-control" [(ngModel)]="groupSelected" (change)="changeTable()">
           <option value=""></option>
-          <option value="group.groupName" *ngFor="let group of characterGroups">{{group.groupName}}</option>
+          <option value="{{group.groupName}}" *ngFor="let group of characterGroups">{{group.groupName}}</option>
         </select>
       </div>
-      <button class="btn btn-outline-success" (click)="showNewGroup = true"> + </button>
+      <button class="btn btn-outline-success" (click)="shNwGrp()"> + </button>
       <div class="input-group" *ngIf="showNewGroup">
         <input type="text" class="form-control" placeholder="Nombre del grupo" [(ngModel)]="groupName">
         <span class="input-group-btn">
@@ -26,15 +26,15 @@
     <h4 class="card-title">Adición de Personajes</h4>
     <div class="form-inline">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Nombre del personaje" [disabled]="!groupSelected">
+        <input type="text" class="form-control" placeholder="Nombre del personaje" [(ngModel)]="characterName" [disabled]="!groupSelected">
         <span class="input-group-btn">
-          <button class="btn btn-outline-success" type="button" [disabled]="!groupSelected">+</button>
+          <button class="btn btn-outline-success" type="button" [disabled]="!groupSelected" (click)="addCharacter()">+</button>
         </span>
       </div>
     </div>
   </div>
   <div class="card-block">
     <h4 class="card-title">Adición de Atributos</h4>
-    <!-- Añadir relación atributo personaje -->
+    <arch-table [tableColumns]="chrColumns" [tableData]="chrTableData" [tableConfiguration]="{allowAdd: true}"></arch-table>
   </div>
 </div>

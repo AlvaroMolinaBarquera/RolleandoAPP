@@ -1,9 +1,14 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
-
+interface RowAction {
+  text: string,
+  action: any
+}
 export interface tableConfiguration {
   allowDelete?: boolean,
   allowEdit?: boolean,
+  allowAdd?: boolean,
+  rowActions?: Array<RowAction>
 };
 
 export interface tableColumns {
@@ -17,8 +22,6 @@ export interface tableColumns {
   templateUrl: './arch.table.view.html',
 })
 export class ArchTable {
-  mockTableData: any;
-  mockTableColumns: any;
   sortedBy: any[string];
   @Input () tableData: any;
   @Input () tableColumns: Array<tableColumns>;
@@ -56,6 +59,15 @@ export class ArchTable {
   }
   deleteRow(idx: any) {
     this.tableData.splice(idx, 1);
-  }
+  };
+
+  addRow() {
+    let tableObject: any = {};
+    for (let c in this.tableColumns) {
+      tableObject[this.tableColumns[c].key] = '';
+    };
+    this.tableData.unshift(tableObject);
+    this.editRow(0, this.tableData[0]);
+  };
 
 }

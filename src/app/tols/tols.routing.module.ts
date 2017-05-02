@@ -6,7 +6,7 @@ import { TolsInitiativeTracker } from './tols-initiative-tracker/tols.initiative
 import { TolsRandomNameGenerator } from './tols-random-name-generator/tols.random-name-generator.component';
 import { TolsCharacterManager } from './tols-character-manager/tols.character-manager.component';
 
-const crisisCenterRoutes: Routes = [
+const tolsRoutes: Routes = [
   {
     path: 'generic-dice-roller',
     component: TolsDiceRoller,
@@ -27,7 +27,7 @@ const crisisCenterRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(crisisCenterRoutes)
+    RouterModule.forChild(tolsRoutes)
   ],
   exports: [
     RouterModule

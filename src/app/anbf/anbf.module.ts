@@ -4,9 +4,9 @@ import { FormsModule }   from '@angular/forms';
 
 import { ArchModule } from './../arch/arch.module';
 import { AnbfCombatManager } from './anbf-combat-manager/anbf.combat-manager.component';
-
+import { AnbfRoutingModule } from './anbf.routing.module';
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ArchModule ],
+  imports:      [ BrowserModule, FormsModule, ArchModule, AnbfRoutingModule ],
   declarations: [ AnbfCombatManager ],
   exports:      [ AnbfCombatManager ],
 })

@@ -9,12 +9,12 @@ import { ArchModule } from './../arch/arch.module';
 
 import {TestComponent} from './test.component';
 import {TestTable } from './test-table/test.table.component';
-
+import { TestModal } from './test-modal/test.modal.component';
 import { TestRoutingModule } from './test.routing.module';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, ArchModule, HttpModule, TestRoutingModule ],
-  declarations: [ TestComponent, TestTable ],
+  declarations: [ TestComponent, TestTable, TestModal ],
   exports:      [ TestComponent ],
 })
 export class TestModule { }

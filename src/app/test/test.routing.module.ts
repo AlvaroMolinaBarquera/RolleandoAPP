@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TestTable } from './test-table/test.table.component';
+import { TestModal } from './test-modal/test.modal.component';
 import { TestComponent} from './test.component';
 
 const testRoutes: Routes = [
@@ -11,6 +12,9 @@ const testRoutes: Routes = [
   },{
     path: 'test/test-table',
     component: TestTable
+  }, {
+    path: 'test/test-modal',
+    component: TestModal
   }
 ];
 

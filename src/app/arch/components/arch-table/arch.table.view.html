@@ -17,7 +17,7 @@
         </div>
       </td>
 
-      <td *ngIf="tableConfiguration.allowDelete && tableConfiguration.allowEdit && !isInEditing">
+      <td *ngIf="(tableConfiguration.allowDelete && tableConfiguration.allowEdit) || ((tableConfiguration.allowDelete || tableConfiguration.allowEdit) && tableConfiguration.rowActions) || tableConfiguration.rowActions && !isInEditing">
         <div ngbDropdown class="d-inline-block">
           <a  id="actionsDropdownds" ngbDropdownToggle>Acciones</a>
           <div class="dropdown-menu" aria-labelledby="actionsDropdownds">
@@ -39,4 +39,4 @@
 
   </tbody>
 </table>
-<button class="btn btn-primary btn-sm btn-block" (click)="addRow()">Añadir</button>
+<button class="btn btn-primary btn-sm btn-block" (click)="addRow()" *ngIf="tableConfiguration.allowAdd">Añadir</button>

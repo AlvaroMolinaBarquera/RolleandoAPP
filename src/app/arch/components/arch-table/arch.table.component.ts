@@ -1,6 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
-interface RowAction {
+export interface RowAction {
   text: string,
   action: any
 }

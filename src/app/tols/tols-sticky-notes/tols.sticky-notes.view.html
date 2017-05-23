@@ -1,0 +1,24 @@
+<div class="card-columns">
+  <div class="card" *ngFor="let stk of stickyList">
+    <div class="card-block">
+      <h4 class="card-title">{{stk.title}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="removeStickyNote()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p class="card-text">{{stk.body}}</p>
+    </div>
+  </div>
+  <div class="card" *ngIf="showNewSticky">
+    <div class="card-block">
+      <input type="text" [(ngModel)]="stickyTitle" class="form-control">
+      <button type="button" class="close" aria-label="Close" (click)="removeStickyNote()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <textarea class="form-control" [(ngModel)]="stickyBody"></textarea>
+      <button class="btn btn-primary" click="confirmAddStickyNote()">Crear</button>
+    </div>
+  </div>
+</div>
+<div class="btn btn-group">
+  <button class="btn btn-primary" (click)="addStickyNote()">Nueva Nota</button>
+</div>

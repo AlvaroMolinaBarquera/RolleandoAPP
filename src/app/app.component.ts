@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
           <button class="dropdown-item" > <a routerLink="generic-dice-roller">Lanzador de Dados </a> </button>
           <button class="dropdown-item" > <a routerLink="generic-random-name-generator">Generador de Nombres </a> </button>
           <button class="dropdown-item" > <a routerLink="generic-character-manager"> Gestionador de Personajes </a> </button>
-
+          <button class="dropdown-item" > <a routerLink="sticky-notes"> Notas </a> </button>
         </div>
       </div>
       </li>

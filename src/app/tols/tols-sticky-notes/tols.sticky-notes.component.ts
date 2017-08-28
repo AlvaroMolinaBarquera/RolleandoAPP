@@ -16,32 +16,42 @@ export class TolsStickyNotes {
   stickyBody: string;
   constructor() {
     let locStorStickyNotes = localStorage.getItem('StickyNotes');
-    if (locStorStickyNotes) {
+    if (locStorStickyNotes && locStorStickyNotes  != '[]' ) {
       this.stickyList = JSON.parse(locStorStickyNotes);
-    };
+    } else {
+      this.showNewSticky = true;
+    }
   }
 
   addStickyNote(): void {
     this.showNewSticky = true;
   };
 
-  removeStickyNote(): void {
-
+  removeStickyNote(index: number): void {
+    this.stickyList.splice(index, 1);
+    localStorage.setItem('StickyNotes', JSON.stringify(this.stickyList));
   };
-
+  cancelStickyNoteCreation() {
+    this.stickyTitle = '';
+    this.stickyBody = '';
+    this.showNewSticky = false;
+  }
   confirmAddStickyNote(): void {
     if (!this.stickyTitle || !this.stickyBody) {
-      console.error('Error');
+      console.error('Ni el titulo ni el cuerpo pueden estar vacios');
       return;
     };
     let sticky = {} as StickyNotes;
     sticky.title = this.stickyTitle;
     sticky.body = this.stickyTitle;
     if (this.stickyList) {
-      this.stickyList.unshift()
+      this.stickyList.unshift(sticky);
     } else {
       this.stickyList = [sticky];
     };
+    localStorage.setItem('StickyNotes', JSON.stringify(this.stickyList));
+    this.stickyTitle = '';
+    this.stickyBody = '';
     this.showNewSticky = false;
   }
 }

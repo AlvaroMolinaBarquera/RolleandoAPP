@@ -10,11 +10,13 @@ import { ArchModule } from './../arch/arch.module';
 import {TestComponent} from './test.component';
 import {TestTable } from './test-table/test.table.component';
 import { TestModal } from './test-modal/test.modal.component';
+import { TestTransactions } from './test-transactions/test.transactions.component';
+
 import { TestRoutingModule } from './test.routing.module';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, ArchModule, HttpModule, TestRoutingModule ],
-  declarations: [ TestComponent, TestTable, TestModal ],
+  declarations: [ TestComponent, TestTable, TestModal, TestTransactions ],
   exports:      [ TestComponent ],
 })
-export class TestModule { }
+export class TestModule {}

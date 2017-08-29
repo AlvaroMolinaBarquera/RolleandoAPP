@@ -10,5 +10,5 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   },
-  "exclude": ["node-modules"]
+  "exclude": ["/node-modules"]
 }

@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   <a routerLink="test-table"> Componente Tabla </a>
   <a routerLink="test-modal"> Componente Modal </a><router-outlet></router-outlet>
   <a routerLink="test-transactions"> Servicio Transacciones </a>
+  <a routerLink="test-traces"> Servicio Trazas </a>
+  
   <router-outlet></router-outlet>
   `,
 })

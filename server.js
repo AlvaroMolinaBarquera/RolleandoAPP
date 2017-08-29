@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'src')));
 
 // Set our api routes
-app.use('/api/login', api);
+app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

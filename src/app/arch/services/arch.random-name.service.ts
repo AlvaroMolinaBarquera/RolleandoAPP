@@ -25,7 +25,7 @@ export class ArchRandomName {
       let gen = (gender) ? '&gender=' + gender : '';
       let use = (usage) ? '&usage=' + usage : '';
       let sur = (surname) ? '&surname=yes' : '';
-      let num = (number) ? '&number='+ number : '&number=6';
+      let num = (number) ? '&number=' + number : '&number=6';
 
 
 

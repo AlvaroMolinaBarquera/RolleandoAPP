@@ -4,16 +4,16 @@ import { GAME_SYSTEMS } from './../arch.constants';
 import { ArchDiceRollerService} from './arch.dice-roller.service';
 
 export interface animaConfiguration {
-  openRoll: number,
-  openRollAllowed: boolean,
-  botch: number,
-  isTurnRoll: boolean,
+  openRoll: number;
+  openRollAllowed: boolean;
+  botch: number;
+  isTurnRoll: boolean;
 }
 
 interface worldOfDarknesConfiguration {
-  difficulty: number,
-  specialty: boolean,
-  tensReroll: boolean,
+  difficulty: number;
+  specialty: boolean;
+  tensReroll: boolean;
 }
 
 @Injectable()
@@ -42,11 +42,11 @@ export class ArchSystemDiceRollerService {
     let rollResultReturned;
     if (roll[0] >= config.openRoll  && config.openRollAllowed) {
       let newRoll = this.archDiceRollerService.roll(1, 100);
-      config.openRoll = Number(config.openRoll) + 1
+      config.openRoll = Number(config.openRoll) + 1;
       if (rollResult) {
         rollResult += roll[0];
       } else {
-        rollResult = roll[0]
+        rollResult = roll[0];
       }
       return this.systemRollAnima(newRoll, config, rollResult, true);
     } else if (roll[0] <= config.botch && !secondRoll) {
@@ -71,7 +71,7 @@ export class ArchSystemDiceRollerService {
       }
       return rollResultReturned;
     } else {
-      if (rollResult) { rollResultReturned = rollResult} else { rollResultReturned = roll[0]}
+      if (rollResult) { rollResultReturned = rollResult} else { rollResultReturned = roll[0]};
       return rollResultReturned;
     }
 

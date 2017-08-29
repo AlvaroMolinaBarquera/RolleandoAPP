@@ -19,11 +19,11 @@ export class ArchGenericModalService {
     modalRef.componentInstance.body = body;
 
     return modalRef.result
-    .then((result)=> {
+    .then((result) => {
       return result;
     })
     .catch((reason) => {
-      console.log(reason)
+      console.log(reason);
     });
   }
 

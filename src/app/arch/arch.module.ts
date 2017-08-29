@@ -18,18 +18,20 @@ import { ArchUsefulServices } from './services/arch.useful-services.service';
 import { ArchRandomName } from './services/arch.random-name.service';
 import { ArchGenericModalService } from './services/arch.generic-modal.service';
 import { ArchTransactionService } from './services/arch.transaction.service';
+import { ArchTracesService } from './services/arch.traces.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, HttpModule ],
   declarations: [ ArchDiceRoller, ArchOrderBy, ArchTable, ArchGameSelector, ArchGenericModal ],
   exports:      [ ArchDiceRoller, ArchOrderBy, ArchTable, ArchGameSelector, ArchGenericModal ],
   providers: [
-    ArchDiceRollerService, 
-    ArchSystemDiceRollerService, 
-    ArchUsefulServices, 
-    ArchRandomName, 
-    ArchGenericModalService, 
-    ArchTransactionService
+    ArchDiceRollerService,
+    ArchSystemDiceRollerService,
+    ArchUsefulServices,
+    ArchRandomName,
+    ArchGenericModalService,
+    ArchTransactionService,
+    ArchTracesService
    ],
   entryComponents: [ArchGenericModal ]
 })

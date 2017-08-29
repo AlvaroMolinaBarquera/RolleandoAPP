@@ -13,6 +13,6 @@ export class ArchUsefulServices {
     } else {
       returnedNPCName = NPCName;
     }
-      return returnedNPCName
+      return returnedNPCName;
   }
 }

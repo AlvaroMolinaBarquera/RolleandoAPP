@@ -18,6 +18,9 @@ import { Component } from '@angular/core';
       <li class="nav-item">
         <a class="nav-link" routerLink="test">TEST</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="chat">CHAT</a>
+      </li>
       <li class="nav-item dropdown">
       <div ngbDropdown class="d-inline-block nav-link">
         <a  id="actionsDropdownds" ngbDropdownToggle>Genericas</a>

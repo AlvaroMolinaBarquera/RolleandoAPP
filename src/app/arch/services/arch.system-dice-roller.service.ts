@@ -54,7 +54,7 @@ export class ArchSystemDiceRollerService {
         let newRoll: any[number] = this.archDiceRollerService.roll(1, 100);
         rollResultReturned = roll[0] - newRoll[0];
       } else {
-        switch(roll[0]) {
+        switch (roll[0]) {
           case 1:
             rollResultReturned = roll[0] - 125;
             break;
@@ -71,7 +71,7 @@ export class ArchSystemDiceRollerService {
       }
       return rollResultReturned;
     } else {
-      if (rollResult) { rollResultReturned = rollResult} else { rollResultReturned = roll[0]};
+      if (rollResult) { rollResultReturned = rollResult } else { rollResultReturned = roll[0]};
       return rollResultReturned;
     }
 

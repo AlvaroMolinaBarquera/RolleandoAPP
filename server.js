@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+var io = require('socket.io')(http);
 
 // Get our API routes
 const api = require('./server/routes/api');
@@ -22,6 +23,11 @@ app.use('/api', api);
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname));
+});
+
+// Evento al conectarse desde un socket
+io.on('connection', function(socket){
+  console.log('a user connected');
 });
 
 /**

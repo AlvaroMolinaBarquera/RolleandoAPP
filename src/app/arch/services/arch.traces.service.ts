@@ -69,6 +69,7 @@ export class ArchTracesService {
         traceToLog.PARAMS = params;
         // Mostramos el mensaje por consola
         console[this.getLevel(level)](message, params);
+        // Se realiza la petición POST
         this.http.post(this.tracesServiceURL, traceToLog)
           .toPromise();
       });

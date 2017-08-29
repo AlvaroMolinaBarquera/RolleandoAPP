@@ -9,6 +9,7 @@ import { ArchModule } from './arch/arch.module';
 import { TolsModule } from './tols/tols.module';
 import { AnbfModule} from './anbf/anbf.module';
 import { TestModule } from './test/test.module';
+import { ChatModule } from './chat/chat.module';
 
 import { AppError404 } from './app.error-404.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +21,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     TolsModule,
     AnbfModule,
     TestModule,
+    ChatModule,
     NgbModule.forRoot(),
     AppRoutingModule // Debe ir el ultimo,
     ],

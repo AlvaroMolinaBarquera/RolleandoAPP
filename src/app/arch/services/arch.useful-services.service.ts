@@ -5,7 +5,7 @@ export class ArchUsefulServices {
 
   updateNPCName(NPCName: string) {
     let returnedNPCName;
-    if (NPCName.indexOf('#') != -1) {
+    if (NPCName.indexOf('#') !== -1) {
       let n: any = NPCName.substring(NPCName.indexOf('#') + 1, NPCName.length);
       n = Number(n);
       n++;

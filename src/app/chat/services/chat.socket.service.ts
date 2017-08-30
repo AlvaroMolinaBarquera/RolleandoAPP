@@ -1,27 +1,32 @@
 import { Injectable } from '@angular/core';
 import { ArchTracesService } from './../../arch/services/arch.traces.service';
-
-let socketio = require('socketio')
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+let io = require('socketio');
 
 @Injectable()
 export class ChatSocketService {
-  constructor (
+   private url = 'http://localhost:3333';  
+   private socket: any;
+   constructor (
     private tracesService: ArchTracesService
-  ) {
-    // Conectamos al servidor
-    try {
-           socketio();
-      
-    } catch (e ) {
-      console.log(e) }
-    try {
-      io()
-    } catch (e) {
-      console.log('e2', e)
-    }
+   ) {
+   }
+
+  sendMessage(message: any){
+    this.socket.emit('add-message', message);    
   }
   
-  public sendMessage = (message: any) => {
-    console.log(message);
-  }
+  getMessages() {
+    let observable = new Observable(observer => {
+      this.socket = io(this.url);
+      this.socket.on('message', (data: any) => {
+        observer.next(data);    
+      });
+      return () => {
+        this.socket.disconnect();
+      };  
+    })     
+    return observable;
+  }  
 }

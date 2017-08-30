@@ -1,14 +1,14 @@
 // Get dependencies
 const express = require('express');
 const path = require('path');
-const http = require('http');
+const app = express();
+const http = require('http').Server(app)
 const bodyParser = require('body-parser');
 var io = require('socket.io')(http);
 
 // Get our API routes
 const api = require('./server/routes/api');
 
-const app = express();
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -25,10 +25,23 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname));
 });
 
-// Evento al conectarse desde un socket
-io.on('connection', function(socket){
-  console.log('a user connected');
+// IO
+io.on('connection', (socket) => {
+
+    console.log('user connected');
+
+    socket.on('disconnect', function() {
+        console.log('user disconnected');
+    });
+
+    socket.on('add-message', (message) => {
+        io.emit('message', { type: 'new-message', text: message });
+        // Function above that stores the message in the database
+        // databaseStore(message)
+    });
+
 });
+
 
 /**
  * Get port from environment and store in Express.
@@ -38,10 +51,11 @@ app.set('port', port);
 
 /**
  * Create HTTP server.
- */
+ 
 const server = http.createServer(app);
+*/
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+http.listen(port, () => console.log(`API running on localhost:${port}`));

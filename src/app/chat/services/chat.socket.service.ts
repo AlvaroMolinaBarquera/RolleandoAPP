@@ -4,6 +4,11 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 let io = require('socketio');
 
+interface SocketMessage {
+  text: string;
+  user: string;
+}
+
 @Injectable()
 export class ChatSocketService {
    private url = 'http://localhost:3333';  
@@ -14,7 +19,10 @@ export class ChatSocketService {
    }
 
   sendMessage(message: any){
-    this.socket.emit('add-message', message);    
+    let socketMessage = {} as SocketMessage;
+    socketMessage.text = message;
+    socketMessage.user = this.socket.id;
+    this.socket.emit('add-message', socketMessage);    
   }
   
   getMessages() {

@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
     });
 
     socket.on('add-message', (message) => {
-        io.emit('message', { type: 'new-message', text: message });
+        io.emit('message', message);
         // Function above that stores the message in the database
         // databaseStore(message)
     });

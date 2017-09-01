@@ -5,16 +5,9 @@ import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller
 
 @Component({
   selector: 'chat-message-input',
-  template: `
-    <div *ngFor="let m of messageArray">
-      {{m.text}}
-    </div>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Escriba su mensaje aqui" [(ngModel)]="messageText">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button" (click)="sendMessage()">Enviar</button>
-      </span>
-    </div> `,
+  templateUrl: './chat.message-input.view.html',
+  styleUrls: ['./chat.message-input.styles.css'],
+  
 })
 
 export class ChatMessageInput {
@@ -25,6 +18,12 @@ export class ChatMessageInput {
     private chatService: ChatSocketService,
     private genericDiceRoller: ArchDiceRollerService,
   ) {}
+  
+  validateKeyDown(event: KeyboardEvent) {
+    if (event.code === 'Enter' && event.location === 0) {
+      this.sendMessage();
+    }
+  };
   
   sendMessage() {
     // Expresión Regular: Empieza por 'roll' luego al menos un digito, luego 'D', luego al menos un digito

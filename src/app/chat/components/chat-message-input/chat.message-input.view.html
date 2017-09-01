@@ -1,0 +1,15 @@
+<div class="chat chat-textarea">
+	<div *ngFor="let m of messageArray; let index = index" [ngClass]="{'text-right': m.user === chatService.socket.id}">
+	   <h6 class="font-weight-bold" *ngIf="index === 0 || messageArray[index].user !== messageArray[index - 1].user" class="font-weight-bold">{{m.user}}</h6>
+	   <p>&nbsp;&nbsp;&nbsp;&nbsp;{{m.text}}</p>
+	</div>
+</div>
+<footer class="footer">
+	<div class="input-group">
+	  <input type="text" class="form-control" placeholder="Escriba su mensaje aqui" [(ngModel)]="messageText" (keydown)="validateKeyDown($event)">
+	  <span class="input-group-btn">
+	    <button class="btn btn-secondary" type="button" (click)="sendMessage()">Enviar</button>
+	  </span>
+	</div>		
+</footer>
+

@@ -19,6 +19,8 @@ import { ArchRandomName } from './services/arch.random-name.service';
 import { ArchGenericModalService } from './services/arch.generic-modal.service';
 import { ArchTransactionService } from './services/arch.transaction.service';
 import { ArchTracesService } from './services/arch.traces.service';
+import { ArchActiveUserService } from './services/arch.active-user.service';
+import { ArchAuthGuard } from './guards/arch.auth.guard';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, HttpModule ],
@@ -31,7 +33,9 @@ import { ArchTracesService } from './services/arch.traces.service';
     ArchRandomName,
     ArchGenericModalService,
     ArchTransactionService,
-    ArchTracesService
+    ArchTracesService,
+    ArchActiveUserService,
+    ArchAuthGuard
    ],
   entryComponents: [ArchGenericModal ]
 })

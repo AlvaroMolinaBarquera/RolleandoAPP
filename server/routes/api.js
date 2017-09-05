@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const tracesService = require('./../shared/traces.service');
-
+const mongodbService = require('./../shared/mongodb.service')
 /* GET api listing. */
 router.get('/', (req, res) => {
   res.send('api works');
@@ -22,8 +22,30 @@ router.post('/traces', (req, res) => {
 });
 
 //Get all posts
-router.post('/login', (req, res) => {
-	console.log('Petición recibida', req)
-	res.send('Success');
+router.post('/transactions', (req, res) => {
+	let transaction = req.body.HEADER.TRANSACTION;
+	tracesService.writeTrace(
+			tracesService.TRACES_LEVEL.INFO,
+			'TRANSACCIÓN RECIBIDA ' + transaction,
+			req.body);	
+	switch(transaction){
+		case 'LOGIN':
+			mongodbService.databaseRecover('user_list', req.body.BODY, (result) => {
+				tracesService.writeTrace(
+						tracesService.TRACES_LEVEL.INFO,
+						'Datos obtenidos de la bd ',
+						result);
+				if (result && result.length !== 0) {
+					res.send(true);
+				} else {
+					res.send(false);
+				}
+			})
+
+		break;
+		default:
+			
+		break;	
+	}
 });
 module.exports = router;

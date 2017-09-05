@@ -1,0 +1,3759 @@
+2017-09-05T06:21:17.737Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T06:21:18.147Z - info: undefined 'MONGODB listening: ' '3333'
+2017-09-05T06:24:38.896Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, 
+2017-09-05T06:24:38.943Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, 
+2017-09-05T08:18:14.853Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Gala, PASSWORD=el
+2017-09-05T08:18:14.861Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Gala, PASSWORD=el
+2017-09-05T08:18:42.256Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=gala, PASSWORD=el
+2017-09-05T08:18:42.261Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=gala, PASSWORD=el
+2017-09-05T08:19:18.496Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=gala, PASSWORD=el
+2017-09-05T08:19:18.499Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=gala, PASSWORD=el
+2017-09-05T08:20:42.268Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=gala, PASSWORD=el
+2017-09-05T08:21:18.525Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=gala, PASSWORD=el
+2017-09-05T08:29:38.592Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=123, PASSWORD=123
+2017-09-05T08:29:38.609Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=123, PASSWORD=123
+2017-09-05T08:31:38.595Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=123, PASSWORD=123
+2017-09-05T09:19:56.449Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:24:45.008Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:25:10.348Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:25:46.748Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:25:47.021Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T09:28:41.174Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=123, PASSWORD=123
+2017-09-05T09:28:41.182Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=123, PASSWORD=123
+2017-09-05T09:49:57.681Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:49:57.972Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T09:50:31.813Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:51:17.751Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:51:18.053Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T09:51:23.074Z - info: undefined 'Datos obtenidos de la bd ' pool=null, server=null, storedOps=[], force=false, bufferMaxEntries=-1, domain=null, error=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, timeout=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, close=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, parseError=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, fullsetup=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, all=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, reconnect=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, _eventsCount=7, _maxListeners=undefined, name=nodejs, version=2.2.31, type=Windows_NT, name=win32, architecture=x64, version=10.0.14393, platform=Node.js v6.10.0, LE, domain=null, reconnect=function () {
+    self.emit('reconnect', self);
+    self.s.store.execute();
+  }, reconnectFailed=function (err) {
+    self.emit('reconnectFailed', err);
+    self.s.store.flush(err);
+  }, serverDescriptionChanged=function (t, server) {
+      self.emit(event, t, server);
+    }, serverHeartbeatStarted=function (t, server) {
+      self.emit(event, t, server);
+    }, serverHeartbeatSucceeded=function (t, server) {
+      self.emit(event, t, server);
+    }, serverHeartbeatFailed=function (t, server) {
+      self.emit(event, t, server);
+    }, serverOpening=function (t, server) {
+      self.emit(event, t, server);
+    }, serverClosed=function (t, server) {
+      self.emit(event, t, server);
+    }, topologyOpening=function (t, server) {
+      self.emit(event, t, server);
+    }, topologyClosed=function (t, server) {
+      self.emit(event, t, server);
+    }, topologyDescriptionChanged=function (t, server) {
+      self.emit(event, t, server);
+    }, attemptReconnect=function (t, server) {
+      self.emit(event, t, server);
+    }, monitoring=function (t, server) {
+      self.emit(event, t, server);
+    }, timeout=function (err) {
+      if(event != 'error') {
+        self.emit(event, err);
+      }
+    }, error=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, close=function (err) {
+      if(event != 'error') {
+        self.emit(event, err);
+      }
+    }, destroy=function () {
+    self.s.store.flush();
+  }, _eventsCount=17, _maxListeners=undefined, id=0, host=ds119524.mlab.com, port=19524, $ref=$["disconnectHandler"], cursorFactory=function (bson, ns, cmd, options, topology, topologyOptions) {
+  CoreCursor.apply(this, Array.prototype.slice.call(arguments, 0));
+  var self = this;
+  var state = Cursor.INIT;
+  var streamOptions = {};
+
+  // Tailable cursor options
+  var numberOfRetries = options.numberOfRetries || 5;
+  var tailableRetryInterval = options.tailableRetryInterval || 500;
+  var currentNumberOfRetries = numberOfRetries;
+
+  // Get the promiseLibrary
+  var promiseLibrary = options.promiseLibrary;
+
+  // No promise library selected fall back
+  if(!promiseLibrary) {
+    promiseLibrary = typeof global.Promise == 'function' ?
+      global.Promise : require('es6-promise').Promise;
+  }
+
+  // Set up
+  Readable.call(this, {objectMode: true});
+
+  // Internal cursor state
+  this.s = {
+    // Tailable cursor options
+      numberOfRetries: numberOfRetries
+    , tailableRetryInterval: tailableRetryInterval
+    , currentNumberOfRetries: currentNumberOfRetries
+    // State
+    , state: state
+    // Stream options
+    , streamOptions: streamOptions
+    // BSON
+    , bson: bson
+    // Namespace
+    , ns: ns
+    // Command
+    , cmd: cmd
+    // Options
+    , options: options
+    // Topology
+    , topology: topology
+    // Topology options
+    , topologyOptions: topologyOptions
+    // Promise library
+    , promiseLibrary: promiseLibrary
+    // Current doc
+    , currentDoc: null
+  }
+
+  // Translate correctly
+  if(self.s.options.noCursorTimeout == true) {
+    self.addCursorFlag('noCursorTimeout', true);
+  }
+
+  // Set the sort value
+  this.sortValue = self.s.cmd.sort;
+
+  // Get the batchSize
+  var batchSize = cmd.cursor && cmd.cursor.batchSize
+    ? cmd.cursor && cmd.cursor.batchSize
+    : (options.cursor && options.cursor.batchSize ? options.cursor.batchSize : 1000);
+
+  // Set the batchSize
+  this.setCursorBatchSize(batchSize);
+}, reconnect=true, emitError=true, size=5, , socketTimeout=360000, connectionTimeout=30000, $ref=$["disconnectHandler"]["s"]["topology"]["clientInfo"], _type=ReadPreference, mode=primary, tags=undefined, options=undefined, promiseLibrary=function Promise() { [native code] }, , className=Server, Cursor=function (bson, ns, cmd, options, topology, topologyOptions) {
+  CoreCursor.apply(this, Array.prototype.slice.call(arguments, 0));
+  var self = this;
+  var state = Cursor.INIT;
+  var streamOptions = {};
+
+  // Tailable cursor options
+  var numberOfRetries = options.numberOfRetries || 5;
+  var tailableRetryInterval = options.tailableRetryInterval || 500;
+  var currentNumberOfRetries = numberOfRetries;
+
+  // Get the promiseLibrary
+  var promiseLibrary = options.promiseLibrary;
+
+  // No promise library selected fall back
+  if(!promiseLibrary) {
+    promiseLibrary = typeof global.Promise == 'function' ?
+      global.Promise : require('es6-promise').Promise;
+  }
+
+  // Set up
+  Readable.call(this, {objectMode: true});
+
+  // Internal cursor state
+  this.s = {
+    // Tailable cursor options
+      numberOfRetries: numberOfRetries
+    , tailableRetryInterval: tailableRetryInterval
+    , currentNumberOfRetries: currentNumberOfRetries
+    // State
+    , state: state
+    // Stream options
+    , streamOptions: streamOptions
+    // BSON
+    , bson: bson
+    // Namespace
+    , ns: ns
+    // Command
+    , cmd: cmd
+    // Options
+    , options: options
+    // Topology
+    , topology: topology
+    // Topology options
+    , topologyOptions: topologyOptions
+    // Promise library
+    , promiseLibrary: promiseLibrary
+    // Current doc
+    , currentDoc: null
+  }
+
+  // Translate correctly
+  if(self.s.options.noCursorTimeout == true) {
+    self.addCursorFlag('noCursorTimeout', true);
+  }
+
+  // Set the sort value
+  this.sortValue = self.s.cmd.sort;
+
+  // Get the batchSize
+  var batchSize = cmd.cursor && cmd.cursor.batchSize
+    ? cmd.cursor && cmd.cursor.batchSize
+    : (options.cursor && options.cursor.batchSize ? options.cursor.batchSize : 1000);
+
+  // Set the batchSize
+  this.setCursorBatchSize(batchSize);
+}, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], domain=null, close=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, error=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, timeout=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, parseError=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, connect=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, reconnect=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, reconnectFailed=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, _eventsCount=7, _maxListeners=undefined, host=ds119524.mlab.com, port=19524, size=5, connectionTimeout=30000, socketTimeout=360000, keepAlive=true, keepAliveInitialDelay=300000, noDelay=true, ssl=false, checkServerIdentity=true, ca=null, crl=null, cert=null, key=null, passPhrase=null, rejectUnauthorized=false, promoteLongs=true, promoteValues=true, promoteBuffers=false, reconnect=true, reconnectInterval=1000, reconnectTries=30, domainsEnabled=false, $ref=$["disconnectHandler"], cursorFactory=function (bson, ns, cmd, options, topology, topologyOptions) {
+  CoreCursor.apply(this, Array.prototype.slice.call(arguments, 0));
+  var self = this;
+  var state = Cursor.INIT;
+  var streamOptions = {};
+
+  // Tailable cursor options
+  var numberOfRetries = options.numberOfRetries || 5;
+  var tailableRetryInterval = options.tailableRetryInterval || 500;
+  var currentNumberOfRetries = numberOfRetries;
+
+  // Get the promiseLibrary
+  var promiseLibrary = options.promiseLibrary;
+
+  // No promise library selected fall back
+  if(!promiseLibrary) {
+    promiseLibrary = typeof global.Promise == 'function' ?
+      global.Promise : require('es6-promise').Promise;
+  }
+
+  // Set up
+  Readable.call(this, {objectMode: true});
+
+  // Internal cursor state
+  this.s = {
+    // Tailable cursor options
+      numberOfRetries: numberOfRetries
+    , tailableRetryInterval: tailableRetryInterval
+    , currentNumberOfRetries: currentNumberOfRetries
+    // State
+    , state: state
+    // Stream options
+    , streamOptions: streamOptions
+    // BSON
+    , bson: bson
+    // Namespace
+    , ns: ns
+    // Command
+    , cmd: cmd
+    // Options
+    , options: options
+    // Topology
+    , topology: topology
+    // Topology options
+    , topologyOptions: topologyOptions
+    // Promise library
+    , promiseLibrary: promiseLibrary
+    // Current doc
+    , currentDoc: null
+  }
+
+  // Translate correctly
+  if(self.s.options.noCursorTimeout == true) {
+    self.addCursorFlag('noCursorTimeout', true);
+  }
+
+  // Set the sort value
+  this.sortValue = self.s.cmd.sort;
+
+  // Get the batchSize
+  var batchSize = cmd.cursor && cmd.cursor.batchSize
+    ? cmd.cursor && cmd.cursor.batchSize
+    : (options.cursor && options.cursor.batchSize ? options.cursor.batchSize : 1000);
+
+  // Set the batchSize
+  this.setCursorBatchSize(batchSize);
+}, emitError=true, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["socketOptions"], $ref=$["disconnectHandler"]["s"]["topology"]["clientInfo"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["readPreference"], promiseLibrary=function Promise() { [native code] }, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], id=0, retriesLeft=30, reconnectId=null, className=Pool, state=connected, availableConnections=[domain=null, error=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, close=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, timeout=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, parseError=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, _eventsCount=4, _maxListeners=undefined, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["options"], id=0, className=Connection, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], tag=undefined, messageHandler=function (message, connection) {
+    // workItem to execute
+    var workItem = null;
+
+    // Locate the workItem
+    for(var i = 0; i < connection.workItems.length; i++) {
+      if(connection.workItems[i].requestId == message.responseTo) {
+        // Get the callback
+        workItem = connection.workItems[i];
+        // Remove from list of workItems
+        connection.workItems.splice(i, 1);
+      }
+    }
+
+
+    // Reset timeout counter
+    self.numberOfConsecutiveTimeouts = 0;
+
+    // Reset the connection timeout if we modified it for
+    // this operation
+    if(workItem.socketTimeout) {
+      connection.resetSocketTimeout();
+    }
+
+    // Log if debug enabled
+    if(self.logger.isDebug()) {
+      self.logger.debug(f('message [%s] received from %s:%s'
+        , message.raw.toString('hex'), self.options.host, self.options.port));
+    }
+
+    // Authenticate any straggler connections
+    function authenticateStragglers(self, connection, callback) {
+      // Get any non authenticated connections
+      var connections = self.nonAuthenticatedConnections.slice(0);
+      var nonAuthenticatedConnections = self.nonAuthenticatedConnections;
+      self.nonAuthenticatedConnections = [];
+
+      // Establish if the connection need to be authenticated
+      // Add to authentication list if
+      // 1. we were in an authentication process when the operation was executed
+      // 2. our current authentication timestamp is from the workItem one, meaning an auth has happened
+      if(connection.workItems.length == 1 && (connection.workItems[0].authenticating == true
+        || (typeof connection.workItems[0].authenticatingTimestamp == 'number'
+            && connection.workItems[0].authenticatingTimestamp != self.authenticatingTimestamp))) {
+        // Add connection to the list
+        connections.push(connection);
+      }
+
+      // No connections need to be re-authenticated
+      if(connections.length == 0) {
+        // Release the connection back to the pool
+        moveConnectionBetween(connection, self.inUseConnections, self.availableConnections);
+        // Finish
+        return callback();
+      }
+
+      // Apply re-authentication to all connections before releasing back to pool
+      var connectionCount = connections.length;
+      // Authenticate all connections
+      for(var i = 0; i < connectionCount; i++) {
+        reauthenticate(self, connections[i], function() {
+          connectionCount = connectionCount - 1;
+
+          if(connectionCount == 0) {
+            // Put non authenticated connections in available connections
+            self.availableConnections = self.availableConnections.concat(nonAuthenticatedConnections);
+            // Release the connection back to the pool
+            moveConnectionBetween(connection, self.inUseConnections, self.availableConnections);
+            // Return
+            callback();
+          }
+        });
+      }
+    }
+
+    function handleOperationCallback(self, cb, err, result) {
+      // No domain enabled
+      if(!self.options.domainsEnabled) {
+        return process.nextTick(function() {
+          return cb(err, result);
+        });
+      }
+
+      // Domain enabled just call the callback
+      cb(err, result);
+    }
+
+    authenticateStragglers(self, connection, function() {
+      // Keep executing, ensure current message handler does not stop execution
+      if(!self.executing) {
+        process.nextTick(function() {
+          _execute(self)();
+        });
+      }
+
+      // Time to dispatch the message if we have a callback
+      if(!workItem.immediateRelease) {
+        try {
+          // Parse the message according to the provided options
+          message.parse(workItem);
+        } catch(err) {
+          return handleOperationCallback(self, workItem.cb, MongoError.create(err));
+        }
+
+        // Establish if we have an error
+        if(workItem.command && message.documents[0] && (message.documents[0].ok == 0 || message.documents[0]['$err']
+        || message.documents[0]['errmsg'] || message.documents[0]['code'])) {
+          return handleOperationCallback(self, workItem.cb, MongoError.create(message.documents[0]));
+        }
+
+        // Add the connection details
+        message.hashedName = connection.hashedName;
+
+        // Return the documents
+        handleOperationCallback(self, workItem.cb, null, new CommandResult(workItem.fullResult ? message : message.documents[0], connection, message));
+      }
+    });
+  }, maxBsonMessageSize=67108864, port=19524, host=ds119524.mlab.com, family=4, keepAlive=true, keepAliveInitialDelay=300000, noDelay=true, connectionTimeout=30000, socketTimeout=360000, destroyed=false, domainSocket=false, singleBufferSerializtion=true, serializationFunction=toBinUnified, ca=null, crl=null, cert=null, key=null, passphrase=null, ssl=false, rejectUnauthorized=false, checkServerIdentity=true, promoteLongs=true, promoteValues=true, promoteBuffers=false, flushing=false, queue=[], connecting=false, _hadError=false, bytesRead=1363, , fd=-1, reading=true, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"], onread=function onread(nread, buffer) {
+  var handle = this;
+  var self = handle.owner;
+  assert(handle === self._handle, 'handle != self._handle');
+
+  self._unrefTimer();
+
+  debug('onread', nread);
+
+  if (nread > 0) {
+    debug('got data');
+
+    // read success.
+    // In theory (and in practice) calling readStop right now
+    // will prevent this from being called again until _read() gets
+    // called again.
+
+    // Optimization: emit the original buffer with end points
+    var ret = self.push(buffer);
+
+    if (handle.reading && !ret) {
+      handle.reading = false;
+      debug('readStop');
+      var err = handle.readStop();
+      if (err)
+        self._destroy(errnoException(err, 'read'));
+    }
+    return;
+  }
+
+  // if we didn't get any bytes, that doesn't necessarily mean EOF.
+  // wait for the next one.
+  if (nread === 0) {
+    debug('not any data, keep waiting');
+    return;
+  }
+
+  // Error, possibly EOF.
+  if (nread !== uv.UV_EOF) {
+    return self._destroy(errnoException(nread, 'read'));
+  }
+
+  debug('EOF');
+
+  // push a null to signal the end of data.
+  // Do it before `maybeDestroy` for correct order of events:
+  // `end` -> `close`
+  self.push(null);
+
+  if (self._readableState.length === 0) {
+    self.readable = false;
+    maybeDestroy(self);
+  }
+
+  // internal end event so that we know that the actual socket
+  // is no longer readable, and we can start the shutdown
+  // procedure. No need to wait for all the data to be consumed.
+  self.emit('_socketEnd');
+}, onconnection=null, writeQueueSize=0, _parent=null, _host=ds119524.mlab.com, objectMode=false, highWaterMark=16384, head=null, tail=null, length=0, length=0, pipes=null, pipesCount=0, flowing=true, ended=false, endEmitted=false, reading=true, sync=false, needReadable=true, emittedReadable=false, readableListening=false, resumeScheduled=false, defaultEncoding=utf8, ranOut=false, awaitDrain=0, readingMore=false, decoder=null, encoding=null, readable=true, domain=null, end=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, finish=function onSocketFinish() {
+  // If still connecting - defer handling 'finish' until 'connect' will happen
+  if (this.connecting) {
+    debug('osF: not yet connected');
+    return this.once('connect', onSocketFinish);
+  }
+
+  debug('onSocketFinish');
+  if (!this.readable || this._readableState.ended) {
+    debug('oSF: ended, destroy', this._readableState);
+    return this.destroy();
+  }
+
+  debug('oSF: not ended, call shutdown()');
+
+  // otherwise, just shutdown, or destroy() if not possible
+  if (!this._handle || !this._handle.shutdown)
+    return this.destroy();
+
+  var req = new ShutdownWrap();
+  req.oncomplete = afterShutdown;
+  req.handle = this._handle;
+  var err = this._handle.shutdown(req);
+
+  if (err)
+    return this._destroy(errnoException(err, 'shutdown'));
+}, _socketEnd=function onSocketEnd() {
+  // XXX Should not have to do as much crap in this function.
+  // ended should already be true, since this is called *after*
+  // the EOF errno and onread has eof'ed
+  debug('onSocketEnd', this._readableState);
+  this._readableState.ended = true;
+  if (this._readableState.endEmitted) {
+    this.readable = false;
+    maybeDestroy(this);
+  } else {
+    this.once('end', function() {
+      this.readable = false;
+      maybeDestroy(this);
+    });
+    this.read(0);
+  }
+
+  if (!this.allowHalfOpen) {
+    this.write = writeAfterFIN;
+    this.destroySoon();
+  }
+}, connect=[function () {
+      // Set socket timeout instead of connection timeout
+      self.connection.setTimeout(self.socketTimeout);
+      // Emit connect event
+      self.emit('connect', self);
+    }], error=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, timeout=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, close=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, data=function (data) {
+    // Parse until we are done with the data
+    while(data.length > 0) {
+      // If we still have bytes to read on the current message
+      if(self.bytesRead > 0 && self.sizeOfMessage > 0) {
+        // Calculate the amount of remaining bytes
+        var remainingBytesToRead = self.sizeOfMessage - self.bytesRead;
+        // Check if the current chunk contains the rest of the message
+        if(remainingBytesToRead > data.length) {
+          // Copy the new data into the exiting buffer (should have been allocated when we know the message size)
+          data.copy(self.buffer, self.bytesRead);
+          // Adjust the number of bytes read so it point to the correct index in the buffer
+          self.bytesRead = self.bytesRead + data.length;
+
+          // Reset state of buffer
+          data = new Buffer(0);
+        } else {
+          // Copy the missing part of the data into our current buffer
+          data.copy(self.buffer, self.bytesRead, 0, remainingBytesToRead);
+          // Slice the overflow into a new buffer that we will then re-parse
+          data = data.slice(remainingBytesToRead);
+
+          // Emit current complete message
+          try {
+            var emitBuffer = self.buffer;
+            // Reset state of buffer
+            self.buffer = null;
+            self.sizeOfMessage = 0;
+            self.bytesRead = 0;
+            self.stubBuffer = null;
+            // Emit the buffer
+            self.messageHandler(new Response(self.bson, emitBuffer, self.responseOptions), self);
+          } catch(err) {
+            var errorObject = {err:"socketHandler", trace:err, bin:self.buffer, parseState:{
+              sizeOfMessage:self.sizeOfMessage,
+              bytesRead:self.bytesRead,
+              stubBuffer:self.stubBuffer}};
+            // We got a parse Error fire it off then keep going
+            self.emit("parseError", errorObject, self);
+          }
+        }
+      } else {
+        // Stub buffer is kept in case we don't get enough bytes to determine the
+        // size of the message (< 4 bytes)
+        if(self.stubBuffer != null && self.stubBuffer.length > 0) {
+          // If we have enough bytes to determine the message size let's do it
+          if(self.stubBuffer.length + data.length > 4) {
+            // Prepad the data
+            var newData = new Buffer(self.stubBuffer.length + data.length);
+            self.stubBuffer.copy(newData, 0);
+            data.copy(newData, self.stubBuffer.length);
+            // Reassign for parsing
+            data = newData;
+
+            // Reset state of buffer
+            self.buffer = null;
+            self.sizeOfMessage = 0;
+            self.bytesRead = 0;
+            self.stubBuffer = null;
+
+          } else {
+
+            // Add the the bytes to the stub buffer
+            var newStubBuffer = new Buffer(self.stubBuffer.length + data.length);
+            // Copy existing stub buffer
+            self.stubBuffer.copy(newStubBuffer, 0);
+            // Copy missing part of the data
+            data.copy(newStubBuffer, self.stubBuffer.length);
+            // Exit parsing loop
+            data = new Buffer(0);
+          }
+        } else {
+          if(data.length > 4) {
+            // Retrieve the message size
+            // var sizeOfMessage = data.readUInt32LE(0);
+            var sizeOfMessage = data[0] | data[1] << 8 | data[2] << 16 | data[3] << 24;
+            // If we have a negative sizeOfMessage emit error and return
+            if(sizeOfMessage < 0 || sizeOfMessage > self.maxBsonMessageSize) {
+              errorObject = {err:"socketHandler", trace:'', bin:self.buffer, parseState:{
+                sizeOfMessage: sizeOfMessage,
+                bytesRead: self.bytesRead,
+                stubBuffer: self.stubBuffer}};
+              // We got a parse Error fire it off then keep going
+              self.emit("parseError", errorObject, self);
+              return;
+            }
+
+            // Ensure that the size of message is larger than 0 and less than the max allowed
+            if(sizeOfMessage > 4 && sizeOfMessage < self.maxBsonMessageSize && sizeOfMessage > data.length) {
+              self.buffer = new Buffer(sizeOfMessage);
+              // Copy all the data into the buffer
+              data.copy(self.buffer, 0);
+              // Update bytes read
+              self.bytesRead = data.length;
+              // Update sizeOfMessage
+              self.sizeOfMessage = sizeOfMessage;
+              // Ensure stub buffer is null
+              self.stubBuffer = null;
+              // Exit parsing loop
+              data = new Buffer(0);
+
+            } else if(sizeOfMessage > 4 && sizeOfMessage < self.maxBsonMessageSize && sizeOfMessage == data.length) {
+              try {
+                emitBuffer = data;
+                // Reset state of buffer
+                self.buffer = null;
+                self.sizeOfMessage = 0;
+                self.bytesRead = 0;
+                self.stubBuffer = null;
+                // Exit parsing loop
+                data = new Buffer(0);
+                // Emit the message
+                self.messageHandler(new Response(self.bson, emitBuffer, self.responseOptions), self);
+              } catch (err) {
+                self.emit("parseError", err, self);
+              }
+            } else if(sizeOfMessage <= 4 || sizeOfMessage > self.maxBsonMessageSize) {
+              errorObject = {err:"socketHandler", trace:null, bin:data, parseState:{
+                sizeOfMessage:sizeOfMessage,
+                bytesRead:0,
+                buffer:null,
+                stubBuffer:null}};
+              // We got a parse Error fire it off then keep going
+              self.emit("parseError", errorObject, self);
+
+              // Clear out the state of the parser
+              self.buffer = null;
+              self.sizeOfMessage = 0;
+              self.bytesRead = 0;
+              self.stubBuffer = null;
+              // Exit parsing loop
+              data = new Buffer(0);
+            } else {
+              emitBuffer = data.slice(0, sizeOfMessage);
+              // Reset state of buffer
+              self.buffer = null;
+              self.sizeOfMessage = 0;
+              self.bytesRead = 0;
+              self.stubBuffer = null;
+              // Copy rest of message
+              data = data.slice(sizeOfMessage);
+              // Emit the message
+              self.messageHandler(new Response(self.bson, emitBuffer, self.responseOptions), self);
+            }
+          } else {
+            // Create a buffer that contains the space for the non-complete message
+            self.stubBuffer = new Buffer(data.length)
+            // Copy the data to the stub buffer
+            data.copy(self.stubBuffer, 0);
+            // Exit parsing loop
+            data = new Buffer(0);
+          }
+        }
+      }
+    }
+  }, _eventsCount=8, _maxListeners=undefined, objectMode=false, highWaterMark=16384, needDrain=false, ending=false, ended=false, finished=false, decodeStrings=false, defaultEncoding=utf8, length=0, writing=false, corked=0, sync=false, bufferProcessing=false, onwrite=function (er) {
+    onwrite(stream, er);
+  }, writecb=null, writelen=0, bufferedRequest=null, lastBufferedRequest=null, pendingcb=0, prefinished=false, errorEmitted=false, bufferedRequestCount=0, next=null, entry=null, finish=(err) => {
+    var entry = this.entry;
+    this.entry = null;
+    while (entry) {
+      var cb = entry.callback;
+      state.pendingcb--;
+      cb(err);
+      entry = entry.next;
+    }
+    if (state.corkedRequestsFree) {
+      state.corkedRequestsFree.next = this;
+    } else {
+      state.corkedRequestsFree = this;
+    }
+  }, writable=true, allowHalfOpen=false, destroyed=false, _bytesDispatched=805, _sockname=null, _pendingData=null, _pendingEncoding=, server=null, _server=null, _idleTimeout=360000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"], 0=function listOnTimeout() {
+  var list = this._list;
+  var msecs = list.msecs;
+
+  debug('timeout callback %d', msecs);
+
+  var now = TimerWrap.now();
+  debug('now: %d', now);
+
+  var diff, timer;
+  while (timer = L.peek(list)) {
+    diff = now - timer._idleStart;
+
+    // Check if this loop iteration is too early for the next timer.
+    // This happens if there are more timers scheduled for later in the list.
+    if (diff < msecs) {
+      var timeRemaining = msecs - (TimerWrap.now() - timer._idleStart);
+      if (timeRemaining < 0) {
+        timeRemaining = 0;
+      }
+      this.start(timeRemaining);
+      debug('%d list wait because diff is %d', msecs, diff);
+      return;
+    }
+
+    // The actual logic for when a timeout happens.
+
+    L.remove(timer);
+    assert(timer !== L.peek(list));
+
+    if (!timer._onTimeout) continue;
+
+    var domain = timer.domain;
+    if (domain) {
+
+      // If the timer callback throws and the
+      // domain or uncaughtException handler ignore the exception,
+      // other timers that expire on this tick should still run.
+      //
+      // https://github.com/nodejs/node-v0.x-archive/issues/2631
+      if (domain._disposed)
+        continue;
+
+      domain.enter();
+    }
+
+    tryOnTimeout(timer, list);
+
+    if (domain)
+      domain.exit();
+  }
+
+  // If `L.peek(list)` returned nothing, the list was either empty or we have
+  // called all of the timer timeouts.
+  // As such, we can remove the list and clean up the TimerWrap C++ handle.
+  debug('%d list empty', msecs);
+  assert(L.isEmpty(list));
+  this.close();
+
+  // Either refedLists[msecs] or unrefedLists[msecs] may have been removed and
+  // recreated since the reference to `list` was created. Make sure they're
+  // the same instance of the list before destroying.
+  if (list._unrefed === true && list === unrefedLists[msecs]) {
+    delete unrefedLists[msecs];
+  } else if (list === refedLists[msecs]) {
+    delete refedLists[msecs];
+  }
+}, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"]["_idleNext"], _unrefed=true, msecs=360000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"]["_idleNext"], _idleStart=6150, read=function (n) {
+  debug('read', n);
+  n = parseInt(n, 10);
+  var state = this._readableState;
+  var nOrig = n;
+
+  if (n !== 0)
+    state.emittedReadable = false;
+
+  // if we're doing read(0) to trigger a readable event, but we
+  // already have a bunch of data in the buffer, then just trigger
+  // the 'readable' event and move on.
+  if (n === 0 &&
+      state.needReadable &&
+      (state.length >= state.highWaterMark || state.ended)) {
+    debug('read: emitReadable', state.length, state.ended);
+    if (state.length === 0 && state.ended)
+      endReadable(this);
+    else
+      emitReadable(this);
+    return null;
+  }
+
+  n = howMuchToRead(n, state);
+
+  // if we've ended, and we're now clear, then finish it up.
+  if (n === 0 && state.ended) {
+    if (state.length === 0)
+      endReadable(this);
+    return null;
+  }
+
+  // All the actual chunk generation logic needs to be
+  // *below* the call to _read.  The reason is that in certain
+  // synthetic stream cases, such as passthrough streams, _read
+  // may be a completely synchronous operation which may change
+  // the state of the read buffer, providing enough data when
+  // before there was *not* enough.
+  //
+  // So, the steps are:
+  // 1. Figure out what the state of things will be after we do
+  // a read from the buffer.
+  //
+  // 2. If that resulting state will trigger a _read, then call _read.
+  // Note that this may be asynchronous, or synchronous.  Yes, it is
+  // deeply ugly to write APIs this way, but that still doesn't mean
+  // that the Readable class should behave improperly, as streams are
+  // designed to be sync/async agnostic.
+  // Take note if the _read call is sync or async (ie, if the read call
+  // has returned yet), so that we know whether or not it's safe to emit
+  // 'readable' etc.
+  //
+  // 3. Actually pull the requested chunks out of the buffer and return.
+
+  // if we need a readable event, then we need to do some reading.
+  var doRead = state.needReadable;
+  debug('need readable', doRead);
+
+  // if we currently have less than the highWaterMark, then also read some
+  if (state.length === 0 || state.length - n < state.highWaterMark) {
+    doRead = true;
+    debug('length less than watermark', doRead);
+  }
+
+  // however, if we've ended, then there's no point, and if we're already
+  // reading, then it's unnecessary.
+  if (state.ended || state.reading) {
+    doRead = false;
+    debug('reading or ended', doRead);
+  } else if (doRead) {
+    debug('do read');
+    state.reading = true;
+    state.sync = true;
+    // if the length is currently zero, then we *need* a readable event.
+    if (state.length === 0)
+      state.needReadable = true;
+    // call internal read method
+    this._read(state.highWaterMark);
+    state.sync = false;
+    // If _read pushed data synchronously, then `reading` will be false,
+    // and we need to re-evaluate how much data we can return to the user.
+    if (!state.reading)
+      n = howMuchToRead(nOrig, state);
+  }
+
+  var ret;
+  if (n > 0)
+    ret = fromList(n, state);
+  else
+    ret = null;
+
+  if (ret === null) {
+    state.needReadable = true;
+    n = 0;
+  } else {
+    state.length -= n;
+  }
+
+  if (state.length === 0) {
+    // If we have nothing in the buffer, then we want to know
+    // as soon as we *do* get something into the buffer.
+    if (!state.ended)
+      state.needReadable = true;
+
+    // If we tried to read() past the EOF, then emit end on the next tick.
+    if (nOrig !== n && state.ended)
+      endReadable(this);
+  }
+
+  if (ret !== null)
+    this.emit('data', ret);
+
+  return ret;
+}, _consuming=true, writeStream=null, hashedName=74eb7e80f1ff4e64daae2318f284de7c4976d334, workItems=[], buffer=null, sizeOfMessage=0, bytesRead=0, stubBuffer=null], inUseConnections=[], connectingConnections=[], executing=false, queue=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[db=chat_messages, username=admin, password=St0ryt3ll3r], id=0, reconnectConnection=null, authenticating=false, loggingout=false, nonAuthenticatedConnections=[], authenticatingTimestamp=1504605077897, numberOfConsecutiveTimeouts=0, connectionIndex=2, $ref=$["disconnectHandler"], monitoring=true, inTopology=false, monitoringInterval=5000, topologyId=-1, topologyType=Single, servers=[address=ds119524.mlab.com:19524, arbiters=[], hosts=[], passives=[], type=RSPrimary], topologyType=Unknown, servers=[address=ds119524.mlab.com:19524, arbiters=[], hosts=[], passives=[], type=Unknown], hosts=[ds119524-a.mlab.com:19524], setName=rs-ds119524, setVersion=1, ismaster=true, secondary=false, primary=ds119524-a.mlab.com:19524, me=ds119524-a.mlab.com:19524, _bsontype=ObjectID, 0=127, 1=255, 2=255, 3=255, 4=0, 5=0, 6=0, 7=0, 8=0, 9=0, 10=0, 11=1, _bsontype=Timestamp, low_=1, high_=1504605083, t=1, lastWriteDate=Tue Sep 05 2017 11:51:23 GMT+0200 (Romance Daylight Time), maxBsonObjectSize=16777216, maxMessageSizeBytes=48000000, maxWriteBatchSize=1000, localTime=Tue Sep 05 2017 11:51:26 GMT+0200 (Romance Daylight Time), maxWireVersion=5, minWireVersion=0, readOnly=false, ok=1, lastIsMasterMS=46, _called=false, _idleTimeout=5000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"], 0=function listOnTimeout() {
+  var list = this._list;
+  var msecs = list.msecs;
+
+  debug('timeout callback %d', msecs);
+
+  var now = TimerWrap.now();
+  debug('now: %d', now);
+
+  var diff, timer;
+  while (timer = L.peek(list)) {
+    diff = now - timer._idleStart;
+
+    // Check if this loop iteration is too early for the next timer.
+    // This happens if there are more timers scheduled for later in the list.
+    if (diff < msecs) {
+      var timeRemaining = msecs - (TimerWrap.now() - timer._idleStart);
+      if (timeRemaining < 0) {
+        timeRemaining = 0;
+      }
+      this.start(timeRemaining);
+      debug('%d list wait because diff is %d', msecs, diff);
+      return;
+    }
+
+    // The actual logic for when a timeout happens.
+
+    L.remove(timer);
+    assert(timer !== L.peek(list));
+
+    if (!timer._onTimeout) continue;
+
+    var domain = timer.domain;
+    if (domain) {
+
+      // If the timer callback throws and the
+      // domain or uncaughtException handler ignore the exception,
+      // other timers that expire on this tick should still run.
+      //
+      // https://github.com/nodejs/node-v0.x-archive/issues/2631
+      if (domain._disposed)
+        continue;
+
+      domain.enter();
+    }
+
+    tryOnTimeout(timer, list);
+
+    if (domain)
+      domain.exit();
+  }
+
+  // If `L.peek(list)` returned nothing, the list was either empty or we have
+  // called all of the timer timeouts.
+  // As such, we can remove the list and clean up the TimerWrap C++ handle.
+  debug('%d list empty', msecs);
+  assert(L.isEmpty(list));
+  this.close();
+
+  // Either refedLists[msecs] or unrefedLists[msecs] may have been removed and
+  // recreated since the reference to `list` was created. Make sure they're
+  // the same instance of the list before destroying.
+  if (list._unrefed === true && list === unrefedLists[msecs]) {
+    delete unrefedLists[msecs];
+  } else if (list === refedLists[msecs]) {
+    delete refedLists[msecs];
+  }
+}, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"]["_idlePrev"], _unrefed=false, msecs=5000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"]["_idlePrev"], _idleStart=6151, _onTimeout=function () {
+    // Pool was destroyed do not continue process
+    if(self.s.pool.isDestroyed()) return;
+    // Emit monitoring Process event
+    self.emit('monitoring', self);
+    // Perform ismaster call
+    // Query options
+    var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+    // Create a query instance
+    var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true}, queryOptions);
+    // Get start time
+    var start = new Date().getTime();
+
+    // Execute the ismaster query
+    self.s.pool.write(query, {
+      socketTimeout: (typeof self.s.options.connectionTimeout !== 'number') ? 2000 : self.s.options.connectionTimeout,
+      monitoring: true,
+    }, function(err, result) {
+      // Set initial lastIsMasterMS
+      self.lastIsMasterMS = new Date().getTime() - start;
+      if(self.s.pool.isDestroyed()) return;
+      // Update the ismaster view if we have a result
+      if(result) {
+        self.ismaster = result.result;
+      }
+      // Re-schedule the monitoring process
+      self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+    });
+  }, _timerArgs=undefined, _repeat=null, initalConnect=false, , _type=server, name=nodejs, version=2.2.31, type=Windows_NT, name=win32, architecture=x64, version=10.0.14393, platform=Node.js v6.10.0, LE, mongodb-core: 2.1.15, lastUpdateTime=0, lastWriteDate=0, staleness=0, hasAggregationCursor=true, hasWriteCommands=true, hasTextSearch=true, hasAuthCommands=true, hasListCollectionsCommand=true, hasListIndexesCommand=true, minWireVersion=0, maxWireVersion=5, maxNumberOfDocsInBatch=1000, commandsTakeWriteConcern=true, commandsTakeCollation=true, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"], reconnect=true, emitError=true, poolSize=5, $ref=$["disconnectHandler"]["s"]["storeOptions"], $ref=$["disconnectHandler"], host=ds119524.mlab.com, port=19524, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["readPreference"], promiseLibrary=function Promise() { [native code] }, length=0, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], ns=chat_messages.user_list, find=chat_messages.user_list, limit=0, skip=0, USER=Galael, PASSWORD=123, preference=primary, tags=undefined, maxStalenessSeconds=undefined, slaveOk=true, $ref=$["cmd"]["readPreference"], skip=0, limit=0, raw=undefined, hint=null, timeout=undefined, slaveOk=true, domain=null, , _eventsCount=0, _maxListeners=undefined, databaseName=chat_messages, , children=[], $ref=$["disconnectHandler"]["s"]["topology"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["options"], className=Db, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authSource=undefined, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["readPreference"], bufferMaxEntries=-1, parentDb=null, pkFactory=undefined, nativeParser=undefined, promiseLibrary=function Promise() { [native code] }, noListener=false, readConcern=undefined, $ref=$["disconnectHandler"]["s"]["topology"], bufferMaxEntries=-1, databaseName=chat_messages, promiseLibrary=function Promise() { [native code] }, $ref=$["disconnectHandler"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"], cursorId=null, $ref=$["cmd"], documents=[], cursorIndex=0, dead=false, killed=false, init=false, notified=false, limit=0, skip=0, batchSize=1000, currentLimit=0, transforms=undefined, className=Cursor, objectMode=true, highWaterMark=16, head=null, tail=null, length=0, length=0, pipes=null, pipesCount=0, flowing=null, ended=false, endEmitted=false, reading=false, sync=true, needReadable=false, emittedReadable=false, readableListening=false, resumeScheduled=false, defaultEncoding=utf8, ranOut=false, awaitDrain=0, readingMore=false, decoder=null, encoding=null, readable=true, domain=null, , _eventsCount=0, _maxListeners=undefined, numberOfRetries=5, tailableRetryInterval=500, currentNumberOfRetries=5, state=0, , $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], ns=chat_messages.user_list, $ref=$["cmd"], $ref=$["options"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"], promiseLibrary=function Promise() { [native code] }, currentDoc=null, sortValue=undefined
+2017-09-05T09:51:23.097Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:51:23.101Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:51:35.305Z - info: undefined 'Datos obtenidos de la bd ' pool=null, server=null, storedOps=[], force=false, bufferMaxEntries=-1, domain=null, error=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, timeout=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, close=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, parseError=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, fullsetup=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, all=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, reconnect=function (err) {
+    if(object.listeners(e).length > 0) {
+      object.emit(e, err, self);
+
+      // Emit on all associated db's if available
+      for(var i = 0; i < self.s.children.length; i++) {
+        self.s.children[i].emit(e, err, self.s.children[i]);
+      }
+    }
+  }, _eventsCount=7, _maxListeners=undefined, name=nodejs, version=2.2.31, type=Windows_NT, name=win32, architecture=x64, version=10.0.14393, platform=Node.js v6.10.0, LE, domain=null, reconnect=function () {
+    self.emit('reconnect', self);
+    self.s.store.execute();
+  }, reconnectFailed=function (err) {
+    self.emit('reconnectFailed', err);
+    self.s.store.flush(err);
+  }, serverDescriptionChanged=function (t, server) {
+      self.emit(event, t, server);
+    }, serverHeartbeatStarted=function (t, server) {
+      self.emit(event, t, server);
+    }, serverHeartbeatSucceeded=function (t, server) {
+      self.emit(event, t, server);
+    }, serverHeartbeatFailed=function (t, server) {
+      self.emit(event, t, server);
+    }, serverOpening=function (t, server) {
+      self.emit(event, t, server);
+    }, serverClosed=function (t, server) {
+      self.emit(event, t, server);
+    }, topologyOpening=function (t, server) {
+      self.emit(event, t, server);
+    }, topologyClosed=function (t, server) {
+      self.emit(event, t, server);
+    }, topologyDescriptionChanged=function (t, server) {
+      self.emit(event, t, server);
+    }, attemptReconnect=function (t, server) {
+      self.emit(event, t, server);
+    }, monitoring=function (t, server) {
+      self.emit(event, t, server);
+    }, timeout=function (err) {
+      if(event != 'error') {
+        self.emit(event, err);
+      }
+    }, error=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, close=function (err) {
+      if(event != 'error') {
+        self.emit(event, err);
+      }
+    }, destroy=function () {
+    self.s.store.flush();
+  }, _eventsCount=17, _maxListeners=undefined, id=0, host=ds119524.mlab.com, port=19524, $ref=$["disconnectHandler"], cursorFactory=function (bson, ns, cmd, options, topology, topologyOptions) {
+  CoreCursor.apply(this, Array.prototype.slice.call(arguments, 0));
+  var self = this;
+  var state = Cursor.INIT;
+  var streamOptions = {};
+
+  // Tailable cursor options
+  var numberOfRetries = options.numberOfRetries || 5;
+  var tailableRetryInterval = options.tailableRetryInterval || 500;
+  var currentNumberOfRetries = numberOfRetries;
+
+  // Get the promiseLibrary
+  var promiseLibrary = options.promiseLibrary;
+
+  // No promise library selected fall back
+  if(!promiseLibrary) {
+    promiseLibrary = typeof global.Promise == 'function' ?
+      global.Promise : require('es6-promise').Promise;
+  }
+
+  // Set up
+  Readable.call(this, {objectMode: true});
+
+  // Internal cursor state
+  this.s = {
+    // Tailable cursor options
+      numberOfRetries: numberOfRetries
+    , tailableRetryInterval: tailableRetryInterval
+    , currentNumberOfRetries: currentNumberOfRetries
+    // State
+    , state: state
+    // Stream options
+    , streamOptions: streamOptions
+    // BSON
+    , bson: bson
+    // Namespace
+    , ns: ns
+    // Command
+    , cmd: cmd
+    // Options
+    , options: options
+    // Topology
+    , topology: topology
+    // Topology options
+    , topologyOptions: topologyOptions
+    // Promise library
+    , promiseLibrary: promiseLibrary
+    // Current doc
+    , currentDoc: null
+  }
+
+  // Translate correctly
+  if(self.s.options.noCursorTimeout == true) {
+    self.addCursorFlag('noCursorTimeout', true);
+  }
+
+  // Set the sort value
+  this.sortValue = self.s.cmd.sort;
+
+  // Get the batchSize
+  var batchSize = cmd.cursor && cmd.cursor.batchSize
+    ? cmd.cursor && cmd.cursor.batchSize
+    : (options.cursor && options.cursor.batchSize ? options.cursor.batchSize : 1000);
+
+  // Set the batchSize
+  this.setCursorBatchSize(batchSize);
+}, reconnect=true, emitError=true, size=5, , socketTimeout=360000, connectionTimeout=30000, $ref=$["disconnectHandler"]["s"]["topology"]["clientInfo"], _type=ReadPreference, mode=primary, tags=undefined, options=undefined, promiseLibrary=function Promise() { [native code] }, , className=Server, Cursor=function (bson, ns, cmd, options, topology, topologyOptions) {
+  CoreCursor.apply(this, Array.prototype.slice.call(arguments, 0));
+  var self = this;
+  var state = Cursor.INIT;
+  var streamOptions = {};
+
+  // Tailable cursor options
+  var numberOfRetries = options.numberOfRetries || 5;
+  var tailableRetryInterval = options.tailableRetryInterval || 500;
+  var currentNumberOfRetries = numberOfRetries;
+
+  // Get the promiseLibrary
+  var promiseLibrary = options.promiseLibrary;
+
+  // No promise library selected fall back
+  if(!promiseLibrary) {
+    promiseLibrary = typeof global.Promise == 'function' ?
+      global.Promise : require('es6-promise').Promise;
+  }
+
+  // Set up
+  Readable.call(this, {objectMode: true});
+
+  // Internal cursor state
+  this.s = {
+    // Tailable cursor options
+      numberOfRetries: numberOfRetries
+    , tailableRetryInterval: tailableRetryInterval
+    , currentNumberOfRetries: currentNumberOfRetries
+    // State
+    , state: state
+    // Stream options
+    , streamOptions: streamOptions
+    // BSON
+    , bson: bson
+    // Namespace
+    , ns: ns
+    // Command
+    , cmd: cmd
+    // Options
+    , options: options
+    // Topology
+    , topology: topology
+    // Topology options
+    , topologyOptions: topologyOptions
+    // Promise library
+    , promiseLibrary: promiseLibrary
+    // Current doc
+    , currentDoc: null
+  }
+
+  // Translate correctly
+  if(self.s.options.noCursorTimeout == true) {
+    self.addCursorFlag('noCursorTimeout', true);
+  }
+
+  // Set the sort value
+  this.sortValue = self.s.cmd.sort;
+
+  // Get the batchSize
+  var batchSize = cmd.cursor && cmd.cursor.batchSize
+    ? cmd.cursor && cmd.cursor.batchSize
+    : (options.cursor && options.cursor.batchSize ? options.cursor.batchSize : 1000);
+
+  // Set the batchSize
+  this.setCursorBatchSize(batchSize);
+}, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], domain=null, close=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, error=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, timeout=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, parseError=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, connect=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, reconnect=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, reconnectFailed=function (err) {
+    // Log information of received information if in info mode
+    if(self.s.logger.isInfo()) {
+      var object = err instanceof MongoError ? JSON.stringify(err) : {}
+      self.s.logger.info(f('server %s fired event %s out with message %s'
+        , self.name, event, object));
+    }
+
+    // Handle connect event
+    if(event == 'connect') {
+      // Issue an ismaster command at connect
+      // Query options
+      var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+      // Create a query instance
+      var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true, client: self.clientInfo}, queryOptions);
+      // Get start time
+      var start = new Date().getTime();
+      // Execute the ismaster query
+      self.s.pool.write(query, {
+        socketTimeout: self.s.options.connectionTimeout || 2000,
+      }, function(err, result) {
+        // Set initial lastIsMasterMS
+        self.lastIsMasterMS = new Date().getTime() - start;
+        if(err) {
+          self.destroy();
+          if(self.listeners('error').length > 0) self.emit('error', err);
+          return;
+        }
+
+        // Ensure no error emitted after initial connect when reconnecting
+        self.initalConnect = false;
+        // Save the ismaster
+        self.ismaster = result.result;
+
+        // It's a proxy change the type so
+        // the wireprotocol will send $readPreference
+        if(self.ismaster.msg == 'isdbgrid') {
+          self._type = 'mongos';
+        }
+        // Add the correct wire protocol handler
+        self.wireProtocolHandler = configureWireProtocolHandler(self, self.ismaster);
+        // Have we defined self monitoring
+        if(self.s.monitoring) {
+          self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+        }
+
+        // Emit server description changed if something listening
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+
+        if(!self.s.inTopology) {
+          // Emit topology description changed if something listening
+          sdam.emitTopologyDescriptionChanged(self, {
+            topologyType: 'Single', servers: [{address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)}]
+          });
+        }
+
+        // Log the ismaster if available
+        if(self.s.logger.isInfo()) {
+          self.s.logger.info(f('server %s connected with ismaster [%s]', self.name, JSON.stringify(self.ismaster)));
+        }
+
+        // Emit connect
+        self.emit('connect', self);
+      });
+    } else if(event == 'error' || event == 'parseError'
+      || event == 'close' || event == 'timeout' || event == 'reconnect'
+      || event == 'attemptReconnect' || 'reconnectFailed') {
+      // Remove server instance from accounting
+      if(serverAccounting && ['close', 'timeout', 'error', 'parseError', 'reconnectFailed'].indexOf(event) != -1) {
+        // Emit toplogy opening event if not in topology
+        if(!self.s.inTopology) {
+          self.emit('topologyOpening', { topologyId: self.id });
+        }
+
+        delete servers[self.id];
+      }
+
+      if (event === 'close') {
+        // Closing emits a server description changed event going to unknown.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: 'Unknown'
+        });
+      }
+
+      // Reconnect failed return error
+      if(event == 'reconnectFailed') {
+        self.emit('reconnectFailed', err);
+        // Emit error if any listeners
+        if(self.listeners('error').length > 0) {
+          self.emit('error', err);
+        }
+        // Terminate
+        return;
+      }
+
+      // On first connect fail
+      if(self.s.pool.state == 'disconnected' && self.initalConnect && ['close', 'timeout', 'error', 'parseError'].indexOf(event) != -1) {
+        self.initalConnect = false;
+        return self.emit('error', new MongoError(f('failed to connect to server [%s] on first connect [%s]', self.name, err)));
+      }
+
+      // Reconnect event, emit the server
+      if(event == 'reconnect') {
+        // Reconnecting emits a server description changed event going from unknown to the
+        // current server type.
+        sdam.emitServerDescriptionChanged(self, {
+          address: self.name, arbiters: [], hosts: [], passives: [], type: sdam.getTopologyType(self)
+        });
+        return self.emit(event, self);
+      }
+
+      // Emit the event
+      self.emit(event, err);
+    }
+  }, _eventsCount=7, _maxListeners=undefined, host=ds119524.mlab.com, port=19524, size=5, connectionTimeout=30000, socketTimeout=360000, keepAlive=true, keepAliveInitialDelay=300000, noDelay=true, ssl=false, checkServerIdentity=true, ca=null, crl=null, cert=null, key=null, passPhrase=null, rejectUnauthorized=false, promoteLongs=true, promoteValues=true, promoteBuffers=false, reconnect=true, reconnectInterval=1000, reconnectTries=30, domainsEnabled=false, $ref=$["disconnectHandler"], cursorFactory=function (bson, ns, cmd, options, topology, topologyOptions) {
+  CoreCursor.apply(this, Array.prototype.slice.call(arguments, 0));
+  var self = this;
+  var state = Cursor.INIT;
+  var streamOptions = {};
+
+  // Tailable cursor options
+  var numberOfRetries = options.numberOfRetries || 5;
+  var tailableRetryInterval = options.tailableRetryInterval || 500;
+  var currentNumberOfRetries = numberOfRetries;
+
+  // Get the promiseLibrary
+  var promiseLibrary = options.promiseLibrary;
+
+  // No promise library selected fall back
+  if(!promiseLibrary) {
+    promiseLibrary = typeof global.Promise == 'function' ?
+      global.Promise : require('es6-promise').Promise;
+  }
+
+  // Set up
+  Readable.call(this, {objectMode: true});
+
+  // Internal cursor state
+  this.s = {
+    // Tailable cursor options
+      numberOfRetries: numberOfRetries
+    , tailableRetryInterval: tailableRetryInterval
+    , currentNumberOfRetries: currentNumberOfRetries
+    // State
+    , state: state
+    // Stream options
+    , streamOptions: streamOptions
+    // BSON
+    , bson: bson
+    // Namespace
+    , ns: ns
+    // Command
+    , cmd: cmd
+    // Options
+    , options: options
+    // Topology
+    , topology: topology
+    // Topology options
+    , topologyOptions: topologyOptions
+    // Promise library
+    , promiseLibrary: promiseLibrary
+    // Current doc
+    , currentDoc: null
+  }
+
+  // Translate correctly
+  if(self.s.options.noCursorTimeout == true) {
+    self.addCursorFlag('noCursorTimeout', true);
+  }
+
+  // Set the sort value
+  this.sortValue = self.s.cmd.sort;
+
+  // Get the batchSize
+  var batchSize = cmd.cursor && cmd.cursor.batchSize
+    ? cmd.cursor && cmd.cursor.batchSize
+    : (options.cursor && options.cursor.batchSize ? options.cursor.batchSize : 1000);
+
+  // Set the batchSize
+  this.setCursorBatchSize(batchSize);
+}, emitError=true, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["socketOptions"], $ref=$["disconnectHandler"]["s"]["topology"]["clientInfo"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["readPreference"], promiseLibrary=function Promise() { [native code] }, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], id=0, retriesLeft=30, reconnectId=null, className=Pool, state=connected, availableConnections=[domain=null, error=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, close=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, timeout=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, parseError=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, _eventsCount=4, _maxListeners=undefined, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["options"], id=0, className=Connection, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], tag=undefined, messageHandler=function (message, connection) {
+    // workItem to execute
+    var workItem = null;
+
+    // Locate the workItem
+    for(var i = 0; i < connection.workItems.length; i++) {
+      if(connection.workItems[i].requestId == message.responseTo) {
+        // Get the callback
+        workItem = connection.workItems[i];
+        // Remove from list of workItems
+        connection.workItems.splice(i, 1);
+      }
+    }
+
+
+    // Reset timeout counter
+    self.numberOfConsecutiveTimeouts = 0;
+
+    // Reset the connection timeout if we modified it for
+    // this operation
+    if(workItem.socketTimeout) {
+      connection.resetSocketTimeout();
+    }
+
+    // Log if debug enabled
+    if(self.logger.isDebug()) {
+      self.logger.debug(f('message [%s] received from %s:%s'
+        , message.raw.toString('hex'), self.options.host, self.options.port));
+    }
+
+    // Authenticate any straggler connections
+    function authenticateStragglers(self, connection, callback) {
+      // Get any non authenticated connections
+      var connections = self.nonAuthenticatedConnections.slice(0);
+      var nonAuthenticatedConnections = self.nonAuthenticatedConnections;
+      self.nonAuthenticatedConnections = [];
+
+      // Establish if the connection need to be authenticated
+      // Add to authentication list if
+      // 1. we were in an authentication process when the operation was executed
+      // 2. our current authentication timestamp is from the workItem one, meaning an auth has happened
+      if(connection.workItems.length == 1 && (connection.workItems[0].authenticating == true
+        || (typeof connection.workItems[0].authenticatingTimestamp == 'number'
+            && connection.workItems[0].authenticatingTimestamp != self.authenticatingTimestamp))) {
+        // Add connection to the list
+        connections.push(connection);
+      }
+
+      // No connections need to be re-authenticated
+      if(connections.length == 0) {
+        // Release the connection back to the pool
+        moveConnectionBetween(connection, self.inUseConnections, self.availableConnections);
+        // Finish
+        return callback();
+      }
+
+      // Apply re-authentication to all connections before releasing back to pool
+      var connectionCount = connections.length;
+      // Authenticate all connections
+      for(var i = 0; i < connectionCount; i++) {
+        reauthenticate(self, connections[i], function() {
+          connectionCount = connectionCount - 1;
+
+          if(connectionCount == 0) {
+            // Put non authenticated connections in available connections
+            self.availableConnections = self.availableConnections.concat(nonAuthenticatedConnections);
+            // Release the connection back to the pool
+            moveConnectionBetween(connection, self.inUseConnections, self.availableConnections);
+            // Return
+            callback();
+          }
+        });
+      }
+    }
+
+    function handleOperationCallback(self, cb, err, result) {
+      // No domain enabled
+      if(!self.options.domainsEnabled) {
+        return process.nextTick(function() {
+          return cb(err, result);
+        });
+      }
+
+      // Domain enabled just call the callback
+      cb(err, result);
+    }
+
+    authenticateStragglers(self, connection, function() {
+      // Keep executing, ensure current message handler does not stop execution
+      if(!self.executing) {
+        process.nextTick(function() {
+          _execute(self)();
+        });
+      }
+
+      // Time to dispatch the message if we have a callback
+      if(!workItem.immediateRelease) {
+        try {
+          // Parse the message according to the provided options
+          message.parse(workItem);
+        } catch(err) {
+          return handleOperationCallback(self, workItem.cb, MongoError.create(err));
+        }
+
+        // Establish if we have an error
+        if(workItem.command && message.documents[0] && (message.documents[0].ok == 0 || message.documents[0]['$err']
+        || message.documents[0]['errmsg'] || message.documents[0]['code'])) {
+          return handleOperationCallback(self, workItem.cb, MongoError.create(message.documents[0]));
+        }
+
+        // Add the connection details
+        message.hashedName = connection.hashedName;
+
+        // Return the documents
+        handleOperationCallback(self, workItem.cb, null, new CommandResult(workItem.fullResult ? message : message.documents[0], connection, message));
+      }
+    });
+  }, maxBsonMessageSize=67108864, port=19524, host=ds119524.mlab.com, family=4, keepAlive=true, keepAliveInitialDelay=300000, noDelay=true, connectionTimeout=30000, socketTimeout=360000, destroyed=false, domainSocket=false, singleBufferSerializtion=true, serializationFunction=toBinUnified, ca=null, crl=null, cert=null, key=null, passphrase=null, ssl=false, rejectUnauthorized=false, checkServerIdentity=true, promoteLongs=true, promoteValues=true, promoteBuffers=false, flushing=false, queue=[], connecting=false, _hadError=false, bytesRead=2313, , fd=-1, reading=true, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"], onread=function onread(nread, buffer) {
+  var handle = this;
+  var self = handle.owner;
+  assert(handle === self._handle, 'handle != self._handle');
+
+  self._unrefTimer();
+
+  debug('onread', nread);
+
+  if (nread > 0) {
+    debug('got data');
+
+    // read success.
+    // In theory (and in practice) calling readStop right now
+    // will prevent this from being called again until _read() gets
+    // called again.
+
+    // Optimization: emit the original buffer with end points
+    var ret = self.push(buffer);
+
+    if (handle.reading && !ret) {
+      handle.reading = false;
+      debug('readStop');
+      var err = handle.readStop();
+      if (err)
+        self._destroy(errnoException(err, 'read'));
+    }
+    return;
+  }
+
+  // if we didn't get any bytes, that doesn't necessarily mean EOF.
+  // wait for the next one.
+  if (nread === 0) {
+    debug('not any data, keep waiting');
+    return;
+  }
+
+  // Error, possibly EOF.
+  if (nread !== uv.UV_EOF) {
+    return self._destroy(errnoException(nread, 'read'));
+  }
+
+  debug('EOF');
+
+  // push a null to signal the end of data.
+  // Do it before `maybeDestroy` for correct order of events:
+  // `end` -> `close`
+  self.push(null);
+
+  if (self._readableState.length === 0) {
+    self.readable = false;
+    maybeDestroy(self);
+  }
+
+  // internal end event so that we know that the actual socket
+  // is no longer readable, and we can start the shutdown
+  // procedure. No need to wait for all the data to be consumed.
+  self.emit('_socketEnd');
+}, onconnection=null, writeQueueSize=0, _parent=null, _host=ds119524.mlab.com, objectMode=false, highWaterMark=16384, head=null, tail=null, length=0, length=0, pipes=null, pipesCount=0, flowing=true, ended=false, endEmitted=false, reading=true, sync=false, needReadable=true, emittedReadable=false, readableListening=false, resumeScheduled=false, defaultEncoding=utf8, ranOut=false, awaitDrain=0, readingMore=false, decoder=null, encoding=null, readable=true, domain=null, end=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, finish=function onSocketFinish() {
+  // If still connecting - defer handling 'finish' until 'connect' will happen
+  if (this.connecting) {
+    debug('osF: not yet connected');
+    return this.once('connect', onSocketFinish);
+  }
+
+  debug('onSocketFinish');
+  if (!this.readable || this._readableState.ended) {
+    debug('oSF: ended, destroy', this._readableState);
+    return this.destroy();
+  }
+
+  debug('oSF: not ended, call shutdown()');
+
+  // otherwise, just shutdown, or destroy() if not possible
+  if (!this._handle || !this._handle.shutdown)
+    return this.destroy();
+
+  var req = new ShutdownWrap();
+  req.oncomplete = afterShutdown;
+  req.handle = this._handle;
+  var err = this._handle.shutdown(req);
+
+  if (err)
+    return this._destroy(errnoException(err, 'shutdown'));
+}, _socketEnd=function onSocketEnd() {
+  // XXX Should not have to do as much crap in this function.
+  // ended should already be true, since this is called *after*
+  // the EOF errno and onread has eof'ed
+  debug('onSocketEnd', this._readableState);
+  this._readableState.ended = true;
+  if (this._readableState.endEmitted) {
+    this.readable = false;
+    maybeDestroy(this);
+  } else {
+    this.once('end', function() {
+      this.readable = false;
+      maybeDestroy(this);
+    });
+    this.read(0);
+  }
+
+  if (!this.allowHalfOpen) {
+    this.write = writeAfterFIN;
+    this.destroySoon();
+  }
+}, connect=[function () {
+      // Set socket timeout instead of connection timeout
+      self.connection.setTimeout(self.socketTimeout);
+      // Emit connect event
+      self.emit('connect', self);
+    }], error=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, timeout=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, close=function g() {
+    target.removeListener(type, g);
+    if (!fired) {
+      fired = true;
+      listener.apply(target, arguments);
+    }
+  }, data=function (data) {
+    // Parse until we are done with the data
+    while(data.length > 0) {
+      // If we still have bytes to read on the current message
+      if(self.bytesRead > 0 && self.sizeOfMessage > 0) {
+        // Calculate the amount of remaining bytes
+        var remainingBytesToRead = self.sizeOfMessage - self.bytesRead;
+        // Check if the current chunk contains the rest of the message
+        if(remainingBytesToRead > data.length) {
+          // Copy the new data into the exiting buffer (should have been allocated when we know the message size)
+          data.copy(self.buffer, self.bytesRead);
+          // Adjust the number of bytes read so it point to the correct index in the buffer
+          self.bytesRead = self.bytesRead + data.length;
+
+          // Reset state of buffer
+          data = new Buffer(0);
+        } else {
+          // Copy the missing part of the data into our current buffer
+          data.copy(self.buffer, self.bytesRead, 0, remainingBytesToRead);
+          // Slice the overflow into a new buffer that we will then re-parse
+          data = data.slice(remainingBytesToRead);
+
+          // Emit current complete message
+          try {
+            var emitBuffer = self.buffer;
+            // Reset state of buffer
+            self.buffer = null;
+            self.sizeOfMessage = 0;
+            self.bytesRead = 0;
+            self.stubBuffer = null;
+            // Emit the buffer
+            self.messageHandler(new Response(self.bson, emitBuffer, self.responseOptions), self);
+          } catch(err) {
+            var errorObject = {err:"socketHandler", trace:err, bin:self.buffer, parseState:{
+              sizeOfMessage:self.sizeOfMessage,
+              bytesRead:self.bytesRead,
+              stubBuffer:self.stubBuffer}};
+            // We got a parse Error fire it off then keep going
+            self.emit("parseError", errorObject, self);
+          }
+        }
+      } else {
+        // Stub buffer is kept in case we don't get enough bytes to determine the
+        // size of the message (< 4 bytes)
+        if(self.stubBuffer != null && self.stubBuffer.length > 0) {
+          // If we have enough bytes to determine the message size let's do it
+          if(self.stubBuffer.length + data.length > 4) {
+            // Prepad the data
+            var newData = new Buffer(self.stubBuffer.length + data.length);
+            self.stubBuffer.copy(newData, 0);
+            data.copy(newData, self.stubBuffer.length);
+            // Reassign for parsing
+            data = newData;
+
+            // Reset state of buffer
+            self.buffer = null;
+            self.sizeOfMessage = 0;
+            self.bytesRead = 0;
+            self.stubBuffer = null;
+
+          } else {
+
+            // Add the the bytes to the stub buffer
+            var newStubBuffer = new Buffer(self.stubBuffer.length + data.length);
+            // Copy existing stub buffer
+            self.stubBuffer.copy(newStubBuffer, 0);
+            // Copy missing part of the data
+            data.copy(newStubBuffer, self.stubBuffer.length);
+            // Exit parsing loop
+            data = new Buffer(0);
+          }
+        } else {
+          if(data.length > 4) {
+            // Retrieve the message size
+            // var sizeOfMessage = data.readUInt32LE(0);
+            var sizeOfMessage = data[0] | data[1] << 8 | data[2] << 16 | data[3] << 24;
+            // If we have a negative sizeOfMessage emit error and return
+            if(sizeOfMessage < 0 || sizeOfMessage > self.maxBsonMessageSize) {
+              errorObject = {err:"socketHandler", trace:'', bin:self.buffer, parseState:{
+                sizeOfMessage: sizeOfMessage,
+                bytesRead: self.bytesRead,
+                stubBuffer: self.stubBuffer}};
+              // We got a parse Error fire it off then keep going
+              self.emit("parseError", errorObject, self);
+              return;
+            }
+
+            // Ensure that the size of message is larger than 0 and less than the max allowed
+            if(sizeOfMessage > 4 && sizeOfMessage < self.maxBsonMessageSize && sizeOfMessage > data.length) {
+              self.buffer = new Buffer(sizeOfMessage);
+              // Copy all the data into the buffer
+              data.copy(self.buffer, 0);
+              // Update bytes read
+              self.bytesRead = data.length;
+              // Update sizeOfMessage
+              self.sizeOfMessage = sizeOfMessage;
+              // Ensure stub buffer is null
+              self.stubBuffer = null;
+              // Exit parsing loop
+              data = new Buffer(0);
+
+            } else if(sizeOfMessage > 4 && sizeOfMessage < self.maxBsonMessageSize && sizeOfMessage == data.length) {
+              try {
+                emitBuffer = data;
+                // Reset state of buffer
+                self.buffer = null;
+                self.sizeOfMessage = 0;
+                self.bytesRead = 0;
+                self.stubBuffer = null;
+                // Exit parsing loop
+                data = new Buffer(0);
+                // Emit the message
+                self.messageHandler(new Response(self.bson, emitBuffer, self.responseOptions), self);
+              } catch (err) {
+                self.emit("parseError", err, self);
+              }
+            } else if(sizeOfMessage <= 4 || sizeOfMessage > self.maxBsonMessageSize) {
+              errorObject = {err:"socketHandler", trace:null, bin:data, parseState:{
+                sizeOfMessage:sizeOfMessage,
+                bytesRead:0,
+                buffer:null,
+                stubBuffer:null}};
+              // We got a parse Error fire it off then keep going
+              self.emit("parseError", errorObject, self);
+
+              // Clear out the state of the parser
+              self.buffer = null;
+              self.sizeOfMessage = 0;
+              self.bytesRead = 0;
+              self.stubBuffer = null;
+              // Exit parsing loop
+              data = new Buffer(0);
+            } else {
+              emitBuffer = data.slice(0, sizeOfMessage);
+              // Reset state of buffer
+              self.buffer = null;
+              self.sizeOfMessage = 0;
+              self.bytesRead = 0;
+              self.stubBuffer = null;
+              // Copy rest of message
+              data = data.slice(sizeOfMessage);
+              // Emit the message
+              self.messageHandler(new Response(self.bson, emitBuffer, self.responseOptions), self);
+            }
+          } else {
+            // Create a buffer that contains the space for the non-complete message
+            self.stubBuffer = new Buffer(data.length)
+            // Copy the data to the stub buffer
+            data.copy(self.stubBuffer, 0);
+            // Exit parsing loop
+            data = new Buffer(0);
+          }
+        }
+      }
+    }
+  }, _eventsCount=8, _maxListeners=undefined, objectMode=false, highWaterMark=16384, needDrain=false, ending=false, ended=false, finished=false, decodeStrings=false, defaultEncoding=utf8, length=0, writing=false, corked=0, sync=false, bufferProcessing=false, onwrite=function (er) {
+    onwrite(stream, er);
+  }, writecb=null, writelen=0, bufferedRequest=null, lastBufferedRequest=null, pendingcb=0, prefinished=false, errorEmitted=false, bufferedRequestCount=0, next=null, entry=null, finish=(err) => {
+    var entry = this.entry;
+    this.entry = null;
+    while (entry) {
+      var cb = entry.callback;
+      state.pendingcb--;
+      cb(err);
+      entry = entry.next;
+    }
+    if (state.corkedRequestsFree) {
+      state.corkedRequestsFree.next = this;
+    } else {
+      state.corkedRequestsFree = this;
+    }
+  }, writable=true, allowHalfOpen=false, destroyed=false, _bytesDispatched=915, _sockname=null, _pendingData=null, _pendingEncoding=, server=null, _server=null, _idleTimeout=360000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"], 0=function listOnTimeout() {
+  var list = this._list;
+  var msecs = list.msecs;
+
+  debug('timeout callback %d', msecs);
+
+  var now = TimerWrap.now();
+  debug('now: %d', now);
+
+  var diff, timer;
+  while (timer = L.peek(list)) {
+    diff = now - timer._idleStart;
+
+    // Check if this loop iteration is too early for the next timer.
+    // This happens if there are more timers scheduled for later in the list.
+    if (diff < msecs) {
+      var timeRemaining = msecs - (TimerWrap.now() - timer._idleStart);
+      if (timeRemaining < 0) {
+        timeRemaining = 0;
+      }
+      this.start(timeRemaining);
+      debug('%d list wait because diff is %d', msecs, diff);
+      return;
+    }
+
+    // The actual logic for when a timeout happens.
+
+    L.remove(timer);
+    assert(timer !== L.peek(list));
+
+    if (!timer._onTimeout) continue;
+
+    var domain = timer.domain;
+    if (domain) {
+
+      // If the timer callback throws and the
+      // domain or uncaughtException handler ignore the exception,
+      // other timers that expire on this tick should still run.
+      //
+      // https://github.com/nodejs/node-v0.x-archive/issues/2631
+      if (domain._disposed)
+        continue;
+
+      domain.enter();
+    }
+
+    tryOnTimeout(timer, list);
+
+    if (domain)
+      domain.exit();
+  }
+
+  // If `L.peek(list)` returned nothing, the list was either empty or we have
+  // called all of the timer timeouts.
+  // As such, we can remove the list and clean up the TimerWrap C++ handle.
+  debug('%d list empty', msecs);
+  assert(L.isEmpty(list));
+  this.close();
+
+  // Either refedLists[msecs] or unrefedLists[msecs] may have been removed and
+  // recreated since the reference to `list` was created. Make sure they're
+  // the same instance of the list before destroying.
+  if (list._unrefed === true && list === unrefedLists[msecs]) {
+    delete unrefedLists[msecs];
+  } else if (list === refedLists[msecs]) {
+    delete refedLists[msecs];
+  }
+}, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"]["_idleNext"], _unrefed=true, msecs=360000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["pool"]["availableConnections"][0]["connection"]["_idleNext"], _idleStart=16249, read=function (n) {
+  debug('read', n);
+  n = parseInt(n, 10);
+  var state = this._readableState;
+  var nOrig = n;
+
+  if (n !== 0)
+    state.emittedReadable = false;
+
+  // if we're doing read(0) to trigger a readable event, but we
+  // already have a bunch of data in the buffer, then just trigger
+  // the 'readable' event and move on.
+  if (n === 0 &&
+      state.needReadable &&
+      (state.length >= state.highWaterMark || state.ended)) {
+    debug('read: emitReadable', state.length, state.ended);
+    if (state.length === 0 && state.ended)
+      endReadable(this);
+    else
+      emitReadable(this);
+    return null;
+  }
+
+  n = howMuchToRead(n, state);
+
+  // if we've ended, and we're now clear, then finish it up.
+  if (n === 0 && state.ended) {
+    if (state.length === 0)
+      endReadable(this);
+    return null;
+  }
+
+  // All the actual chunk generation logic needs to be
+  // *below* the call to _read.  The reason is that in certain
+  // synthetic stream cases, such as passthrough streams, _read
+  // may be a completely synchronous operation which may change
+  // the state of the read buffer, providing enough data when
+  // before there was *not* enough.
+  //
+  // So, the steps are:
+  // 1. Figure out what the state of things will be after we do
+  // a read from the buffer.
+  //
+  // 2. If that resulting state will trigger a _read, then call _read.
+  // Note that this may be asynchronous, or synchronous.  Yes, it is
+  // deeply ugly to write APIs this way, but that still doesn't mean
+  // that the Readable class should behave improperly, as streams are
+  // designed to be sync/async agnostic.
+  // Take note if the _read call is sync or async (ie, if the read call
+  // has returned yet), so that we know whether or not it's safe to emit
+  // 'readable' etc.
+  //
+  // 3. Actually pull the requested chunks out of the buffer and return.
+
+  // if we need a readable event, then we need to do some reading.
+  var doRead = state.needReadable;
+  debug('need readable', doRead);
+
+  // if we currently have less than the highWaterMark, then also read some
+  if (state.length === 0 || state.length - n < state.highWaterMark) {
+    doRead = true;
+    debug('length less than watermark', doRead);
+  }
+
+  // however, if we've ended, then there's no point, and if we're already
+  // reading, then it's unnecessary.
+  if (state.ended || state.reading) {
+    doRead = false;
+    debug('reading or ended', doRead);
+  } else if (doRead) {
+    debug('do read');
+    state.reading = true;
+    state.sync = true;
+    // if the length is currently zero, then we *need* a readable event.
+    if (state.length === 0)
+      state.needReadable = true;
+    // call internal read method
+    this._read(state.highWaterMark);
+    state.sync = false;
+    // If _read pushed data synchronously, then `reading` will be false,
+    // and we need to re-evaluate how much data we can return to the user.
+    if (!state.reading)
+      n = howMuchToRead(nOrig, state);
+  }
+
+  var ret;
+  if (n > 0)
+    ret = fromList(n, state);
+  else
+    ret = null;
+
+  if (ret === null) {
+    state.needReadable = true;
+    n = 0;
+  } else {
+    state.length -= n;
+  }
+
+  if (state.length === 0) {
+    // If we have nothing in the buffer, then we want to know
+    // as soon as we *do* get something into the buffer.
+    if (!state.ended)
+      state.needReadable = true;
+
+    // If we tried to read() past the EOF, then emit end on the next tick.
+    if (nOrig !== n && state.ended)
+      endReadable(this);
+  }
+
+  if (ret !== null)
+    this.emit('data', ret);
+
+  return ret;
+}, _consuming=true, writeStream=null, hashedName=74eb7e80f1ff4e64daae2318f284de7c4976d334, workItems=[], buffer=null, sizeOfMessage=0, bytesRead=0, stubBuffer=null], inUseConnections=[], connectingConnections=[], executing=false, queue=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authStore=[db=chat_messages, username=admin, password=St0ryt3ll3r], id=0, reconnectConnection=null, authenticating=false, loggingout=false, nonAuthenticatedConnections=[], authenticatingTimestamp=1504605077897, numberOfConsecutiveTimeouts=0, connectionIndex=4, $ref=$["disconnectHandler"], monitoring=true, inTopology=false, monitoringInterval=5000, topologyId=-1, topologyType=Single, servers=[address=ds119524.mlab.com:19524, arbiters=[], hosts=[], passives=[], type=RSPrimary], topologyType=Unknown, servers=[address=ds119524.mlab.com:19524, arbiters=[], hosts=[], passives=[], type=Unknown], hosts=[ds119524-a.mlab.com:19524], setName=rs-ds119524, setVersion=1, ismaster=true, secondary=false, primary=ds119524-a.mlab.com:19524, me=ds119524-a.mlab.com:19524, _bsontype=ObjectID, 0=127, 1=255, 2=255, 3=255, 4=0, 5=0, 6=0, 7=0, 8=0, 9=0, 10=0, 11=1, _bsontype=Timestamp, low_=1, high_=1504605093, t=1, lastWriteDate=Tue Sep 05 2017 11:51:33 GMT+0200 (Romance Daylight Time), maxBsonObjectSize=16777216, maxMessageSizeBytes=48000000, maxWriteBatchSize=1000, localTime=Tue Sep 05 2017 11:51:36 GMT+0200 (Romance Daylight Time), maxWireVersion=5, minWireVersion=0, readOnly=false, ok=1, lastIsMasterMS=45, _called=false, _idleTimeout=5000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"], 0=function listOnTimeout() {
+  var list = this._list;
+  var msecs = list.msecs;
+
+  debug('timeout callback %d', msecs);
+
+  var now = TimerWrap.now();
+  debug('now: %d', now);
+
+  var diff, timer;
+  while (timer = L.peek(list)) {
+    diff = now - timer._idleStart;
+
+    // Check if this loop iteration is too early for the next timer.
+    // This happens if there are more timers scheduled for later in the list.
+    if (diff < msecs) {
+      var timeRemaining = msecs - (TimerWrap.now() - timer._idleStart);
+      if (timeRemaining < 0) {
+        timeRemaining = 0;
+      }
+      this.start(timeRemaining);
+      debug('%d list wait because diff is %d', msecs, diff);
+      return;
+    }
+
+    // The actual logic for when a timeout happens.
+
+    L.remove(timer);
+    assert(timer !== L.peek(list));
+
+    if (!timer._onTimeout) continue;
+
+    var domain = timer.domain;
+    if (domain) {
+
+      // If the timer callback throws and the
+      // domain or uncaughtException handler ignore the exception,
+      // other timers that expire on this tick should still run.
+      //
+      // https://github.com/nodejs/node-v0.x-archive/issues/2631
+      if (domain._disposed)
+        continue;
+
+      domain.enter();
+    }
+
+    tryOnTimeout(timer, list);
+
+    if (domain)
+      domain.exit();
+  }
+
+  // If `L.peek(list)` returned nothing, the list was either empty or we have
+  // called all of the timer timeouts.
+  // As such, we can remove the list and clean up the TimerWrap C++ handle.
+  debug('%d list empty', msecs);
+  assert(L.isEmpty(list));
+  this.close();
+
+  // Either refedLists[msecs] or unrefedLists[msecs] may have been removed and
+  // recreated since the reference to `list` was created. Make sure they're
+  // the same instance of the list before destroying.
+  if (list._unrefed === true && list === unrefedLists[msecs]) {
+    delete unrefedLists[msecs];
+  } else if (list === refedLists[msecs]) {
+    delete refedLists[msecs];
+  }
+}, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"]["_idlePrev"], _unrefed=false, msecs=5000, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["monitoringProcessId"]["_idlePrev"], _idleStart=16249, _onTimeout=function () {
+    // Pool was destroyed do not continue process
+    if(self.s.pool.isDestroyed()) return;
+    // Emit monitoring Process event
+    self.emit('monitoring', self);
+    // Perform ismaster call
+    // Query options
+    var queryOptions = { numberToSkip: 0, numberToReturn: -1, checkKeys: false, slaveOk: true };
+    // Create a query instance
+    var query = new Query(self.s.bson, 'admin.$cmd', {ismaster:true}, queryOptions);
+    // Get start time
+    var start = new Date().getTime();
+
+    // Execute the ismaster query
+    self.s.pool.write(query, {
+      socketTimeout: (typeof self.s.options.connectionTimeout !== 'number') ? 2000 : self.s.options.connectionTimeout,
+      monitoring: true,
+    }, function(err, result) {
+      // Set initial lastIsMasterMS
+      self.lastIsMasterMS = new Date().getTime() - start;
+      if(self.s.pool.isDestroyed()) return;
+      // Update the ismaster view if we have a result
+      if(result) {
+        self.ismaster = result.result;
+      }
+      // Re-schedule the monitoring process
+      self.monitoringProcessId = setTimeout(monitoringProcess(self), self.s.monitoringInterval);
+    });
+  }, _timerArgs=undefined, _repeat=null, initalConnect=false, , _type=server, name=nodejs, version=2.2.31, type=Windows_NT, name=win32, architecture=x64, version=10.0.14393, platform=Node.js v6.10.0, LE, mongodb-core: 2.1.15, lastUpdateTime=0, lastWriteDate=0, staleness=0, hasAggregationCursor=true, hasWriteCommands=true, hasTextSearch=true, hasAuthCommands=true, hasListCollectionsCommand=true, hasListIndexesCommand=true, minWireVersion=0, maxWireVersion=5, maxNumberOfDocsInBatch=1000, commandsTakeWriteConcern=true, commandsTakeCollation=true, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"], reconnect=true, emitError=true, poolSize=5, $ref=$["disconnectHandler"]["s"]["storeOptions"], $ref=$["disconnectHandler"], host=ds119524.mlab.com, port=19524, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["readPreference"], promiseLibrary=function Promise() { [native code] }, length=0, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], ns=chat_messages.user_list, find=chat_messages.user_list, limit=0, skip=0, USER=Galael, PASSWORD=123, preference=primary, tags=undefined, maxStalenessSeconds=undefined, slaveOk=true, $ref=$["cmd"]["readPreference"], skip=0, limit=0, raw=undefined, hint=null, timeout=undefined, slaveOk=true, domain=null, , _eventsCount=0, _maxListeners=undefined, databaseName=chat_messages, , children=[], $ref=$["disconnectHandler"]["s"]["topology"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["options"], className=Db, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], authSource=undefined, $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["readPreference"], bufferMaxEntries=-1, parentDb=null, pkFactory=undefined, nativeParser=undefined, promiseLibrary=function Promise() { [native code] }, noListener=false, readConcern=undefined, $ref=$["disconnectHandler"]["s"]["topology"], bufferMaxEntries=-1, databaseName=chat_messages, promiseLibrary=function Promise() { [native code] }, $ref=$["disconnectHandler"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"], cursorId=null, $ref=$["cmd"], documents=[], cursorIndex=0, dead=false, killed=false, init=false, notified=false, limit=0, skip=0, batchSize=1000, currentLimit=0, transforms=undefined, className=Cursor, objectMode=true, highWaterMark=16, head=null, tail=null, length=0, length=0, pipes=null, pipesCount=0, flowing=null, ended=false, endEmitted=false, reading=false, sync=true, needReadable=false, emittedReadable=false, readableListening=false, resumeScheduled=false, defaultEncoding=utf8, ranOut=false, awaitDrain=0, readingMore=false, decoder=null, encoding=null, readable=true, domain=null, , _eventsCount=0, _maxListeners=undefined, numberOfRetries=5, tailableRetryInterval=500, currentNumberOfRetries=5, state=0, , $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"]["bson"], ns=chat_messages.user_list, $ref=$["cmd"], $ref=$["options"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"], $ref=$["disconnectHandler"]["s"]["topology"]["s"]["server"]["s"]["options"], promiseLibrary=function Promise() { [native code] }, currentDoc=null, sortValue=undefined
+2017-09-05T09:51:35.336Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:51:35.338Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:53:28.044Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:53:28.472Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T09:53:40.459Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:53:40.463Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:55:07.847Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:55:08.143Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T09:55:11.765Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:55:11.771Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:55:36.819Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=123
+2017-09-05T09:57:01.420Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:57:01.707Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T09:59:12.801Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T09:59:13.098Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T10:00:17.785Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T10:00:18.185Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T10:00:40.961Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T10:00:40.978Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T10:00:41.020Z - info: undefined 'Datos obtenidos de la bd '
+2017-09-05T10:00:42.663Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T10:00:42.667Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T10:00:42.704Z - info: undefined 'Datos obtenidos de la bd '
+2017-09-05T10:00:56.401Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=12345678
+2017-09-05T10:00:56.419Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=12345678
+2017-09-05T10:00:56.461Z - info: undefined 'Datos obtenidos de la bd ' _bsontype=ObjectID, 0=89, 1=174, 2=114, 3=228, 4=115, 5=77, 6=29, 7=37, 8=160, 9=246, 10=210, 11=54, USER=Galael, PASSWORD=12345678
+2017-09-05T10:04:37.214Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-05T10:04:37.568Z - info: undefined 'MONGODB listening: 3000'
+2017-09-05T10:04:53.657Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T10:04:53.673Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T10:04:53.716Z - info: undefined 'Datos obtenidos de la bd '
+2017-09-05T10:05:04.505Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=12345678
+2017-09-05T10:05:04.511Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=12345678
+2017-09-05T10:05:04.554Z - info: undefined 'Datos obtenidos de la bd ' _bsontype=ObjectID, 0=89, 1=174, 2=114, 3=228, 4=115, 5=77, 6=29, 7=37, 8=160, 9=246, 10=210, 11=54, USER=Galael, PASSWORD=12345678
+2017-09-05T10:06:53.685Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=1234
+2017-09-05T11:19:19.218Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'QOWWK8fQnPlocgD_AAAA'
+2017-09-05T11:19:26.492Z - debug: undefined 'socketConnection: Se ha desconectado un usuario: ' 'QOWWK8fQnPlocgD_AAAA'
+2017-09-05T11:34:09.310Z - info: undefined 'TRANSACCIÓN RECIBIDA LOGIN' TRANSACTION=LOGIN, USER=Galael, PASSWORD=12345678
+2017-09-05T11:34:09.717Z - info: { USUARIO: '',
+  FILE: 'ArchTransactionService.sendTransaction (http://localhost:3333/app/arch/services/arch.transaction.service.js:24:39)' } 'Se inicia se transaction :' TRANSACTION=LOGIN, USER=Galael, PASSWORD=12345678
+2017-09-05T11:34:09.766Z - info: undefined 'Datos obtenidos de la bd ' _bsontype=ObjectID, 0=89, 1=174, 2=114, 3=228, 4=115, 5=77, 6=29, 7=37, 8=160, 9=246, 10=210, 11=54, USER=Galael, PASSWORD=12345678
+2017-09-05T11:34:10.423Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' '7csTMQxyhxevYOQQAAAB'
+2017-09-05T11:34:15.046Z - debug: undefined 'socketConnection: Se ha desconectado un usuario: ' '7csTMQxyhxevYOQQAAAB'
+2017-09-05T11:34:15.788Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'ZXEjYVKaroGnPvntAAAC'
+2017-09-05T11:34:21.228Z - debug: undefined 'socketConnection: Se ha desconectado un usuario: ' 'ZXEjYVKaroGnPvntAAAC'

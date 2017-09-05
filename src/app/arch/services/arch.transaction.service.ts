@@ -4,13 +4,13 @@ import 'rxjs/add/operator/toPromise';
 import { ArchTracesService } from './arch.traces.service';
 
 interface Transaction {
-  Header: TransactionHeader;
-  Body: any;
+  HEADER: TransactionHeader;
+  BODY: any;
 }
 
 export interface TransactionHeader  {
-    Transaction: string;
-    User: string;
+    TRANSACTION: string;
+    USER: string;
   };
 
 @Injectable()
@@ -20,13 +20,15 @@ export class ArchTransactionService {
     private http: Http,
     private tracesService: ArchTracesService
   ) {
-    this.transactionServiceURL = 'http://localhost:3333/api/login';
+    this.transactionServiceURL = 'http://localhost:3333/api/transactions';
   }
    
   // Envia una transacción
   sendTransaction = (header: TransactionHeader, body: any): Promise<any> => {
     this.tracesService.write.info('Se inicia se transaction :', {'header': header, 'body': body});
-    return this.http.post(this.transactionServiceURL, body)
+    // Mezcla la cabecera y el cuerpo
+    let transactionMessage = {HEADER: header, BODY: body}
+    return this.http.post(this.transactionServiceURL, transactionMessage)
       .toPromise()
       .then((response: any) => {
         return response._body;

@@ -1,0 +1,45 @@
+2017-09-01T05:44:06.104Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'GTyQOOfj3ED11Pb6AAAA'
+2017-09-01T05:45:03.015Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'IioACSNEw0L5iun3AAAA'
+2017-09-01T05:45:43.932Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'YLs3l72Y0j7YZBfVAAAA'
+2017-09-01T05:46:37.907Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'CKpIN5sAOxY5vonCAAAA'
+2017-09-01T05:50:45.699Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'EA6LbEhUQIIT4HVxAAAA'
+2017-09-01T05:57:40.037Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'dO5HMKOZev-HtKugAAAA'
+2017-09-01T06:00:06.951Z - debug: undefined 'API running on localhost: ' '3333'
+2017-09-01T06:00:16.045Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'MI4B8BbK43riTVyEAAAA'
+2017-09-01T06:00:24.356Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-01T06:00:24.496Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'y4rrPjK4l_KyTvWJAAAA'
+2017-09-01T07:45:09.109Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-01T07:45:09.314Z - error: undefined 'error conneting db' MongoError: Authentication failed.
+    at Function.MongoError.create (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\error.js:31:11)
+    at C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\pool.js:497:72
+    at authenticateStragglers (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\pool.js:443:16)
+    at Connection.messageHandler (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\pool.js:477:5)
+    at Socket.<anonymous> (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\connection.js:331:22)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at TCP.onread (net.js:548:20)
+2017-09-01T07:45:30.639Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-01T07:45:30.816Z - error: undefined 'Error conneting db' MongoError: Authentication failed.
+    at Function.MongoError.create (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\error.js:31:11)
+    at C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\pool.js:497:72
+    at authenticateStragglers (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\pool.js:443:16)
+    at Connection.messageHandler (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\pool.js:477:5)
+    at Socket.<anonymous> (C:\Users\alvaro.barquera\Documents\GitHub\RolleandoAPP\node_modules\mongodb-core\lib\connection\connection.js:331:22)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:188:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at TCP.onread (net.js:548:20)
+2017-09-01T07:46:54.331Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-01T07:46:54.662Z - info: undefined 'MONGODB listening: ' '3333'
+2017-09-01T07:47:17.384Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'eY9928DT4ZhJJqD9AAAA'
+2017-09-01T07:47:38.466Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-01T07:47:38.813Z - info: undefined 'MONGODB listening: ' '3333'
+2017-09-01T07:47:54.803Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'urahGD2MT8SGVDLgAAAA'
+2017-09-01T07:47:58.753Z - info: undefined 'Data sabed in DB: '
+2017-09-01T09:04:04.738Z - info: undefined 'API running on localhost: ' '3333'
+2017-09-01T09:04:05.094Z - info: undefined 'MONGODB listening: ' '3333'
+2017-09-01T09:04:31.085Z - debug: undefined 'socketConnection: Se ha conectado un usuario: ' 'ewXwFJGtpEq9DCYXAAAA'
+2017-09-01T09:05:11.996Z - debug: undefined 'socketConnection: Se ha desconectado un usuario: ' 'ewXwFJGtpEq9DCYXAAAA'

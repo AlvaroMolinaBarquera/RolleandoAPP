@@ -1,6 +1,8 @@
   var winston = require('winston');
   require('winston-daily-rotate-file');
   // Generamos el logger por defecto
+  
+  
   var logger = new (winston.Logger)({
 	  	level: 'debug',
 	    transports: [
@@ -16,6 +18,7 @@
 	    	  }),
 	    	new (winston.transports.Console)({
 	    		colorize: true, // Colorea las trazas por consola
+	    		timestamp: true, // Coloca el tiempo justamente de la traza.
 	    	})
 	    ] 
 	  });
@@ -32,5 +35,11 @@
 	 var levels = ['error', 'warn', 'info', 'debug'];
 	 return levels[level] || 'debug';
  }
- 
+ const TRACES_LEVEL = {
+	 ERROR: 0,
+	 WARN: 1,
+	 INFO: 2,
+	 DEBUG: 3,
+ }
  exports.writeTrace = writeTrace;
+ exports.TRACES_LEVEL = TRACES_LEVEL;

@@ -1,10 +1,12 @@
 // Get dependencies
 const express = require('express');
 const path = require('path');
-const app = express();
+var app = module.exports = express();
 const http = require('http').Server(app)
 const bodyParser = require('body-parser');
 var io = require('socket.io')(http);
+const tracesService = require('./server/shared/traces.service.js')
+const mongodbService = require('./server/shared/mongodb.service.js')
 
 // Get our API routes
 const api = require('./server/routes/api');
@@ -27,20 +29,21 @@ app.get('*', (req, res) => {
 
 // IO
 io.on('connection', (socket) => {
-
-    console.log('user connected');
+     tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha conectado un usuario: ', socket.client.id)
 
     socket.on('disconnect', function() {
-        console.log('user disconnected');
+        tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha desconectado un usuario: ', socket.client.id)
     });
 
     socket.on('add-message', (message) => {
         io.emit('message', message);
         // Function above that stores the message in the database
-        // databaseStore(message)
+        let storeData = { chatMessage: message, timestamp: new Date().getTime() }
+        mongodbService.databaseStore('chatroom-chats', storeData)
     });
 
 });
+
 
 
 /**
@@ -58,4 +61,4 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-http.listen(port, () => console.log(`API running on localhost:${port}`));
+http.listen(port, () => tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'API running on localhost: ',  port));

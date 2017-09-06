@@ -1,6 +1,7 @@
 import { Component, Output } from '@angular/core';
 import {ChatSocketService} from './../../services/chat.socket.service';
 import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller.service';
+import { ArchActiveUserService } from './../../../arch/services/arch.active-user.service';
 
 
 @Component({
@@ -11,13 +12,18 @@ import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller
 })
 
 export class ChatMessageInput {
-  private messageText: string;
+  private messageText: string; // Texto del mensaje
   private connection: any;
-  private messageArray: any = [];
+  private messageArray: any = []; // Array con todos los mensajes
+  private activeUserName: string; // Nombre del usuario
   constructor(
     private chatService: ChatSocketService,
     private genericDiceRoller: ArchDiceRollerService,
-  ) {}
+    private activeUserService: ArchActiveUserService
+  ) {
+    this.activeUserName = this.activeUserService.getActiveUser()['name'];
+  
+  }
   
   validateKeyDown(event: KeyboardEvent) {
     if (event.code === 'Enter' && event.location === 0) {

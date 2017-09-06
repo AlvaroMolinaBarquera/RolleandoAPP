@@ -17,9 +17,10 @@ MongoClient.connect(dbconnection, (err, database) => {
 
 
 function databaseStore(collection, storeData) {
+	tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Se procede a guardar en la colección ' + collection,  storeData)
     db.collection(collection).save(storeData, (err, result) => {
         if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error saving MONGODBDB ',  err)
-        tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Data saved in DB: ' + collection, databaseStore);
+        tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Data saved in DB: ' + collection, storeData);
     })
 }
 

@@ -3,25 +3,32 @@ import { ArchTracesService } from './../../arch/services/arch.traces.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 let io = require('socketio');
+import { ArchActiveUserService } from './../../arch/services/arch.active-user.service';
 
 interface SocketMessage {
   text: string;
   user: string;
+  color: string;
 }
+ const COLORS = ['#EF9A9A', '#F48FB1', '#CE93D8', '#B39DDB', '#9FA8DA', '#90CAF9', '#81D4FA', '#80DEEA', '#80CBC4', '#A5D6A7'];
 
 @Injectable()
 export class ChatSocketService {
    private url = 'http://localhost:3333';  
    private socket: any;
+  // Temporal
+  private color: string = COLORS[Math.floor(Math.random() * 11)];
    constructor (
-    private tracesService: ArchTracesService
+    private tracesService: ArchTracesService,
+    private activeUserService: ArchActiveUserService
    ) {
    }
 
   sendMessage(message: any){
     let socketMessage = {} as SocketMessage;
     socketMessage.text = message;
-    socketMessage.user = this.socket.id;
+    socketMessage.user = this.activeUserService.getActiveUser()['name'] || this.socket.id;
+    socketMessage.color = this.color;
     this.socket.emit('add-message', socketMessage);    
   }
   

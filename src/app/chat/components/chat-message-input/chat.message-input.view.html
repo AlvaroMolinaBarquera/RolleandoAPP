@@ -1,8 +1,13 @@
 <div class="chat chat-textarea">
-	<div *ngFor="let m of messageArray; let index = index" [ngClass]="{'text-right': m.user === activeUserName}" [ngStyle]="{'background-color': m.color}">
-	   <h6 class="font-weight-bold" *ngIf="index === 0 || messageArray[index].user !== messageArray[index - 1].user" class="font-weight-bold">{{m.user}}</h6>
-	   <p>&nbsp;&nbsp;&nbsp;&nbsp;{{m.text}}</p>
-	</div>
+	<ul 
+	*ngFor="let m of messageArray; let index = index"
+	[ngClass]="{'right': m.user === activeUserName}" 
+	[ngStyle]="{'background-color': m.color}" 
+	class="chat-box"
+	>
+	   <li class="font-weight-bold" *ngIf="index === 0 || messageArray[index].user !== messageArray[index - 1].user" class="font-weight-bold">{{m.user}}</li>
+	   <li>&nbsp;&nbsp;&nbsp;&nbsp;{{m.text}}</li>
+	</ul>
 </div>
 <footer class="footer">
 	<div class="input-group">

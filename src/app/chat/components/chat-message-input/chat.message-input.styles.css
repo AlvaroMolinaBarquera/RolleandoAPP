@@ -3,6 +3,23 @@
 	height: 90vh;
 }
 
+.chat > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-box {
+  width: 80%;
+  display: inline-block;
+  text-align: justify;
+}
+.right {
+    float: right;
+    text-align: right;
+}
+
+
 .footer {
   position: absolute;
   bottom: 0;

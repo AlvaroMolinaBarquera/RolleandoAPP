@@ -6,9 +6,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "*",
-    "body-parser": "*",
-	"socket.io": "*"
+    "express": "^4.15.4",
+    "body-parser": "^1.17.2",
+	"socket.io": "^2.0.3",
+	"compression": "^1.7.0",
+	"mongodb": "^2.2.31"
   },
   "repository": {}
 }

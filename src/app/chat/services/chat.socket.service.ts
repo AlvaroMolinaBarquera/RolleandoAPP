@@ -9,6 +9,11 @@ interface SocketMessage {
   text: string;
   user: string;
   color: string;
+  params: SocketMessageParams
+}
+
+export interface SocketMessageParams {
+  to: string | Array<string>; // Indica los usuarios a los cuales se les notifica un mensaje en concreto
 }
  const COLORS = ['#EF9A9A', '#F48FB1', '#CE93D8', '#B39DDB', '#9FA8DA', '#90CAF9', '#81D4FA', '#80DEEA', '#80CBC4', '#A5D6A7'];
 
@@ -24,17 +29,20 @@ export class ChatSocketService {
    ) {
    }
 
-  sendMessage(message: any){
+  sendMessage(message: string, params?: SocketMessageParams){
     let socketMessage = {} as SocketMessage;
     socketMessage.text = message;
     socketMessage.user = this.activeUserService.getActiveUser()['name'] || this.socket.id;
     socketMessage.color = this.color;
+    socketMessage.params = params;
     this.socket.emit('add-message', socketMessage);    
   }
   
   getMessages() {
     let observable = new Observable(observer => {
-      this.socket = io(this.url);
+      this.socket = io(this.url, {
+        query: 'name=' + this.activeUserService.getActiveUser()['name']
+      });
       this.socket.on('message', (data: any) => {
         observer.next(data);    
       });

@@ -34,15 +34,21 @@ let activeUsers = {};
 // IO
 io.on('connection', (socket) => {
      tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha conectado un usuario: ', {id: socket.client.id, name: socket.handshake.query.name})
-    activeUsers[socket.client.id] = socket.handshake.query.name;
+    activeUsers[socket.handshake.query.name] = socket.client.id
     socket.on('disconnect', function() {
         tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha desconectado un usuario: ', {id: socket.client.id, name: activeUsers[socket.client.id]} )
-    	delete activeUsers[socket.client.id];
+    	for (let user in activeUsers) {
+    		if (activeUsers[user] === socket.client.id) {
+    			delete activeUsers[user];
+    			break;
+    		}
+    	}
+        delete activeUsers[socket.client.id];
     });
 
     socket.on('add-message', (message) => {
     	if (message && message.params && message.params.to) {
-    		// socket.to().emit('message', message);
+    		io.to(activeUsers[message.params.to]).to(socket.client.id).emit('message', message);
     	} else {
             io.emit('message', message);    		
     	}

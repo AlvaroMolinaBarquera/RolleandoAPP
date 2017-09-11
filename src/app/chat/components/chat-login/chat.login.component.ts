@@ -31,11 +31,11 @@ export class ChatLogin {
     };
     this.transactionService.sendTransaction(head, body)
       .then((response: any) => {
-        if (response === 'true') {
-          
+        if (response.HEADER.SUCCESS === true) {
           // Si el login es correcto colocamos como usuario activo al usuario que se ha logeado
           let activeUser = {} as ActiveUser;
-          activeUser.name = body.USER;
+          activeUser.name = response.BODY.USER;
+          activeUser.lastConnection = response.BODY.LAST_CONNECTION;
           this.activeUserService.setActiveUser(activeUser);
           // Navegamos a chat
           this.router.navigate(['/chat']);

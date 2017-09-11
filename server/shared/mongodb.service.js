@@ -6,6 +6,7 @@ var app = require('./../../server.js');
 
 exports.databaseStore = databaseStore;
 exports.databaseRecover = databaseRecover;
+exports.databaseUpdateOne = databaseUpdateOne;
 
 MongoClient.connect(dbconnection, (err, database) => {
     if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error conneting db', err);
@@ -27,6 +28,14 @@ function databaseStore(collection, storeData) {
 function databaseRecover(collection, searchParams, callback) {
 	db.collection(collection).find(searchParams).toArray((err, result) => {
         if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error recovering MONGODBDB ',  err)
+        tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Data recover from DB: ' + collection, result);
         return callback(result);	
+	})
+}
+
+function databaseUpdateOne(collection, query, update) {
+	db.collection(collection).updateOne(query, update, (err, result) => {
+        if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error updating MONGODBDB ',  err)
+        tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Update data in DB: ' + collection, result);
 	})
 }

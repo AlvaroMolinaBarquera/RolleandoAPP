@@ -33,17 +33,27 @@ app.get('*', (req, res) => {
 let activeUsers = {};
 // IO
 io.on('connection', (socket) => {
-     tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha conectado un usuario: ', {id: socket.client.id, name: socket.handshake.query.name})
+    tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha conectado un usuario: ', {id: socket.client.id, name: socket.handshake.query.name, lastConnection: socket.handshake.query.lastConnection})
+    // Al conectarse un nuevo usuario se guarda en la lista de usuarios activos
     activeUsers[socket.handshake.query.name] = socket.client.id
+    if (socket.handshake.query.lastConnection) {
+    	// Cuando el usuario se conecta devuelve todos los mensajes desde su ultima conexión
+    	mongodbService.databaseRecover('chatroom-chats', {timestamp: {$gt: Number(socket.handshake.query.lastConnection)}}, (result) => {
+    		tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: El usuario activo se conectó por ultima vez ' +  socket.handshake.query.lastConnection + ' se procede adevolver los siguientes datos: ', result)
+    		io.to(socket.client.id).emit('message', result)
+    	})
+    }
     socket.on('disconnect', function() {
-        tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha desconectado un usuario: ', {id: socket.client.id, name: activeUsers[socket.client.id]} )
     	for (let user in activeUsers) {
     		if (activeUsers[user] === socket.client.id) {
+    	        // Cuando el usuario se desconecta se borra de la lsita de usuarios conectados y se actualiza la ultima vez que se desconectó
+    			tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha desconectado un usuario: ', {id: socket.client.id, name: user} )
+    	        mongodbService.databaseUpdateOne('user_list', {USER: user}, {$set: { LAST_CONNECTION: new Date().getTime()}})
     			delete activeUsers[user];
     			break;
     		}
     	}
-        delete activeUsers[socket.client.id];
+        
     });
 
     socket.on('add-message', (message) => {

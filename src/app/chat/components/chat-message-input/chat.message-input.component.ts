@@ -71,7 +71,13 @@ export class ChatMessageInput {
 
   ngOnInit() {
     this.connection = this.chatService.getMessages().subscribe(message => {
-      this.messageArray.push(message);
+      if (message instanceof Array) {
+        for (let m in message) {
+          this.messageArray.push(message[m].chatMessage);
+        }
+      } else {
+        this.messageArray.push(message);
+      }
     })
   }
   

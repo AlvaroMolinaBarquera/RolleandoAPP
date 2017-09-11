@@ -1,19 +1,31 @@
-<div class="chat chat-textarea">
+<div class="chat chat-textarea container-fluid">
 	<ul 
 	*ngFor="let m of messageArray; let index = index"
 	[ngClass]="{'right': m.user === activeUserName}" 
-	[ngStyle]="{'background-color': m.color}" 
 	class="chat-box"
 	>
-	   <li class="font-weight-bold" *ngIf="index === 0 || messageArray[index].user !== messageArray[index - 1].user" class="font-weight-bold">{{m.user}}</li>
-	   <li>&nbsp;&nbsp;&nbsp;&nbsp;{{m.text}}</li>
+	   <li  [ngStyle]="{'background-color': m.color}"
+	   		 class="font-weight-bold" 
+	   		 *ngIf="index === 0 || messageArray[index].user !== messageArray[index - 1].user"
+	   >
+	   	{{m.user}}
+	   </li>
+	   <li [ngStyle]="{'background-color': m.color}">{{m.text}}</li>
 	</ul>
 </div>
 <footer class="footer">
 	<div class="input-group">
 	  <input type="text" class="form-control" placeholder="Escriba su mensaje aqui" [(ngModel)]="messageText" (keydown)="validateKeyDown($event)">
 	  <span class="input-group-btn">
-	    <button class="btn btn-secondary" type="button" (click)="sendMessage()">Enviar</button>
+	    <button class="btn btn-secondary" type="button" (click)="sendMessage()">
+	    	<i class="fa fa-paper-plane" aria-hidden="false"></i>
+		</button>
+	  </span>
+	  <span  class="input-group-btn">
+		<button type="button" class="btn btn-outline-secondary" placement="top"
+		        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">
+			<i class="fa fa-cog" aria-hidden="true"></i>
+		</button>
 	  </span>
 	</div>		
 </footer>

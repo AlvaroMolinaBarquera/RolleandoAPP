@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+.chat > ul > li {
+	margin-top: 0.2%;
+}
+
 .chat-box {
   width: 80%;
   display: inline-block;

@@ -22,7 +22,7 @@ export class ChatSocketService {
    private url = 'http://localhost:3333';  
    private socket: any;
   // Temporal
-  private color: string = COLORS[Math.floor(Math.random() * 11)];
+  private color: string = COLORS[Math.floor(Math.random() * 10)];
    constructor (
     private tracesService: ArchTracesService,
     private activeUserService: ArchActiveUserService
@@ -41,7 +41,10 @@ export class ChatSocketService {
   getMessages() {
     let observable = new Observable(observer => {
       this.socket = io(this.url, {
-        query: 'name=' + this.activeUserService.getActiveUser()['name']
+        query: {
+          name: this.activeUserService.getActiveUser()['name'],
+          lastConnection: this.activeUserService.getActiveUser()['lastConnection']
+        }
       });
       this.socket.on('message', (data: any) => {
         observer.next(data);    

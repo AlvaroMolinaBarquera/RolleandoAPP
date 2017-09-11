@@ -36,9 +36,11 @@ router.post('/transactions', (req, res) => {
 						'Datos obtenidos de la bd ',
 						result);
 				if (result && result.length !== 0) {
-					res.send(true);
+					let response = {HEADER: {SUCCESS: true}, BODY: {USER: result[0].USER, LAST_CONNECTION: result[0].LAST_CONNECTION}}
+					res.send(response);
 				} else {
-					res.send(false);
+					let response = {HEADER: {SUCCESS: false}, BODY: {}}
+					res.send(response);
 				}
 			})
 

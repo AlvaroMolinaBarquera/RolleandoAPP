@@ -9,6 +9,5 @@
      "lib": [ "es2015", "dom" ],
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
-  },
-  "exclude": ["node-modules", "src/node-modules"]
+  }
 }

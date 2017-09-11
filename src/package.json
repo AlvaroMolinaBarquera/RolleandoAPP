@@ -21,7 +21,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "",
+  "author": "Álvaro Molina",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~4.0.0",

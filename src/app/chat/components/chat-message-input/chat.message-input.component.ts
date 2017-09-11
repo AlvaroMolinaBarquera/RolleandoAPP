@@ -1,7 +1,21 @@
 import { Component, Output } from '@angular/core';
-import {ChatSocketService, SocketMessageParams} from './../../services/chat.socket.service';
+import {ChatSocketService} from './../../services/chat.socket.service';
 import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller.service';
 import { ArchActiveUserService } from './../../../arch/services/arch.active-user.service';
+
+interface SocketMessageParams {
+  to: string | Array<string>; // Indica los usuarios a los cuales se les notifica un mensaje en concreto
+}
+
+interface SocketMessage {
+  text: string;
+  user: string;
+  color: string;
+  offrol: boolean;
+  params: SocketMessageParams;
+}
+
+ const COLORS = ['#EF9A9A', '#F48FB1', '#CE93D8', '#B39DDB', '#9FA8DA', '#90CAF9', '#81D4FA', '#80DEEA', '#80CBC4', '#A5D6A7'];
 
 
 @Component({
@@ -10,17 +24,19 @@ import { ArchActiveUserService } from './../../../arch/services/arch.active-user
   styleUrls: ['./chat.message-input.styles.css'],
   
 })
-
 export class ChatMessageInput {
   private messageText: string; // Texto del mensaje
   private connection: any;
   private messageArray: any = []; // Array con todos los mensajes
   private activeUserName: string; // Nombre del usuario
+  private offRolActivated: boolean; // Indica si el modo fuera de rol está activado
+  private color: string = COLORS[Math.floor(Math.random() * 10)];
   constructor(
     private chatService: ChatSocketService,
     private genericDiceRoller: ArchDiceRollerService,
     private activeUserService: ArchActiveUserService
   ) {
+    this.offRolActivated = false;
     this.activeUserName = this.activeUserService.getActiveUser()['name'];
   
   }
@@ -34,6 +50,12 @@ export class ChatMessageInput {
   sendMessage() {
     // Expresión regular que controla si el mensaje es un susurro, es decir, si va dirigido a un jugador en especifico
     // Ejemplo: /w Galael 
+    
+    let socketMessage = {} as SocketMessage;
+    socketMessage.offrol = this.offRolActivated;
+    socketMessage.color = this.color;
+    socketMessage.user = this.activeUserName;
+
     let whisperRegEx = /\/(w)\s(\w*)\s/ig;
     let whisperUser: string;
     if (whisperRegEx.test(this.messageText)) {
@@ -46,9 +68,13 @@ export class ChatMessageInput {
       this.messageText = this.messageText.replace(whisperRegEx, '');
       whisperUser = user;
     }
-
+    
+    socketMessage.text = this.messageText;
+    socketMessage.params = {
+      to: whisperUser
+    }
     // Envia el mensaje al servicio de socket
-    this.chatService.sendMessage(this.messageText, {to: whisperUser});
+    this.chatService.sendMessage(socketMessage);
     
     // Expresión Regular: Empieza por 'roll' luego al menos un digito, luego 'D', luego al menos un digito
     let rollRegEx = /\/(roll)\d+(d)\d+/ig;
@@ -62,7 +88,9 @@ export class ChatMessageInput {
         // Se envia un mensaje de texto al chat con el resultado de la tirada
         let rolls: number[] = this.genericDiceRoller.roll(numberOfDices, faces);
         let message: string = this.activeUserName + ' ha lanzado' + numberOfDices + 'D'+ faces + ' obteniendo: ' +  rolls.join(', ');
-        this.chatService.sendMessage(message, {to: whisperUser})
+        socketMessage.text = message;
+        socketMessage.offrol = true;
+        this.chatService.sendMessage(socketMessage)
       }
     }
     

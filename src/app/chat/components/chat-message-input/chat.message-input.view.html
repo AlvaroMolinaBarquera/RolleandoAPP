@@ -10,23 +10,37 @@
 	   >
 	   	{{m.user}}
 	   </li>
-	   <li [ngStyle]="{'background-color': m.color}">{{m.text}}</li>
+	   <li [ngStyle]="{'background-color': m.color}">
+	   	<span class="badge badge-pill badge-info" *ngIf="m.offrol">
+	   		Offrol
+	   	</span>
+	   	{{m.text}}
+	   </li>
 	</ul>
 </div>
 <footer class="footer">
 	<div class="input-group">
 	  <input type="text" class="form-control" placeholder="Escriba su mensaje aqui" [(ngModel)]="messageText" (keydown)="validateKeyDown($event)">
+	  <span  class="input-group-btn">
+		<button type="button" class="btn btn-outline-secondary" placement="top"
+		        [ngbPopover]="cfgPopover" popoverTitle="Configuración">
+			<i class="fa fa-cog" aria-hidden="true"></i>
+		</button>
+	  </span>
 	  <span class="input-group-btn">
 	    <button class="btn btn-secondary" type="button" (click)="sendMessage()">
 	    	<i class="fa fa-paper-plane" aria-hidden="false"></i>
 		</button>
 	  </span>
-	  <span  class="input-group-btn">
-		<button type="button" class="btn btn-outline-secondary" placement="top"
-		        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">
-			<i class="fa fa-cog" aria-hidden="true"></i>
-		</button>
-	  </span>
+
 	</div>		
 </footer>
-
+<!--  Template del POPOVER de OPCIONES -->
+<ng-template #cfgPopover>
+	<div class="form-check">
+	  <label class="form-check-label">
+	    <input class="form-check-input" type="checkbox" [(ngModel)]="offRolActivated">
+	   	Offrol
+	  </label>
+	</div>
+</ng-template>

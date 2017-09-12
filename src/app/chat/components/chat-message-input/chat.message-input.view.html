@@ -28,7 +28,7 @@
 		</button>
 	  </span>
 	  <span class="input-group-btn">
-	    <button class="btn btn-secondary" type="button" (click)="sendMessage()">
+	    <button class="btn btn-secondary btn-block" type="button" (click)="sendMessage()">
 	    	<i class="fa fa-paper-plane" aria-hidden="false"></i>
 		</button>
 	  </span>
@@ -43,4 +43,10 @@
 	   	Offrol
 	  </label>
 	</div>
+	<button class="btn btn-secondary"  (click)="downloadWord()">
+		
+		<i class="fa fa-file-word-o" aria-hidden="true"></i>
+		<i class="fa fa-download" aria-hidden="true"></i>
+		
+	</button>
 </ng-template>

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const tracesService = require('./../shared/traces.service');
 const mongodbService = require('./../shared/mongodb.service')
+const fs = require('fs')
+
 /* GET api listing. */
 router.get('/', (req, res) => {
   res.send('api works');
@@ -45,6 +47,36 @@ router.post('/transactions', (req, res) => {
 			})
 
 		break;
+		case 'PRINT_STORY':
+			mongodbService.databaseRecover('chatroom-chats', {}, (result) => {
+				const TEMP_FILE = 'partida.docx'
+				try {
+					var fd = fs.openSync(TEMP_FILE, 'w');
+					let p = '';
+					for (let mess in result) {
+						if (result[mess]['chatMessage']) {
+							let chtMsg = result[mess]['chatMessage']; 
+							if (chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user)) {
+								fs.writeFileSync(TEMP_FILE, p, {flag: 'a'});
+								p = '';
+								p += '\n';
+							}
+							if (mess === 0 || chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ) {
+								p += chtMsg.user.toUpperCase() + ': ';
+							}
+							p += chtMsg.text;
+							if (!chtMsg.text.endsWith('.')) { p += '. '};
+						}
+
+					}
+		
+					res.download(TEMP_FILE)
+		
+				} catch (e) {
+					console.log(e)
+				}
+
+			});
 		default:
 			
 		break;	

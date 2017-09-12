@@ -2,6 +2,7 @@ import { Component, Output } from '@angular/core';
 import {ChatSocketService} from './../../services/chat.socket.service';
 import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller.service';
 import { ArchActiveUserService } from './../../../arch/services/arch.active-user.service';
+import { ArchTransactionService, TransactionHeader } from './../../../arch/services/arch.transaction.service';
 
 interface SocketMessageParams {
   to: string | Array<string>; // Indica los usuarios a los cuales se les notifica un mensaje en concreto
@@ -34,7 +35,8 @@ export class ChatMessageInput {
   constructor(
     private chatService: ChatSocketService,
     private genericDiceRoller: ArchDiceRollerService,
-    private activeUserService: ArchActiveUserService
+    private activeUserService: ArchActiveUserService,
+    private transactionService: ArchTransactionService
   ) {
     this.offRolActivated = false;
     this.activeUserName = this.activeUserService.getActiveUser()['name'];
@@ -96,7 +98,28 @@ export class ChatMessageInput {
     
     this.messageText = '';
   }
-
+  
+  // Recurre a la base de datos y descarga el WORD con la partida hasta el momento
+  downloadWord() {
+    let header = {} as TransactionHeader;
+    header.TRANSACTION = 'PRINT_STORY';
+    header.USER = this.activeUser;
+    let body = {}
+    this.transactionService.sendTransaction(header, body)
+      .then((response: any) => {
+        let element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(response));
+        element.setAttribute('download', 'story.txt');
+      
+        element.style.display = 'none';
+        document.body.appendChild(element);
+      
+        element.click();
+      
+        document.body.removeChild(element);
+      });
+  }
+  
   ngOnInit() {
     this.connection = this.chatService.getMessages().subscribe(message => {
       if (message instanceof Array) {

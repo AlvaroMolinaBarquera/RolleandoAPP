@@ -31,7 +31,11 @@ export class ArchTransactionService {
     return this.http.post(this.transactionServiceURL, transactionMessage)
       .toPromise()
       .then((response: any) => {
-        return JSON.parse(response._body);
+        try {
+          return JSON.parse(response._body);
+        } catch (e) {
+          return response._body;
+        }
       });
   }
 }

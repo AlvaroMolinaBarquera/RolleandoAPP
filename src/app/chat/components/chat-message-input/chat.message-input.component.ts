@@ -3,6 +3,8 @@ import {ChatSocketService} from './../../services/chat.socket.service';
 import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller.service';
 import { ArchActiveUserService } from './../../../arch/services/arch.active-user.service';
 import { ArchTransactionService, TransactionHeader } from './../../../arch/services/arch.transaction.service';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 interface SocketMessageParams {
   to: string | Array<string>; // Indica los usuarios a los cuales se les notifica un mensaje en concreto
@@ -36,7 +38,8 @@ export class ChatMessageInput {
     private chatService: ChatSocketService,
     private genericDiceRoller: ArchDiceRollerService,
     private activeUserService: ArchActiveUserService,
-    private transactionService: ArchTransactionService
+    private transactionService: ArchTransactionService,
+	private http: Http
   ) {
     this.offRolActivated = false;
     this.activeUserName = this.activeUserService.getActiveUser()['name'];
@@ -107,8 +110,10 @@ export class ChatMessageInput {
     let body = {}
     this.transactionService.sendTransaction(header, body)
       .then((response: any) => {
+		// Crea un elemento fantasma que es automaticamente clickeado por para iniciar la
+		// descarga.
         let element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(response));
+        element.setAttribute('href', response.BODY.URL);
         element.setAttribute('download', 'story.txt');
       
         element.style.display = 'none';
@@ -116,7 +121,7 @@ export class ChatMessageInput {
       
         element.click();
       
-        document.body.removeChild(element);
+        document.body.removeChild(element); 
       });
   }
   

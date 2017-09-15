@@ -25,6 +25,12 @@ app.use(express.static(path.join(__dirname, 'src')));
 // Set our api routes
 app.use('/api', api);
 
+app.get('/server/downloads/*', (req, res) => {
+	let file = __dirname + req.url
+	tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'getDownload: Se ha recibido la petición de descarga para la siguiente url ', file)
+	res.download(file);
+});
+
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname));

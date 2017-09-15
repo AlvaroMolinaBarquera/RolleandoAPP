@@ -49,7 +49,8 @@ router.post('/transactions', (req, res) => {
 		break;
 		case 'PRINT_STORY':
 			mongodbService.databaseRecover('chatroom-chats', {}, (result) => {
-				const TEMP_FILE = 'partida.docx'
+				const TEMP_DIR = '/server/downloads/';
+				const TEMP_FILE = new Date().getTime() + '_story.txt';
 				try {
 					var fd = fs.openSync(TEMP_FILE, 'w');
 					let p = '';
@@ -57,23 +58,32 @@ router.post('/transactions', (req, res) => {
 						if (result[mess]['chatMessage']) {
 							let chtMsg = result[mess]['chatMessage']; 
 							if (chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user)) {
-								fs.writeFileSync(TEMP_FILE, p, {flag: 'a'});
+								fs.writeFileSync('.' + TEMP_DIR + TEMP_FILE, p, {flag: 'a'});
 								p = '';
 								p += '\n';
 							}
 							if (mess === 0 || chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ) {
 								p += chtMsg.user.toUpperCase() + ': ';
 							}
+							//  Muestra un mensaje para quien va dirigido, por ejemplo (A Galael);
+							if (result[mess]['params'] && result[mess]['params']['to']) {
+								p += '(A ' + result[mess]['params']['to'] + ')';
+							}
 							p += chtMsg.text;
 							if (!chtMsg.text.endsWith('.')) { p += '. '};
 						}
 
 					}
-		
-					res.download(TEMP_FILE)
-		
+					let response = {HEADER: {SUCCESS: true}, BODY: { URL: TEMP_DIR + TEMP_FILE}}
+					res.send(response)
+					
 				} catch (e) {
-					console.log(e)
+					tracesService.writeTrace(
+							tracesService.TRACES_LEVEL.ERROR,
+							'Error creando el archivo para descargar ',
+							e);					
+					let response = {HEADER: {SUCCESS: false}, BODY: {}}
+					res.send(response);
 				}
 
 			});

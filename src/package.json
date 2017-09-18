@@ -21,7 +21,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "¡lvaro Molina",
+  "author": "√Ålvaro Molina",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~4.0.0",
@@ -38,7 +38,9 @@
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "font-awesome": "^4.7.0",
+    "stacktrace-js": "^2.0.0"
   },
   "devDependencies": {
     "concurrently": "^3.2.0",

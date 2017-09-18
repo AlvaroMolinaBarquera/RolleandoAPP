@@ -1,5 +1,4 @@
 # RolleandoAPP 
-[![Build Status][travis-badge]][travis-badge-url]
 - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Se trata de una aplicación para gestionar partidas de rol. Tiene un creador de personajes y un gestionador de iniciativas y una parte de un chat que es la que está más avanzada.
 

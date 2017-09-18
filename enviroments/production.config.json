@@ -1,0 +1,14 @@
+{
+  "node": {
+    "server": "localhost",
+    "port": "3333"
+  },
+  "traces": {
+    "rest": "/traces",
+    "traceLevel": 3,
+    "console": true
+  },
+  "transaction": {
+    "rest": "/transaction"
+  }
+}

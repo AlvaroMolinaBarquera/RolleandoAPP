@@ -20,7 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Point static path to dist
-app.use(express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, '/src')));
+app.use('/enviroments', express.static(path.join(__dirname, '/enviroments')));
 
 // Set our api routes
 app.use('/api', api);

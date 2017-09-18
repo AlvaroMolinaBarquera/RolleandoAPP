@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { ArchConfigurationService } from './arch.configuration.service';
 import 'rxjs/add/operator/toPromise';
 
   enum TRACES_LEVEL {
@@ -28,7 +29,12 @@ import 'rxjs/add/operator/toPromise';
 export class ArchTracesService {
   tracesServiceURL: string;
   write: any;
-  constructor (private http: Http) {
+  constructor (
+    private http: Http,
+    private configurationService: ArchConfigurationService
+  ) {
+    let node = this.configurationService.getProperty('node');
+    console.log(node)
     this.tracesServiceURL = 'http://localhost:3333/api/traces';
     this.write = {
       debug: this.writeDebug,
@@ -58,7 +64,7 @@ export class ArchTracesService {
   };
   
   private writeTrace = (message: string, level: TRACES_LEVEL, params?: any) => {
-    // Utilizamos StackTrace para recuperar la traza desde donde llaman a esta función
+    // Utilizamos StackTrace para recuperar la traza desde donde llaman a esta funciÃ³n
     StackTrace.get()
       .then((response: Array<StackFrame>) => {
         let traceToLog = {} as TRACE;
@@ -69,7 +75,7 @@ export class ArchTracesService {
         traceToLog.PARAMS = params;
         // Mostramos el mensaje por consola
         console[this.getLevel(level)](message, params);
-        // Se realiza la petición POST
+        // Se realiza la peticiÃ³n POST
         this.http.post(this.tracesServiceURL, traceToLog)
           .toPromise();
       });

@@ -1,6 +1,6 @@
 {
   "node": {
-    "server": "localhost",
+    "server": "rolleando.eu-4.evennode.com",
     "port": "3333"
   },
   "traces": {

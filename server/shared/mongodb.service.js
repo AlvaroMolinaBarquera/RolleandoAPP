@@ -11,8 +11,8 @@ exports.databaseUpdateOne = databaseUpdateOne;
 MongoClient.connect(dbconnection, (err, database) => {
     if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error conneting db', err);
     db = database
-    app.listen(3000, () => {
-    	tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'MONGODB listening: 3000')
+    app.listen(4444, () => {
+    	tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'MONGODB listening: 4444')
     })
 })
 

@@ -5,6 +5,7 @@
   "keywords": [],
   "author": "Álvaro Molina Barquera",
   "license": "MIT",
+  "start": "node server.js",
   "dependencies": {
     "express": "^4.15.4",
     "body-parser": "^1.17.2",

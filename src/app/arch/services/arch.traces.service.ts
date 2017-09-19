@@ -34,8 +34,7 @@ export class ArchTracesService {
     private configurationService: ArchConfigurationService
   ) {
     let node = this.configurationService.getProperty('node');
-    console.log(node)
-    this.tracesServiceURL = 'http://localhost:3333/api/traces';
+    this.tracesServiceURL =  './api/traces';
     this.write = {
       debug: this.writeDebug,
       info: this.writeInfo,

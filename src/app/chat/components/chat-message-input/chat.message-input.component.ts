@@ -8,6 +8,7 @@ import 'rxjs/add/operator/toPromise';
 
 interface SocketMessageParams {
   to: string | Array<string>; // Indica los usuarios a los cuales se les notifica un mensaje en concreto
+  from: string;
 }
 
 interface SocketMessage {
@@ -32,7 +33,7 @@ export class ChatMessageInput {
   private connection: any;
   private messageArray: any = []; // Array con todos los mensajes
   private activeUserName: string; // Nombre del usuario
-  private offRolActivated: boolean; // Indica si el modo fuera de rol est· activado
+  private offRolActivated: boolean; // Indica si el modo fuera de rol est√° activado
   private color: string = COLORS[Math.floor(Math.random() * 10)];
   constructor(
     private chatService: ChatSocketService,
@@ -53,7 +54,7 @@ export class ChatMessageInput {
   };
   
   sendMessage() {
-    // ExpresiÛn regular que controla si el mensaje es un susurro, es decir, si va dirigido a un jugador en especifico
+    // Expresi√≥n regular que controla si el mensaje es un susurro, es decir, si va dirigido a un jugador en especifico
     // Ejemplo: /w Galael 
     
     let socketMessage = {} as SocketMessage;
@@ -81,7 +82,7 @@ export class ChatMessageInput {
     // Envia el mensaje al servicio de socket
     this.chatService.sendMessage(socketMessage);
     
-    // ExpresiÛn Regular: Empieza por 'roll' luego al menos un digito, luego 'D', luego al menos un digito
+    // Expresi√≥n Regular: Empieza por 'roll' luego al menos un digito, luego 'D', luego al menos un digito
     let rollRegEx = /\/(roll)\d+(d)\d+/ig;
     if (rollRegEx.test(this.messageText)) {
       let rolls = this.messageText.match(rollRegEx);

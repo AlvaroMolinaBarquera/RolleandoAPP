@@ -6,11 +6,11 @@
 	>
 	   <li  [ngStyle]="{'background-color': m.color}"
 	   		 class="font-weight-bold" 
-	   		 *ngIf="index === 0 || messageArray[index].user !== messageArray[index - 1].user"
+	   		 *ngIf="(index === 0 || messageArray[index].user !== messageArray[index - 1].user) && m.user !== 'SYSTEM' "
 	   >
 	   	{{m.user}}
 	   </li>
-	   <li [ngStyle]="{'background-color': m.color}">
+	   <li [ngStyle]="{'background-color': m.color}" [ngClass]="{'text-center': m.user === 'SYSTEM'}">
 	   	<span class="badge badge-pill badge-info" *ngIf="m.offrol">
 	   		Offrol
 	   	</span>
@@ -23,7 +23,7 @@
 	  <input type="text" class="form-control" placeholder="Escriba su mensaje aqui" [(ngModel)]="messageText" (keydown)="validateKeyDown($event)">
 	  <span  class="input-group-btn">
 		<button type="button" class="btn btn-outline-secondary" placement="top"
-		        [ngbPopover]="cfgPopover" popoverTitle="Configuración">
+		        [ngbPopover]="cfgPopover" popoverTitle="ConfiguraciÃ³n">
 			<i class="fa fa-cog" aria-hidden="true"></i>
 		</button>
 	  </span>

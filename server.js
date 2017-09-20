@@ -42,6 +42,7 @@ let activeUsers = {};
 io.on('connection', (socket) => {
     tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha conectado un usuario: ', {id: socket.client.id, name: socket.handshake.query.name, lastConnection: socket.handshake.query.lastConnection})
     // Al conectarse un nuevo usuario se guarda en la lista de usuarios activos
+    socket.broadcast.emit('message', {text: socket.handshake.query.name + ' se ha conectado.', user: 'SYSTEM'})
     activeUsers[socket.handshake.query.name] = socket.client.id
     if (socket.handshake.query.lastConnection) {
     	// Cuando el usuario se conecta devuelve todos los mensajes desde su ultima conexión
@@ -55,7 +56,8 @@ io.on('connection', (socket) => {
     		if (activeUsers[user] === socket.client.id) {
     	        // Cuando el usuario se desconecta se borra de la lsita de usuarios conectados y se actualiza la ultima vez que se desconectó
     			tracesService.writeTrace(tracesService.TRACES_LEVEL.DEBUG, 'socketConnection: Se ha desconectado un usuario: ', {id: socket.client.id, name: user} )
-    	        mongodbService.databaseUpdateOne('user_list', {USER: user}, {$set: { LAST_CONNECTION: new Date().getTime()}})
+    	    mongodbService.databaseUpdateOne('user_list', {USER: user}, {$set: { LAST_CONNECTION: new Date().getTime()}})
+          socket.broadcast.emit('message', {text: user + ' se ha desconectado.', user: 'SYSTEM'})
     			delete activeUsers[user];
     			break;
     		}

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class ChatLogin {
   user: string; // Usuario
-  password: string; // ContraseÒa, maximo 8 caracteres
+  password: string; // Contrase√±a, maximo 8 caracteres
   constructor (
     private modalService: ArchGenericModalService,
     private transactionService: ArchTransactionService,
@@ -36,19 +36,22 @@ export class ChatLogin {
           let activeUser = {} as ActiveUser;
           activeUser.name = response.BODY.USER;
           activeUser.lastConnection = response.BODY.LAST_CONNECTION;
+          activeUser.chat = {}
+          activeUser.chat.alias = response.BODY.CHAT.ALIAS;
+          activeUser.chat.master = response.BODY.CHAT.MASTER;
           this.activeUserService.setActiveUser(activeUser);
           // Navegamos a chat
           this.router.navigate(['/chat']);
         } else {
           // Si no ha introducido lso campos correctos mostramos un error
-          this.modalService.openModal('ERROR', 'El usuario o la contraseÒa son incorrectos');
+          this.modalService.openModal('ERROR', 'El usuario o la contrase√±a son incorrectos');
         }
       })
     
   }
   
   unavaiableOption() {
-    this.modalService.openModal('No disponible', 'Actualmente este opciÛn no est· disponible');
+    this.modalService.openModal('No disponible', 'Actualmente este opci√≥n no est√° disponible');
   }
   
 }

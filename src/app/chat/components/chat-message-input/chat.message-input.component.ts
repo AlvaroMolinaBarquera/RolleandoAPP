@@ -16,11 +16,12 @@ interface SocketMessage {
   user: string;
   color: string;
   offrol: boolean;
+  alias: string;
   params: SocketMessageParams;
 }
 
  const COLORS = ['#EF9A9A', '#F48FB1', '#CE93D8', '#B39DDB', '#9FA8DA', '#90CAF9', '#81D4FA', '#80DEEA', '#80CBC4', '#A5D6A7'];
-
+ const SYSTEM_USER = 'SYSTEM';
 
 @Component({
   selector: 'chat-message-input',
@@ -33,7 +34,10 @@ export class ChatMessageInput {
   private connection: any;
   private messageArray: any = []; // Array con todos los mensajes
   private activeUserName: string; // Nombre del usuario
+  private activeUserAlias: string; // Indica el alias del usuario, puede cambiar para el MASTER
+  private activeUserMasterRole: boolean; // Indica si el usuario tiene papel de Narrador;
   private offRolActivated: boolean; // Indica si el modo fuera de rol está activado
+ 
   private color: string = COLORS[Math.floor(Math.random() * 10)];
   constructor(
     private chatService: ChatSocketService,
@@ -44,7 +48,9 @@ export class ChatMessageInput {
   ) {
     this.offRolActivated = false;
     this.activeUserName = this.activeUserService.getActiveUser()['name'];
-  
+    this.activeUserAlias = this.activeUserService.getActiveUser()['chat']['alias'];
+    this.activeUserMasterRole = this.activeUserService.getActiveUser()['chat']['master'];
+
   }
   
   validateKeyDown(event: KeyboardEvent) {
@@ -61,6 +67,7 @@ export class ChatMessageInput {
     socketMessage.offrol = this.offRolActivated;
     socketMessage.color = this.color;
     socketMessage.user = this.activeUserName;
+    socketMessage.alias = this.activeUserAlias;
 
     let whisperRegEx = /\/(w)\s(\w*)\s/ig;
     let whisperUser: string;
@@ -96,6 +103,7 @@ export class ChatMessageInput {
         let message: string = this.activeUserName + ' ha lanzado' + numberOfDices + 'D'+ faces + ' obteniendo: ' +  rolls.join(', ');
         socketMessage.text = message;
         socketMessage.offrol = true;
+        socketMessage.user = SYSTEM_USER;
         this.chatService.sendMessage(socketMessage)
       }
     }

@@ -38,7 +38,7 @@ router.post('/transactions', (req, res) => {
 						'Datos obtenidos de la bd ',
 						result);
 				if (result && result.length !== 0) {
-					let response = {HEADER: {SUCCESS: true}, BODY: {USER: result[0].USER, LAST_CONNECTION: result[0].LAST_CONNECTION}}
+					let response = {HEADER: {SUCCESS: true}, BODY: {USER: result[0].USER, LAST_CONNECTION: result[0].LAST_CONNECTION, CHAT: result[0].CHAT}}
 					res.send(response);
 				} else {
 					let response = {HEADER: {SUCCESS: false}, BODY: {}}
@@ -57,13 +57,18 @@ router.post('/transactions', (req, res) => {
 					for (let mess in result) {
 						if (result[mess]['chatMessage']) {
 							let chtMsg = result[mess]['chatMessage']; 
-							if (chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user)) {
+							if (chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ||chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias)) {
 								fs.writeFileSync('.' + TEMP_DIR + TEMP_FILE, p, {flag: 'a'});
 								p = '';
 								p += '\n';
 							}
-							if (mess === 0 || chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ) {
-								p += chtMsg.user.toUpperCase() + ': ';
+							if (mess === 0 || chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ||
+              chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias) {
+                if (chtMsg.alias) {
+   								p += chtMsg.alias.toUpperCase() + ': ';
+                } else {
+  								p += chtMsg.user.toUpperCase() + ': ';      
+                }
 							}
 							//  Muestra un mensaje para quien va dirigido, por ejemplo (A Galael);
 							if (result[mess]['params'] && result[mess]['params']['to']) {

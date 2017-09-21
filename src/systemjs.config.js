@@ -28,6 +28,10 @@
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
       'stacktrace': 'npm:stacktrace-js/dist/stacktrace.js',
       'socketio': 'npm:socket.io-client/dist/socket.io.js',
+      // Bootstrap y Jquery
+      'tether': 'npm:tether/dist/js/tether.js',
+      'bootstrap': 'npm:bootstrap/dist/js/bootstrap.min.js',
+      'jquery': 'npm:jquery/dist/jquery.min.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

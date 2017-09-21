@@ -63,7 +63,7 @@ router.post('/transactions', (req, res) => {
 								p += '\n';
 							}
 							if (mess === 0 || chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ||
-              chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias) {
+              chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias)) {
                 if (chtMsg.alias) {
    								p += chtMsg.alias.toUpperCase() + ': ';
                 } else {

@@ -63,12 +63,12 @@ router.post('/transactions', (req, res) => {
 								p += '\n';
 							}
 							if (mess === 0 || chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ||
-              chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias)) {
-                if (chtMsg.alias) {
-   								p += chtMsg.alias.toUpperCase() + ': ';
-                } else {
-  								p += chtMsg.user.toUpperCase() + ': ';      
-                }
+								chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias)) {
+									if (chtMsg.alias) {
+													p += chtMsg.alias.toUpperCase() + ': ';
+									} else {
+													p += chtMsg.user.toUpperCase() + ': ';      
+									}
 							}
 							//  Muestra un mensaje para quien va dirigido, por ejemplo (A Galael);
 							if (result[mess]['params'] && result[mess]['params']['to']) {

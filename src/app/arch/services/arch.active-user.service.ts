@@ -4,6 +4,10 @@ import { ArchTracesService } from './arch.traces.service';
 export interface ActiveUser {
   name: string,
   lastConnection: number; // Formato timestamp en ms
+  chat: {
+    alias: string;
+    master: boolean;
+  }
 }
 
 @Injectable()

@@ -7,7 +7,7 @@ var app = require('./../../server.js');
 exports.databaseStore = databaseStore;
 exports.databaseRecover = databaseRecover;
 exports.databaseUpdateOne = databaseUpdateOne;
-
+exports.databaseInsertOne = databaseInsertOne
 MongoClient.connect(dbconnection, (err, database) => {
     if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error conneting db', err);
     db = database
@@ -22,6 +22,18 @@ function databaseStore(collection, storeData) {
     db.collection(collection).save(storeData, (err, result) => {
         if (err) return tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error saving MONGODBDB ',  err)
         tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Data saved in DB: ' + collection, storeData);
+    })
+}
+
+function databaseInsertOne(collection, storeData, callback) {
+	tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Se procede a guardar en la colección ' + collection,  storeData)
+    db.collection(collection).insert(storeData, (err, result) => {
+        if (err) {
+            tracesService.writeTrace(tracesService.TRACES_LEVEL.ERROR, 'Error saving MONGODBDB ',  err);
+            return callback(err);
+        } 
+        tracesService.writeTrace(tracesService.TRACES_LEVEL.INFO, 'Data saved in DB: ' + collection, storeData);
+        return callback(result);
     })
 }
 

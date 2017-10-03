@@ -75,13 +75,15 @@ export class ChatRegister {
       let header = {} as TransactionHeader;
       header.TRANSACTION = 'REGISTER';
       let body = {
-        NAME: this.newUserForm.get('name').value,
+        USER: this.newUserForm.get('name').value,
         PASSWORD: this.newUserForm.get('password').value,
-        ALIAS: this.newUserForm.get('alias').value || '', // Paremetro no obligatorio
+        CHAT: {
+          ALIAS: this.newUserForm.get('alias').value || '', // Paremetro no obligatorio
+        }
       }
       this.transactionService.sendTransaction(header, body)
         .then((response: any) => {
-
+          console.log(response)
         })
         .catch((error: Error) => {
           console.log(error);

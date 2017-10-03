@@ -92,6 +92,32 @@ router.post('/transactions', (req, res) => {
 				}
 
 			});
+		case 'REGISTER':
+			var response = null;
+			mongodbService.databaseRecover('user_list', req.body.BODY, (result) => {
+				if (result && result.length !== 0) {
+					for (user in result) {
+						tracesService.writeTrace(
+							tracesService.TRACES_LEVEL.DEBUG, 
+							'REGISTER: result User/req.body.BODY.USER', 
+							[result[user].USER, req.body.BODY.USER]
+						);
+						if (result[user].USER === req.body.BODY.USER) {
+							response = {HEADER: {SUCCESS: false}, BODY: {ERROR: 'El usuario ya existe'}}
+							res.send(response);
+							break;
+						}
+					}
+
+				}
+				if (response === null) {
+					mongodbService.databaseInsertOne('user_list', req.body.BODY, (result) => {
+						response = {HEADER: {SUCCESS: true}, BODY: {}};
+						res.send(response);
+					})
+				}
+			});
+		break;
 		default:
 			
 		break;	

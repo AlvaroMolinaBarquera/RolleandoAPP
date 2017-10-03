@@ -1,0 +1,57 @@
+<div class="row justify-content-md-center">
+	<div class="col-md-4 col-sm-12">
+		<div class="card mx-auto my-auto" >
+		  <div class="card-block">
+            <h4 class="card-title">Registrarse</h4>
+                <form [formGroup]="newUserForm" (ngSubmit)="registerNewUser()" #formDir="ngForm">
+                    <div class="form-group">
+                        <label>Nombre de Usuario</label>
+                        <input type="text" class="form-control"
+                        formControlName="name" placeholder="Usuario" maxlength="{{NAME_ALIAS_MAX_LENGHT}}" minlength="{{NAME_ALIAS_MIN_LENGHT}}" id="name"/>
+                        <div *ngIf="(newUserForm.controls.name.invalid && newUserForm.controls.name.value)
+                        && (newUserForm.controls.name.dirty || newUserForm.controls.name.touched)"
+                        class="alert alert-danger">
+                            <div *ngIf="newUserForm.controls.name.errors.required">
+                            El campo Nombre de Usuario es obligatorio.
+                            </div>
+                            <div *ngIf="newUserForm.controls.name.errors.minlength || newUserForm.controls.name.errors.maxlenght">
+                            El nombre debe tener como minimo {{NAME_ALIAS_MIN_LENGHT}} caracteres y como maximo {{NAME_ALIAS_MAX_LENGHT}}.
+                            </div>
+                            <div *ngIf="newUserForm.controls.name.errors.alreadyChosen">
+                            El nombre no está disponible.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" formControlName="password" class="form-control" 
+                        placeholder="Contraseña" id="password"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirma la contraseña</label>
+                        <input type="password" formControlName="confirmPassword" class="form-control" 
+                        placeholder="Confirma la contraseña" maxlength="{{PASSWORD_MAX_LENGHT}}" minlength="{{PASSWORD_MIN_LENGHT}}" id="confirmPassword"/>
+                        <div *ngIf="(newUserForm.controls.confirmPassword.invalid && newUserForm.controls.confirmPassword.value)
+                        && (newUserForm.controls.confirmPassword.dirty || newUserForm.controls.confirmPassword.touched)"
+                        class="alert alert-danger">
+                            <div *ngIf="newUserForm.controls.confirmPassword.errors.samePassword">
+                            Las contraseñas no coinciden.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Alias</label>
+                        <input type="text" formControlName="alias" class="form-control" 
+                         placeholder="Alias" maxlength="{{NAME_ALIAS_MAX_LENGHT}}" minlength="{{NAME_ALIAS_MIN_LENGHT}}" id="alias"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Color</label>
+                        <input type="color" formControlName="color" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="newUserForm.invalid"> Registrarse </button>
+                </form>
+                
+		  	  </div>
+		</div>
+	</div>
+</div>

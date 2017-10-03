@@ -8,7 +8,6 @@ import 'rxjs/add/operator/toPromise';
 
 interface SocketMessageParams {
   to: string | Array<string>; // Indica los usuarios a los cuales se les notifica un mensaje en concreto
-  from: string;
 }
 
 interface SocketMessage {

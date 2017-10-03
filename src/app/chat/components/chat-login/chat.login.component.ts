@@ -51,7 +51,7 @@ export class ChatLogin {
   }
   
   unavaiableOption() {
-    this.modalService.openModal('No disponible', 'Actualmente este opción no está disponible');
+    this.router.navigate(['/register']);
   }
   
 }

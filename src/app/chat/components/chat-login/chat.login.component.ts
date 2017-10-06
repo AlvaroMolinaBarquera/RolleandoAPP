@@ -49,9 +49,4 @@ export class ChatLogin {
       })
     
   }
-  
-  unavaiableOption() {
-    this.router.navigate(['/register']);
-  }
-  
 }

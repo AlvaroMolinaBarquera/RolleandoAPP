@@ -4,6 +4,8 @@ import {  ActiveUser } from './../../../arch/services/arch.active-user.service';
 
 import { ArchGenericModalService } from './../../../arch/services/arch.generic-modal.service';
 import { ArchTransactionService, TransactionHeader } from './../../../arch/services/arch.transaction.service';
+import { ArchTracesService } from './../../../arch/services/arch.traces.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +27,7 @@ export class ChatRegister {
     private transactionService: ArchTransactionService,
     private router: Router,
     private fb: FormBuilder,
-    
+    private tracesService: ArchTracesService,
   ) {
 
     this.createForm();
@@ -83,10 +85,15 @@ export class ChatRegister {
       }
       this.transactionService.sendTransaction(header, body)
         .then((response: any) => {
-          console.log(response)
+          this.tracesService.writeInfo('registerNewUser: Respuesta de nuevo usuario registrado', response)
+          if (response.HEADER.SUCCESS === false) {
+            this.modalService.openModal('Error', response.BODY.ERROR);
+          };
+          this.modalService.openModal('EXITO', 'Se ha registrado con exito');
         })
         .catch((error: Error) => {
-          console.log(error);
+          this.modalService.openModal('ERROR', 'Se ha producido un error generico al ejecutar la operación');
+          this.tracesService.writeError('registerNewUser: Se ha producido un error al registrar a un nuevo usuario', error);
         })
     }  
 }

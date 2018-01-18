@@ -3,6 +3,7 @@ import {ChatSocketService} from './../../services/chat.socket.service';
 import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller.service';
 import { ArchActiveUserService } from './../../../arch/services/arch.active-user.service';
 import { ArchTransactionService, TransactionHeader } from './../../../arch/services/arch.transaction.service';
+import { ArchUsefulServices } from './../../../arch/services/arch.useful-services.service';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -43,7 +44,8 @@ export class ChatMessageInput {
     private genericDiceRoller: ArchDiceRollerService,
     private activeUserService: ArchActiveUserService,
     private transactionService: ArchTransactionService,
-	private http: Http
+    private archUsefulServices: ArchUsefulServices,
+	  private http: Http
   ) {
     this.offRolActivated = false;
     this.activeUserName = this.activeUserService.getActiveUser()['name'];
@@ -118,6 +120,8 @@ export class ChatMessageInput {
     let body = {}
     this.transactionService.sendTransaction(header, body)
       .then((response: any) => {
+        this.archUsefulServices.offerDownload('story.txt', 'txt', response.BODY.CONTENT);
+        /**
 		// Crea un elemento fantasma que es automaticamente clickeado por para iniciar la
 		// descarga.
         let element = document.createElement('a');
@@ -129,7 +133,9 @@ export class ChatMessageInput {
       
         element.click();
       
-        document.body.removeChild(element); 
+        document.body.removeChild(element);
+        */
+
       });
   }
   

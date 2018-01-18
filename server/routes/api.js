@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const tracesService = require('./../shared/traces.service');
-const mongodbService = require('./../shared/mongodb.service')
+const mongodbService = require('./../shared/mongodb.service');
+const excelService = require ('./../shared/excel.service');
 const fs = require('fs')
 
 /* GET api listing. */
@@ -22,6 +23,14 @@ router.post('/traces', (req, res) => {
 	tracesService.writeTrace(level, message, params, metaObj);
 	
 });
+
+router.post('/excel', (req, res) => {
+	var fileName = req.body.FILE_NAME;
+	var data = req.body.TRANSACTION_DATA;
+	excelService.trxToExcel(FILE_NAME, TRANSACTION_DATA)
+		.then((response) => { res.send(response)})
+		.catch((response) => { res.send(response)})
+	});
 
 //Get all posts
 router.post('/transactions', (req, res) => {
@@ -45,20 +54,19 @@ router.post('/transactions', (req, res) => {
 					res.send(response);
 				}
 			})
-
 		break;
 		case 'PRINT_STORY':
 			mongodbService.databaseRecover('chatroom-chats', {}, (result) => {
-				const TEMP_DIR = '/server/downloads/';
-				const TEMP_FILE = new Date().getTime() + '_story.txt';
+
 				try {
-					var fd = fs.openSync(TEMP_FILE, 'w');
 					let p = '';
 					for (let mess in result) {
 						if (result[mess]['chatMessage']) {
-							let chtMsg = result[mess]['chatMessage']; 
+						
+							let chtMsg = result[mess]['chatMessage'];
+							// Evitamos que si no nos llega chtMsg continue.
+							if (!chtMsg) { continue };
 							if (chtMsg.user !== (result[mess - 1] && result[mess - 1]['chatMessage'].user) ||chtMsg.alias !== (result[mess - 1] && result[mess - 1]['chatMessage'].alias)) {
-								fs.writeFileSync('.' + TEMP_DIR + TEMP_FILE, p, {flag: 'a'});
 								p = '';
 								p += '\n';
 							}
@@ -75,11 +83,12 @@ router.post('/transactions', (req, res) => {
 								p += '(A ' + result[mess]['params']['to'] + ')';
 							}
 							p += chtMsg.text;
+
 							if (!chtMsg.text.endsWith('.')) { p += '. '};
 						}
 
 					}
-					let response = {HEADER: {SUCCESS: true}, BODY: { URL: TEMP_DIR + TEMP_FILE}}
+					let response = {HEADER: {SUCCESS: true}, BODY: { CONTENT: p}}
 					res.send(response)
 					
 				} catch (e) {
@@ -92,6 +101,7 @@ router.post('/transactions', (req, res) => {
 				}
 
 			});
+			break;
 		case 'REGISTER':
 			var response = null;
 			mongodbService.databaseRecover('user_list', req.body.BODY, (result) => {
@@ -117,10 +127,10 @@ router.post('/transactions', (req, res) => {
 					})
 				}
 			});
-		break;
 		default:
 			
 		break;	
 	}
 });
+
 module.exports = router;

@@ -1,3 +1,5 @@
+const cfgService = require('./server/shared/config.service.js');
+
 // Get dependencies
 const express = require('express');
 const path = require('path');
@@ -8,7 +10,6 @@ const compression = require('compression');
 var io = require('socket.io')(http);
 const tracesService = require('./server/shared/traces.service.js')
 const mongodbService = require('./server/shared/mongodb.service.js')
-
 // Compress all files in gzip
 app.use(compression())
 

@@ -15,4 +15,27 @@ export class ArchUsefulServices {
     }
       return returnedNPCName;
   }
+
+  /**
+   * 
+   * @param base64 
+   */
+  offerDownload(fileName: string, type: string, data: string) {
+    try {
+      let blob = new Blob([data], { type: 'data:attachment/' + type});
+      if (window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(blob, fileName);
+      } else {
+        let objectUrl = URL.createObjectURL(blob);
+        let anchor = document.createElement('a');
+        anchor.style.display = 'none';
+        anchor.download = fileName;
+        anchor.href = objectUrl;
+        anchor.click();
+      }
+    } catch {
+
+    }
+
+  }
 }

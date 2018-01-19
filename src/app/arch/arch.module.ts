@@ -18,7 +18,7 @@ import { ArchGenericModal } from './components/arch-generic-modal/arch.generic-m
 // Servicios
 import { ArchDiceRollerService} from './services/arch.dice-roller.service';
 import { ArchSystemDiceRollerService} from './services/arch.system-dice-roller.service';
-import { ArchUsefulServices } from './services/arch.useful-services.service';
+import { ArchUtilsService } from './services/arch.utils.service';
 import { ArchRandomName } from './services/arch.random-name.service';
 import { ArchGenericModalService } from './services/arch.generic-modal.service';
 import { ArchTransactionService } from './services/arch.transaction.service';
@@ -38,7 +38,7 @@ import { ArchAuthGuard } from './guards/arch.auth.guard';
     { provide: APP_INITIALIZER, useFactory: (config: ArchConfigurationService) => () => config.load(), deps: [ArchConfigurationService], multi: true },
     ArchDiceRollerService,
     ArchSystemDiceRollerService,
-    ArchUsefulServices,
+    ArchUtilsService,
     ArchRandomName,
     ArchGenericModalService,
     ArchTransactionService,

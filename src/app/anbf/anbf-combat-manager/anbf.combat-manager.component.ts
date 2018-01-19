@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { tableConfiguration, tableColumns } from './../../arch/components/arch-table/arch.table.component';
 
 import { ArchSystemDiceRollerService, animaConfiguration } from './../../arch/services/arch.system-dice-roller.service';
-import { ArchUsefulServices } from './../../arch/services/arch.useful-services.service';
+import { ArchUtilsService } from './../../arch/services/arch.utils.service';
 import { GAME_SYSTEMS } from './../../arch/arch.constants';
 
 @Component({
@@ -31,7 +31,7 @@ export class AnbfCombatManager {
   oponent: boolean;
   constructor (
     private archSystemDiceRollerService: ArchSystemDiceRollerService,
-    private archUsefulServices: ArchUsefulServices) {
+    private archUtilsService: ArchUtilsService) {
     this.turnModBase = 20;
     this.turnModWeapon = 20;
     this.openRollRange = 90;
@@ -98,7 +98,7 @@ export class AnbfCombatManager {
       modifier: this.turnTotal,
       initiative: 0,
     });
-    this.characterName = this.archUsefulServices.updateNPCName(this.characterName);
+    this.characterName = this.archUtilsService.updateNPCName(this.characterName);
   }
   newInitiatives() {
       let comTabDat = this.combatTableData;

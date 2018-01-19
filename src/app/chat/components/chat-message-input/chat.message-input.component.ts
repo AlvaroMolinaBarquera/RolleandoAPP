@@ -3,7 +3,7 @@ import {ChatSocketService} from './../../services/chat.socket.service';
 import { ArchDiceRollerService } from './../../../arch/services/arch.dice-roller.service';
 import { ArchActiveUserService } from './../../../arch/services/arch.active-user.service';
 import { ArchTransactionService, TransactionHeader } from './../../../arch/services/arch.transaction.service';
-import { ArchUsefulServices } from './../../../arch/services/arch.useful-services.service';
+import { ArchUtilsService } from './../../../arch/services/arch.utils.service';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -44,7 +44,7 @@ export class ChatMessageInput {
     private genericDiceRoller: ArchDiceRollerService,
     private activeUserService: ArchActiveUserService,
     private transactionService: ArchTransactionService,
-    private archUsefulServices: ArchUsefulServices,
+    private archUtilsService: ArchUtilsService,
 	  private http: Http
   ) {
     this.offRolActivated = false;
@@ -113,29 +113,14 @@ export class ChatMessageInput {
   }
   
   // Recurre a la base de datos y descarga el WORD con la partida hasta el momento
-  downloadWord() {
+  downloadWord(): void {
     let header = {} as TransactionHeader;
     header.TRANSACTION = 'PRINT_STORY';
     header.USER = this.activeUser;
     let body = {}
     this.transactionService.sendTransaction(header, body)
       .then((response: any) => {
-        this.archUsefulServices.offerDownload('story.txt', 'txt', response.BODY.CONTENT);
-        /**
-		// Crea un elemento fantasma que es automaticamente clickeado por para iniciar la
-		// descarga.
-        let element = document.createElement('a');
-        element.setAttribute('href', response.BODY.URL);
-        element.setAttribute('download', 'story.txt');
-      
-        element.style.display = 'none';
-        document.body.appendChild(element);
-      
-        element.click();
-      
-        document.body.removeChild(element);
-        */
-
+        this.archUtilsService.offerDownload('story.txt', 'txt', response.BODY.CONTENT);
       });
   }
   

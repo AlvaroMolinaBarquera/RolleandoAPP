@@ -4,6 +4,8 @@ const tracesService = require('./traces.service')
 const cfgService = require('./config.service');
 const EXCEL_PATH = cfgService.getProperty('node').templates.excel;
 
+exports.trxToExcel = trxToExcel;
+
 /**
  * @desc En base a una salida de una transacción lee 
  * de una ruta predefinida un excel y sustituye los (Nombres Definidos) por lo que se corresponda con el campo de salida
@@ -12,7 +14,7 @@ const EXCEL_PATH = cfgService.getProperty('node').templates.excel;
  * @param {any} trxData Datos de la transacción
  */
 function trxToExcel(fileTemplate, trxData) {
-    XlsxPopulate.fromFileAsync(`${EXCEL_PATH}${fileTemplate}.xlsx`)
+    return XlsxPopulate.fromFileAsync(`${EXCEL_PATH}${fileTemplate}.xlsx`)
         .then((workbook) => {
             for (var trxFormat in trxData) {
                 // Si no es un Array lo igualamos para tratar a todas las entradas por igual
@@ -39,21 +41,4 @@ function trxToExcel(fileTemplate, trxData) {
             }
             return workbook.outputAsync();
         })
-        .then((data) => {
-            // Set the output file name.
-            res.attachment(fileTemplate + '.xlsx');
-
-            // Send the workbook.
-            return data;
-        })
-        .catch((error) => {
-            tracesService.writeNodeLogs(
-                'trxToExcel: Error en la exportación a EXCEL',
-                0,
-                'excelService.js',
-                error
-            )
-            return error;
-        })
-
 }

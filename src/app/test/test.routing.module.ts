@@ -5,6 +5,7 @@ import { TestTable } from './test-table/test.table.component';
 import { TestModal } from './test-modal/test.modal.component';
 import { TestTransactions } from './test-transactions/test.transactions.component';
 import { TestTraces } from './test-traces/test.traces.component';
+import { TestExcel } from './test-excel/test.excel.component';
 
 import { TestComponent} from './test.component';
 
@@ -24,6 +25,10 @@ const testRoutes: Routes = [
   }, {
     path: 'test/test-traces',
     component: TestTraces
+  },
+  {
+    path: 'test/test-excel',
+    component: TestExcel,
   }
 ];
 

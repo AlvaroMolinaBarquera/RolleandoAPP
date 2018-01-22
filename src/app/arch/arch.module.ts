@@ -25,7 +25,7 @@ import { ArchTransactionService } from './services/arch.transaction.service';
 import { ArchTracesService } from './services/arch.traces.service';
 import { ArchActiveUserService } from './services/arch.active-user.service';
 import { ArchConfigurationService } from './services/arch.configuration.service';
-
+import { ArchExcelService } from './services/arch-excel/arch.excel.service';
 // Guards
 import { ArchAuthGuard } from './guards/arch.auth.guard';
 
@@ -44,7 +44,8 @@ import { ArchAuthGuard } from './guards/arch.auth.guard';
     ArchTransactionService,
     ArchTracesService,
     ArchActiveUserService,
-    ArchAuthGuard
+    ArchAuthGuard,
+    ArchExcelService
    ],
   entryComponents: [ArchGenericModal ]
 })

@@ -25,11 +25,20 @@ router.post('/traces', (req, res) => {
 });
 
 router.post('/excel', (req, res) => {
-	var fileName = req.body.FILE_NAME;
-	var data = req.body.TRANSACTION_DATA;
-	excelService.trxToExcel(FILE_NAME, TRANSACTION_DATA)
-		.then((response) => { res.send(response)})
-		.catch((response) => { res.send(response)})
+	var fileName = req.body.fileName;
+	var data = req.body.data;
+	excelService.trxToExcel(fileName, data)
+		.then((response) => { 
+			res.attachment(fileName + '.xlxs');
+			res.send(response);
+		})
+		.catch((error) => { 
+			tracesService.writeTrace(
+				tracesService.TRACES_LEVEL.ERROR,
+				'Error en la exportación a excel:',
+				error.message);	
+			res.send(error)
+		})
 	});
 
 //Get all posts

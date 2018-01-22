@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+      Prueba: Tablas
+    </div>
+    <div class="card-block">
+      <h4 class="card-title">Transacción a Excel</h4>
+      <div class="form-group">
+          <label>Nombre Archivo</label>
+          <input class="form-control" [(ngModel)]="fileName">
+      </div>
+      <textarea class="form-control" rows="10" [(ngModel)]="trxData"></textarea>
+      <div *ngIf="!validJson" class="alert alert-danger">
+          JSON Invalido
+      </div>
+      <button (click)="toExcel(trxData, fileName)" class="btn btn-primary"> Exportar a Excel</button>
+    </div>
+</div>

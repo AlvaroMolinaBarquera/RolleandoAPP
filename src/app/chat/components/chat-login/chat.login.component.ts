@@ -36,9 +36,10 @@ export class ChatLogin {
           let activeUser = {} as ActiveUser;
           activeUser.name = response.BODY.USER;
           activeUser.lastConnection = response.BODY.LAST_CONNECTION;
-          activeUser.chat = {}
-          activeUser.chat.alias = response.BODY.CHAT.ALIAS;
-          activeUser.chat.master = response.BODY.CHAT.MASTER;
+          activeUser.chat = {
+            alias: response.BODY.CHAT.ALIAS,
+            master: response.BODY.CHAT.MASTER,
+          }
           this.activeUserService.setActiveUser(activeUser);
           // Navegamos a chat
           this.router.navigate(['/chat']);

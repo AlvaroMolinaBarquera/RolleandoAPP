@@ -3,6 +3,25 @@
     Prueba: Transacciones
   </div>
   <div class="card-block">
+    <div class="form-group">
+      <label> TRANSACCIÓN </label>
+      <input class="form-control" [(ngModel)]="trxName">
+    </div>
+    <div class="form-group">
+      <label> USUARIO </label>
+      <input class="form-control" [(ngModel)]="trxUser">
+    </div>
+    <div class="form-group">
+        <label>Contenido de la Transacción</label>
+        <textarea class="form-control" [(ngModel)]="trxBody" rows="6"></textarea>
+        <div *ngIf="!validJson" class="alert alert-danger">
+          JSON Invalido
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Resultado de la Transacción</label>
+        <textarea class="form-control" [(ngModel)]="trxResponse" rows="6"></textarea>
+    </div>
     <button class="btn btn-sucess" (click)="sendTransaction()">Lanzar Prueba</button>
   </div>
 </div>

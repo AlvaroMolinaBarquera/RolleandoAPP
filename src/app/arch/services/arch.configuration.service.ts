@@ -12,24 +12,26 @@ export class ArchConfigurationService {
     private http: Http,
   ) { }
 
-      /**
-     * Use to get the data found in the second file (config file)
-     */
-    public getProperty(key: any) {
+    /**
+    * Permite recuperar una propiedad en concreto.
+    * Normalmente será una string, pero tambien puede ser un objeto
+    * @param key La propiedad a buscar en la configuración.
+    */
+    public getProperty(key: string): any {
         return this.config[key];
     }
 
     /**
-     * Use to get the data found in the first file (env file)
+     * Obtiene el entorno, se usa para obtener el entorno del primer archivo
+     * sus posibles valores son 'devolpment' y 'production';
      */
-    public getEnv(key: any) {
+    public getEnv(): string {
         return this.env['env'];
     }
 
     /**
-     * This method:
-     *   a) Loads "env.json" to get the current working environment (e.g.: 'production', 'development')
-     *   b) Loads "[env].config.json" to get all env's variables (e.g.: 'development.config.json')
+     *  El metodo carga el archivo "env.json" para obtener el entorno actual. (Ej: 'production', 'development' )
+     *  Luego para dicho entorno carga la configuración correspondiente "[env].config.json"  (Ej: 'development.config.json')
      */
     public load() {
         return new Promise((resolve, reject) => {
@@ -42,31 +44,30 @@ export class ArchConfigurationService {
             }).subscribe( (envResponse) => {
                 this.env = envResponse;
                 let request:any = null;
+                let enviro = this.getEnv();
+                switch (enviro) {
+                    case 'production': 
+                        request = this.http.get('/enviroments/' + enviro + '.config.json');
+                    break;
 
-                switch (envResponse.env) {
-                    case 'production': {
-                        request = this.http.get('/enviroments/' + envResponse.env + '.config.json');
-                    } break;
+                    case 'development': 
+                        request = this.http.get('./enviroments/' + enviro + '.config.json');
+                    break;
 
-                    case 'development': {
-                        request = this.http.get('./enviroments/' + envResponse.env + '.config.json');
-                    } break;
-
-                    case 'default': {
+                    default: 
                         console.error('Environment file is not set or invalid');
                         resolve(true);
-                    } break;
+                    break;
                 }
-
                 if (request) {
                     request
-                        .map( res => res.json() )
+                        .map( (res: any) => res.json() )
                         .catch((error: any) => {
-                            console.error('Error reading ' + envResponse.env + ' configuration file');
+                            console.error('Error reading ' + enviro + ' configuration file');
                             resolve(error);
                             return Observable.throw(error || 'Server error');
                         })
-                        .subscribe((responseData) => {
+                        .subscribe((responseData: any) => {
                             this.config = responseData;
                             resolve(true);
                         });

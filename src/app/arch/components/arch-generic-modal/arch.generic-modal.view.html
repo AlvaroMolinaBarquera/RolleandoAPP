@@ -1,0 +1,17 @@
+      <div class="modal-header">
+        <h4 class="modal-title">{{title}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.close(button)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{body}}</p>
+      </div>
+      <div class="modal-footer">
+          <div *ngFor="let button of buttonArray">
+             <button *ngIf="button === MODAL_BUTTON.YES " class="btn btn-secondary" (click)="activeModal.close(button)">Si</button>                
+             <button *ngIf="button === MODAL_BUTTON.NO " class="btn btn-secondary" (click)="activeModal.close(button)">No</button>                
+             <button *ngIf="button === MODAL_BUTTON.ACCEPT " class="btn btn-secondary" (click)="activeModal.close(button)">Aceptar</button>                
+             <button *ngIf="button === MODAL_BUTTON.CLOSE " class="btn btn-secondary" (click)="activeModal.close(button)">Cerrar</button>                
+            </div>
+      </div>

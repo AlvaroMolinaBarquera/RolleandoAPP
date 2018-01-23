@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-
+import {ArchTracesService, Trac } from './arch.traces.service';
 @Injectable()
 export class ArchUtilsService{
 
+  constructor (private tracesService: ArchTracesService) {}
   /**
    * Sirve para añadir diferentes NPCs con el mismo nombre
    * conatenando tras una almohadilla el numero siguiente
@@ -21,6 +22,7 @@ export class ArchUtilsService{
       return returnedNPCName;
   }
 
+  
   /**
    * Ofrece como descarga un texto que se le pase
    * @param fileName Nombre del archivo, con el que se va descargar ejemplo "story.txt";
@@ -29,6 +31,8 @@ export class ArchUtilsService{
    */
   offerDownload(fileName: string, type: string, data: string) {
     try {
+      // Si el nombre del archivo no viene acabado con un '.' tipo, se añade.
+      fileName = (fileName.endsWith('.' + type))? fileName : fileName + '.' + type;
       // Transformamos en un blob los datas pasados
       let blob = new Blob([data], { type: 'data:attachment/' + type});
       // Si el anvegador tiene la opción la usamos (IE)
@@ -43,8 +47,8 @@ export class ArchUtilsService{
         anchor.href = objectUrl;
         anchor.click();
       }
-    } catch {
-
+    } catch (error) {
+      this.tracesService.writeError('offerDownload: Error en la descarga', error.message);
     }
 
   }

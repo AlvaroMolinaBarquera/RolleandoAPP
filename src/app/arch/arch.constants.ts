@@ -11,3 +11,17 @@ export const LIST_OF_GAMES = [
   {CODE: GAME_SYSTEMS.LEGEND_5_RINGS, FULL: 'La Leyenda de los 5 Anillos'},
   {CODE: GAME_SYSTEMS.HITOS, FULL: 'Hitos'},
 ];
+
+export enum MODAL_BUTTON {
+  ACCEPT,
+  CLOSE,
+  YES,
+  NO
+}
+
+export enum MODAL_TYPE {
+  INFO,
+  ERROR,
+  WARNING,
+  QUESTION,
+}

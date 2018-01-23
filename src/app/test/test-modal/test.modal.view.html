@@ -3,6 +3,34 @@
     Prueba: Modales
   </div>
   <div class="card-block">
+      <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" id="inlineradio1" value="0" [(ngModel)]="modalType"> ERROR
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" id="inlineradio2" value="1" [(ngModel)]="modalType"> WARNING
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" id="inlineradio3" value="2" [(ngModel)]="modalType"> INFO
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" id="inlineradio4" value="3" [(ngModel)]="modalType"> QUESTION
+            </label>
+          </div>
+    <div class="form-group">
+      <label>Titulo Modal</label>
+      <input class="form-control" [(ngModel)]="modalTitle">
+    </div>
+    <div class="form-group">
+        <label>Cuerpo Modal</label>
+        <input class="form-control" [(ngModel)]="modalBody">        
+      </div>
     <button class="btn btn-sucess" (click)="createModal()">Modal Estandar</button>
   </div>
 </div>

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ArchTracesService } from './arch.traces.service';
 
+export interface Chat {
+  alias: string;
+  master: boolean;
+}
+
 export interface ActiveUser {
   name: string,
   lastConnection: number; // Formato timestamp en ms
-  chat: {
-    alias: string;
-    master: boolean;
-  }
+  chat: Chat
 }
 
 @Injectable()
@@ -22,5 +24,4 @@ export class ArchActiveUserService {
   getActiveUser() {
     return this.activeUser;
   }
-
 }

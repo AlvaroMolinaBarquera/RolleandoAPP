@@ -5,6 +5,7 @@ import {  ActiveUser } from './../../../arch/services/arch.active-user.service';
 import { ArchGenericModalService } from './../../../arch/services/arch.generic-modal.service';
 import { ArchTransactionService, TransactionHeader } from './../../../arch/services/arch.transaction.service';
 import { ArchTracesService } from './../../../arch/services/arch.traces.service';
+import {MODAL_TYPE} from './../../../arch/arch.constants';
 
 import { Router } from '@angular/router';
 
@@ -17,6 +18,7 @@ import { Router } from '@angular/router';
 export class ChatRegister {
     newUserForm: FormGroup;
     newUser: ActiveUser;
+    checkingUser: boolean = false;
     NAME_ALIAS_MIN_LENGHT: number = 3;
     NAME_ALIAS_MAX_LENGHT: number = 20;
     PASSWORD_MAX_LENGHT: number = 16;
@@ -38,19 +40,22 @@ export class ChatRegister {
         '', 
         [Validators.required, 
         Validators.maxLength(this.NAME_ALIAS_MAX_LENGHT), 
-        Validators.minLength(this.NAME_ALIAS_MIN_LENGHT)]
+        Validators.minLength(this.NAME_ALIAS_MIN_LENGHT),
+        ],
+        this.alreadyChosen.bind(this),
+        
       ],
       password: [
         '', 
         [Validators.required, 
         Validators.maxLength(this.PASSWORD_MAX_LENGHT), 
-        Validators.minLength(this.PASSWORD_MIN_LENGHT)]
+        Validators.minLength(this.PASSWORD_MIN_LENGHT),
+        ],
+        
       ],
       confirmPassword:  [
         '', 
         [Validators.required, 
-        Validators.maxLength(this.PASSWORD_MAX_LENGHT), 
-        Validators.minLength(this.PASSWORD_MIN_LENGHT), 
         this.samePassword]
       ],
       alias: [
@@ -73,6 +78,27 @@ export class ChatRegister {
       return null;
     };
   
+
+    alreadyChosen = (control: AbstractControl): any => {
+     
+      let alreadyChosen = control.value;
+      if (alreadyChosen && alreadyChosen.length > this.NAME_ALIAS_MIN_LENGHT) {
+        let header = {} as TransactionHeader;
+        header.TRANSACTION = 'LOGIN';
+        let body = {
+          USER: alreadyChosen,
+        }
+        this.checkingUser = true;
+        return this.transactionService.sendTransaction(header, body)
+          .then((response) => {
+            this.checkingUser = false;
+            return response.HEADER.SUCCESS ? {'alreadyChosen': {value: control.value}} : null;
+          });
+      } else {
+        return null;
+      }
+    }
+
     registerNewUser() {
       let header = {} as TransactionHeader;
       header.TRANSACTION = 'REGISTER';
@@ -87,12 +113,12 @@ export class ChatRegister {
         .then((response: any) => {
           this.tracesService.writeInfo('registerNewUser: Respuesta de nuevo usuario registrado', response)
           if (response.HEADER.SUCCESS === false) {
-            this.modalService.openModal('Error', response.BODY.ERROR);
+            this.modalService.openModal(MODAL_TYPE.ERROR, 'Error', response.BODY.ERROR);
           };
-          this.modalService.openModal('EXITO', 'Se ha registrado con exito');
+          this.modalService.openModal(MODAL_TYPE.INFO, 'EXITO', 'Se ha registrado con exito');
         })
         .catch((error: Error) => {
-          this.modalService.openModal('ERROR', 'Se ha producido un error generico al ejecutar la operación');
+          this.modalService.openModal(MODAL_TYPE.ERROR, 'ERROR', 'Se ha producido un error generico al ejecutar la operación');
           this.tracesService.writeError('registerNewUser: Se ha producido un error al registrar a un nuevo usuario', error);
         })
     }  

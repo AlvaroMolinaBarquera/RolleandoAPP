@@ -1,6 +1,12 @@
       <div class="modal-header">
-        <h4 class="modal-title">{{title}}</h4>
-        <button type="button" class="close" aria-label="Close" (click)="activeModal.close(button)">
+        <h4 class="modal-title">
+            <i *ngIf="type === MODAL_TYPE.ERROR" class="fa fa-times-circle" aria-hidden="true"></i>                
+            <i *ngIf="type === MODAL_TYPE.WARNING" class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <i *ngIf="type === MODAL_TYPE.INFO" class="fa fa-info-circle" aria-hidden="true"></i>
+            <i *ngIf="type === MODAL_TYPE.QUESTION" class="fa fa-question-circle" aria-hidden="true"></i>
+            {{title}}
+        </h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.close(MODAL_BUTTON.CLOSE)">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

@@ -20,8 +20,8 @@ export enum MODAL_BUTTON {
 }
 
 export enum MODAL_TYPE {
-  INFO,
   ERROR,
-  WARNING,
+  WARNING,  
+  INFO,
   QUESTION,
 }

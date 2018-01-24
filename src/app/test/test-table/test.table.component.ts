@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { tableConfiguration } from './../../arch/components/arch-table/arch.table.component';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'test-table',
@@ -28,12 +29,12 @@ export class TestTable  {
       {character: 'Jerome', age: '82', gender: 'Hombre', game: 'C\'thulhu'},
       {character: 'Yotaka', age: '6', gender: 'Hombre', game: 'Hombre-Lobo'},
     ];
-    this.mockTableData1 = this.mockTableData;
-    this.mockTableData2 = this.mockTableData;
-    this.mockTableData3 = this.mockTableData;
-    this.mockTableData4 = this.mockTableData;
-    this.mockTableData5 = this.mockTableData;
-    this.mockTableData6 = this.mockTableData;
+    this.mockTableData1 = _.clone(this.mockTableData);
+    this.mockTableData2 = _.clone(this.mockTableData);
+    this.mockTableData3 = _.clone(this.mockTableData);
+    this.mockTableData4 = _.clone(this.mockTableData);
+    this.mockTableData5 = _.clone(this.mockTableData);
+    this.mockTableData6 = _.clone(this.mockTableData);
 
     this.mockTableColumns = [
       {key: 'character', text: 'Personaje'},

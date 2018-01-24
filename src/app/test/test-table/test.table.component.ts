@@ -32,13 +32,13 @@ export class TestTable  {
       {character: 'Jerome', age: '82', gender: 'Hombre', game: 'C\'thulhu'},
       {character: 'Yotaka', age: '6', gender: 'Hombre', game: 'Hombre-Lobo'},
     ];
-    this.mockTableData1 = _.clone(this.mockTableData);
-    this.mockTableData2 = _.clone(this.mockTableData);
-    this.mockTableData3 = _.clone(this.mockTableData);
-    this.mockTableData4 = _.clone(this.mockTableData);
-    this.mockTableData5 = _.clone(this.mockTableData);
-    this.mockTableData6 = _.clone(this.mockTableData);
-    this.mockTableData7 = _.clone(this.mockTableData);
+    this.mockTableData1 = _.cloneDeep(this.mockTableData);
+    this.mockTableData2 = _.cloneDeep(this.mockTableData);
+    this.mockTableData3 = _.cloneDeep(this.mockTableData);
+    this.mockTableData4 = _.cloneDeep(this.mockTableData);
+    this.mockTableData5 = _.cloneDeep(this.mockTableData);
+    this.mockTableData6 = _.cloneDeep(this.mockTableData);
+    this.mockTableData7 = _.cloneDeep(this.mockTableData);
     
     this.mockTableColumns = [
       {key: 'character', text: 'Personaje'},

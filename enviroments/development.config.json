@@ -1,7 +1,10 @@
 {
   "node": {
     "server": "localhost",
-    "port": "3333"
+    "port": "3333",
+    "templates": {
+      "excel": "./server/templates/excel/"
+    }
   },
   "traces": {
     "rest": "/traces",
@@ -10,5 +13,10 @@
   },
   "transaction": {
     "rest": "/transaction"
+  },
+  "behindTheName": {
+    "rest": "https://www.behindthename.com/api/",
+    "restRandom": "random.php",
+    "apiKey": "?key=ga395499"
   }
 }

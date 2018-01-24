@@ -29,8 +29,13 @@
             <input type="number" min="1" max="6" class="form-control  mx-md-3" [(ngModel)]="numNames">
           </div>
           <button class="btn btn-success" (click)="getRandomName()"> Generar </button>
-          <span class="mx-md-3"><span *ngFor="let name of suggestedNames; let i = index" >{{(i === 0)? '  ': ', ' }} {{name}}</span></span>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4 class="card-title">Lista de Nombress</h4>
+        <arch-table [tableData]="suggestedNamesTableData" [tableColumns]="suggestedNamesTableColumns" [tableConfiguration]="suggestedNamesRowActions"></arch-table>
       </div>
     </div>
   </div>

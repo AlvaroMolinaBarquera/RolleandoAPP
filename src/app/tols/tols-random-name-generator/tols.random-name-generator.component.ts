@@ -14,7 +14,9 @@ export class TolsRandomNameGenerator {
   gender: string;
   numNames: string;
   surname: boolean;
-  suggestedNames: any[]
+  suggestedNamesTableData: any[]
+  suggestedNamesTableColumns: any[];
+  suggestedNamesRowActions: any
   constructor(private archRandomName: ArchRandomName) {
     this.numNames = '6';
     this.usagesList = BEHIND_THE_NAME_USAGES;
@@ -22,17 +24,24 @@ export class TolsRandomNameGenerator {
       {code: 'm', name: 'masculinos'},
       {code: 'f', name: 'feminos'},
       {code: undefined, name: 'ambos'}
-
+    ];
+    this.suggestedNamesTableColumns = [
+      {key: 'name', text: 'Nombre'}
     ]
+    this.suggestedNamesRowActions = {rowActions: [{text: 'Detalle', action: this.goToName }]};
   }
   getRandomName() {
-    this.suggestedNames = [];
+    this.suggestedNamesTableData = [];
     this.archRandomName.getBehindNameRandomName(this.gender, this.usage, this.surname, this.numNames)
       .then((response: any[]) => {
         for (let rN of response) {
-          this.suggestedNames.push(rN)
+          this.suggestedNamesTableData.push({name: rN})
         }
     })
-
+  }
+  goToName(row: {name: string}): void {
+    if (row.name) {
+      window.open('https://www.behindthename.com/name/' + row.name.toLowerCase(), '_blank')
+    }
   }
 }

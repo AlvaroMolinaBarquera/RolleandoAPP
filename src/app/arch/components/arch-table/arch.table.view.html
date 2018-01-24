@@ -24,9 +24,9 @@
           <button class="btn btn-primary btn-sm" (click)="editRow(idx, row)">Editar</button>
         </td>
         <td *ngIf="(tableConfiguration.rowActions &&  tableConfiguration.rowActions.length === 1)&& !isInEditing"> 
-          <div *ngFor="let act of tableConfiguration.rowActions">
-              <button class="dropdown-item" (click)="act.action(row)"> {{act.text}} </button>
-          </div>
+            <button class="btn btn-primary btn-sm" (click)="tableConfiguration.rowActions[0].action(row)"> 
+              {{tableConfiguration.rowActions[0].text}} 
+            </button>
         </td> 
       <!-- El desplegable de acciones se muestra si, permite editar y borrar -->
       <!-- O si permite editar / borrar y tiene acciones -->

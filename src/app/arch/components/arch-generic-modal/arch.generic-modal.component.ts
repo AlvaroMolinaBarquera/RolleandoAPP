@@ -16,7 +16,6 @@ export class ArchGenericModal {
   MODAL_TYPE: any = MODAL_TYPE;
   
   constructor(public activeModal: NgbActiveModal) {
-      case MODAL_TYPE.WARNING:
     
   }
 }

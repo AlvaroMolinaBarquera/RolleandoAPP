@@ -1,0 +1,15 @@
+<h1>Pruebas</h1>
+<div class="row">
+  <div class="col-6">
+    <h3>Servicios</h3>    
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let r of SERVICES_ARRAY"><a routerLink="{{r.path}}"> {{r.text}} </a></li>
+    </ul>
+  </div>
+  <div class="col-6">
+    <h3>Componentes</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let r of COMPONENTS_ARRAY"><a routerLink="{{r.path}}"> {{r.text}} </a></li>
+    </ul>
+  </div>
+</div>

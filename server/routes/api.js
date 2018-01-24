@@ -21,6 +21,7 @@ router.post('/traces', (req, res) => {
 		FILE: req.body.FILE || ''
 	};
 	tracesService.writeTrace(level, message, params, metaObj);
+	res.send({SUCCESS: false})
 	
 });
 

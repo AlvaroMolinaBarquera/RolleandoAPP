@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { tableConfiguration } from './../../arch/components/arch-table/arch.table.component';
+
 import * as _ from 'lodash';
 
 @Component({
@@ -15,6 +16,7 @@ export class TestTable  {
   mockTableData4: any[];
   mockTableData5: any[];
   mockTableData6: any[];
+  mockTableData7: any[];
 
   mockTableColumns: any[];
   tableConfigEdit: tableConfiguration;
@@ -22,6 +24,7 @@ export class TestTable  {
   tableConfigAdd: tableConfiguration;
   tableConfigActions: tableConfiguration;
   tableConfigCustomActions: tableConfiguration;
+  tableConfigCustomAction: tableConfiguration;
   constructor() {
     this.mockTableData = [
       {character: 'Kaiser', age: '23', gender: 'Hombre', game: 'Anima'},
@@ -35,7 +38,8 @@ export class TestTable  {
     this.mockTableData4 = _.clone(this.mockTableData);
     this.mockTableData5 = _.clone(this.mockTableData);
     this.mockTableData6 = _.clone(this.mockTableData);
-
+    this.mockTableData7 = _.clone(this.mockTableData);
+    
     this.mockTableColumns = [
       {key: 'character', text: 'Personaje'},
       {key: 'age', text: 'Edad'},
@@ -47,12 +51,16 @@ export class TestTable  {
     this.tableConfigAdd = {allowAdd: true};
     this.tableConfigActions = { allowAdd: true, allowDelete: true, allowEdit: true};
     this.tableConfigCustomActions = {rowActions: [{text: 'Ejemplo Uno', action: this.exampleOne}, {text: 'Ejemplo Dos', action: this.exampleTwo}]}
+    this.tableConfigCustomAction = {rowActions: [{text: 'Ejemplo Tres', action: this.exampleThree}]}
   };
 
   exampleOne(row: any) {
-    console.info('Ejemplo Dos ' + JSON.stringify(row));
+    console.info('Ejemplo Uno ' + JSON.stringify(row));
   }
   exampleTwo(row: any) {
     console.info('Ejemplo Dos ' + JSON.stringify(row));
+  }
+  exampleThree(row: any) {
+    console.info('Ejemplo Tres ' + JSON.stringify(row));    
   }
 }

@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { ArchConfigurationService } from './arch.configuration.service';
 import 'rxjs/add/operator/toPromise';
 
-  enum TRACES_LEVEL {
+  export enum TRACES_LEVEL {
     ERROR,
     WARN,
     INFO,
@@ -62,7 +62,7 @@ export class ArchTracesService {
     this.writeTrace(message, TRACES_LEVEL.ERROR, params);
   };
   
-  private writeTrace = (message: string, level: TRACES_LEVEL, params?: any) => {
+  private writeTrace = (message: string, level: TRACES_LEVEL, params?: any): void => {
     // Utilizamos StackTrace para recuperar la traza desde donde llaman a esta función
     StackTrace.get()
       .then((response: Array<StackFrame>) => {
@@ -73,7 +73,8 @@ export class ArchTracesService {
         traceToLog.MESSAGE = message;
         traceToLog.PARAMS = params;
         // Mostramos el mensaje por consola
-        console[this.getLevel(level)](message, params);
+        let strLevel = this.getLevel(traceToLog.LEVEL);
+        console[strLevel](traceToLog.FILE + ':' + message, params);
         // Se realiza la petición POST
         this.http.post(this.tracesServiceURL, traceToLog)
           .toPromise();
@@ -81,15 +82,19 @@ export class ArchTracesService {
   }
   
   getFile(stackFrameArray: Array<StackFrame>) {
+    let file = '';
     if (stackFrameArray && stackFrameArray[2]) {
-      // El numero 0 se corresponde a writeTrace
+      // El numer o 0 se corresponde a writeTrace
       // El numero 1 se corresponde a writeInfo/Debug/Warn/Trace
       // El numero 2 es el archivo que lo llama
-      return stackFrameArray[2].functionName || '';
+      let functionName = stackFrameArray[2].functionName;
+      // Quita todo el contenido de los parentesis    
+      file = functionName.substr(0, functionName.indexOf("(")).trim();
     };
+    return file;
   }
   getLevel(level: TRACES_LEVEL): string {
-    let levels = ['error', 'warn', 'info', 'log'];
-    return levels[level] || 'log';
+    let levels = ['error', 'warn', 'info', 'debug'];
+    return levels[level] || 'debug';
   }
 }

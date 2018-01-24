@@ -33,6 +33,9 @@ import { Component } from '@angular/core';
         </div>
       </div>
       </li>
+      <li class="nav-item">
+        <tols-recorder></tols-recorder>
+      </li>
     </ul>
   </div>
 </nav>

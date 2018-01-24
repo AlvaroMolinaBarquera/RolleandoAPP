@@ -11,12 +11,14 @@ import { TolsInitiativeTracker }  from './tols-initiative-tracker/tols.initiativ
 import { TolsRandomNameGenerator } from './tols-random-name-generator/tols.random-name-generator.component';
 import { TolsCharacterManager } from './tols-character-manager/tols.character-manager.component';
 import { TolsStickyNotes } from './tols-sticky-notes/tols.sticky-notes.component';
+import { TolsRecorder } from './tols-recorder/tols.recorder.component';
  
 import { TolsRoutingModule } from './tols.routing.module';
-
+const DECLARE_EXPORT = [ TolsDiceRoller , TolsInitiativeTracker, TolsRandomNameGenerator, 
+  TolsCharacterManager, TolsStickyNotes, TolsRecorder];
 @NgModule({
   imports:      [ BrowserModule, FormsModule, ArchModule, HttpModule, TolsRoutingModule  ],
-  declarations: [ TolsDiceRoller , TolsInitiativeTracker, TolsRandomNameGenerator, TolsCharacterManager, TolsStickyNotes],
-  exports:      [ TolsDiceRoller , TolsInitiativeTracker, TolsRandomNameGenerator, TolsCharacterManager, TolsStickyNotes ],
+  declarations: DECLARE_EXPORT,
+  exports:      DECLARE_EXPORT,
 })
 export class TolsModule { }

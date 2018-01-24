@@ -7,9 +7,25 @@
     }
   },
   "traces": {
-    "rest": "/traces",
-    "traceLevel": 3, 
-    "console": true
+    "rest": "/api/traces",
+    "traceOutputDestination": [
+      {
+        "console": true,
+        "file": true
+      },
+      {
+        "console": true,
+        "file": true
+      },
+      {
+        "console": true,
+        "file": true
+      },
+      {
+        "console": true,
+        "file": true
+      }
+    ]
   },
   "transaction": {
     "rest": "/transaction"

@@ -28,13 +28,16 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ArchTracesService {
   tracesServiceURL: string;
+  /** Indica si para un respectivo nivel de trazas se va a loguear en Consola, Fichero u Ambos  */
+  tracesOutputDestination: Array<{console: boolean, file: boolean}>
   write: any;
   constructor (
     private http: Http,
     private configurationService: ArchConfigurationService
   ) {
-    let node = this.configurationService.getProperty('node');
-    this.tracesServiceURL =  './api/traces';
+    let tracesCfg = this.configurationService.getProperty('traces');;
+    this.tracesServiceURL =  tracesCfg.rest;
+    this.tracesOutputDestination = tracesCfg.traceOutputDestination;
     this.write = {
       debug: this.writeDebug,
       info: this.writeInfo,
@@ -72,12 +75,17 @@ export class ArchTracesService {
         traceToLog.FILE = this.getFile(response);
         traceToLog.MESSAGE = message;
         traceToLog.PARAMS = params;
-        // Mostramos el mensaje por consola
-        let strLevel = this.getLevel(traceToLog.LEVEL);
-        console[strLevel](traceToLog.FILE + ':' + message, params);
-        // Se realiza la petición POST
-        this.http.post(this.tracesServiceURL, traceToLog)
-          .toPromise();
+
+        if (this.tracesOutputDestination[traceToLog.LEVEL].console) {
+          let strLevel = this.getLevel(traceToLog.LEVEL);
+          // Mostramos el mensaje por consola
+          try { console[strLevel](traceToLog.FILE + ': ' + message, params); } catch (e) { }
+        }
+        if (this.tracesOutputDestination[traceToLog.LEVEL].file) {
+          // Se realiza la petición POST
+          this.http.post(this.tracesServiceURL, traceToLog)
+            .toPromise();
+        }
       });
   }
   

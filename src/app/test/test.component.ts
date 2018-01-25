@@ -21,6 +21,10 @@ export class TestComponent  {
     {
       text: 'Modal',
       path: 'test-modal'
+    },
+    {
+      text: 'Eventos',
+      path: 'test-events'
     } 
   ];
   COMPONENTS_ARRAY: Array<{text: string; path: string}> = [

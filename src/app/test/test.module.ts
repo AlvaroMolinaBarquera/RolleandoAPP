@@ -13,12 +13,13 @@ import { TestModal } from './test-modal/test.modal.component';
 import { TestTransactions } from './test-transactions/test.transactions.component';
 import { TestTraces } from './test-traces/test.traces.component';
 import { TestExcel } from './test-excel/test.excel.component';
+import { TestEvents} from './test-events/test.events.component';
 
 import { TestRoutingModule } from './test.routing.module';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, ArchModule, HttpModule, TestRoutingModule ],
-  declarations: [ TestComponent, TestTable, TestModal, TestTransactions, TestTraces, TestExcel ],
+  declarations: [ TestComponent, TestTable, TestModal, TestTransactions, TestTraces, TestExcel, TestEvents ],
   exports:      [ TestComponent ],
 })
 export class TestModule {}

@@ -15,7 +15,7 @@ const testRoutes: Routes = [
     component: TestComponent,
   }, {
     path: 'test/test-table',
-    component: TestTable
+    component: TestTable,
   }, {
     path: 'test/test-modal',
     component: TestModal

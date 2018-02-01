@@ -12,6 +12,7 @@ const chatRoutes: Routes = [
   {
     path: 'login',
     component: ChatLogin,
+    
   }, {
     path: 'chat',
     component: ChatMessageInput,

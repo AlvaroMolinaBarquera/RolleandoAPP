@@ -51,7 +51,8 @@ export class TestTable  {
     this.tableConfigAdd = {allowAdd: true};
     this.tableConfigActions = { allowAdd: true, allowDelete: true, allowEdit: true};
     this.tableConfigCustomActions = {rowActions: [{text: 'Ejemplo Uno', action: this.exampleOne}, {text: 'Ejemplo Dos', action: this.exampleTwo}]}
-    this.tableConfigCustomAction = {rowActions: [{text: 'Ejemplo Tres', action: this.exampleThree}]}
+    this.tableConfigCustomAction = {rowActions: [{text: 'Ejemplo Tres', action: this.exampleThree}]};
+    
   };
 
   exampleOne(row: any) {

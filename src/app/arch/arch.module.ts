@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { APP_INITIALIZER } from '@angular/core';
+import { RouteReuseStrategy } from '@angular/router';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,9 +29,11 @@ import { ArchConfigurationService } from './services/arch.configuration.service'
 import { ArchExcelService } from './services/arch-excel/arch.excel.service';
 import { ArchErrorsService } from './services/arch-errors/arch.errors.service';
 import { ArchEventsService } from './services/arch-events/arch.events.service';
+import { ArchReuseStrategyService } from './services/arch-reuse-strategy/arch.reuse-strategy.service';
 
-// Guards
+// Guardias
 import { ArchAuthGuard } from './guards/arch.auth.guard';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, HttpModule ],
@@ -39,6 +42,7 @@ import { ArchAuthGuard } from './guards/arch.auth.guard';
   providers: [
     ArchConfigurationService,
     { provide: APP_INITIALIZER, useFactory: (config: ArchConfigurationService) => () => config.load(), deps: [ArchConfigurationService], multi: true },
+    { provide: RouteReuseStrategy, useClass: ArchReuseStrategyService}, 
     ArchDiceRollerService,
     ArchSystemDiceRollerService,
     ArchUtilsService,

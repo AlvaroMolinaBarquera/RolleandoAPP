@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import { ArchTracesService } from './arch.traces.service';
 import  { ArchConfigurationService }  from './arch.configuration.service';
 import { ArchActiveUserService } from './arch.active-user.service';
-
+import { ArchUtilsService } from './arch.utils.service';
 interface Transaction {
   HEADER: TransactionHeader;
   BODY: any;
@@ -24,6 +24,7 @@ export class ArchTransactionService {
     private tracesService: ArchTracesService,
     private configurationService: ArchConfigurationService,
     private activeUserService: ArchActiveUserService,
+    private archUtilsService: ArchUtilsService,
   ) {
     let node = this.configurationService.getProperty('node');
 
@@ -60,18 +61,7 @@ export class ArchTransactionService {
     let header = {} as TransactionHeader;
     header = incompleteHeader;
     header.USER = this.activeUserService.getActiveUser() ? this.activeUserService.getActiveUser().name : '';
-    header.ID = this.uuidv4();
+    header.ID = this.archUtilsService.uuidv4();
     return header;
   }
-
-  /**
-   * Genera una id unica aleatoria
-   * @return Id unica
-   */
-  uuidv4(): string {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    )
-  }
-
 }

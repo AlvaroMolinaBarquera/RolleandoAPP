@@ -16,10 +16,11 @@ import { TestExcel } from './test-excel/test.excel.component';
 import { TestEvents} from './test-events/test.events.component';
 
 import { TestRoutingModule } from './test.routing.module';
+import { TestNavigatioOne } from './test-navigation/test.navigation.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, ArchModule, HttpModule, TestRoutingModule ],
-  declarations: [ TestComponent, TestTable, TestModal, TestTransactions, TestTraces, TestExcel, TestEvents ],
+  declarations: [ TestComponent, TestTable, TestModal, TestTransactions, TestTraces, TestExcel, TestEvents, TestNavigatioOne ],
   exports:      [ TestComponent ],
 })
 export class TestModule {}

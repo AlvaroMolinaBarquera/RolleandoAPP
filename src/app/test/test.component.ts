@@ -25,6 +25,10 @@ export class TestComponent  {
     {
       text: 'Eventos',
       path: 'test-events'
+    },
+    {
+      text: 'Navegacion',
+      path: 'test-navigation'
     } 
   ];
   COMPONENTS_ARRAY: Array<{text: string; path: string}> = [

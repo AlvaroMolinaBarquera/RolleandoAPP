@@ -30,6 +30,7 @@ import { ArchExcelService } from './services/arch-excel/arch.excel.service';
 import { ArchErrorsService } from './services/arch-errors/arch.errors.service';
 import { ArchEventsService } from './services/arch-events/arch.events.service';
 import { ArchReuseStrategyService } from './services/arch-reuse-strategy/arch.reuse-strategy.service';
+import { ArchTaskManagerService } from './services/arch-task-manager/arch.task-manager.service';
 
 // Guardias
 import { ArchAuthGuard } from './guards/arch.auth.guard';
@@ -55,6 +56,7 @@ import { ArchAuthGuard } from './guards/arch.auth.guard';
     ArchExcelService,
     ArchErrorsService,
     ArchEventsService,
+    ArchTaskManagerService,
    ],
   entryComponents: [ArchGenericModal ]
 })

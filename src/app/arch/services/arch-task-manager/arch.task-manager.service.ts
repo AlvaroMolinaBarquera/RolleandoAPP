@@ -11,6 +11,7 @@ export class ArchTaskManagerService {
     MAX_TASK: number = 5;
     taskNumber: number = 0;
     activeTasks: any[] = [];
+    activeTaskName: string;
     constructor(
         private router: Router,
         private tracesService: ArchTracesService,
@@ -18,20 +19,33 @@ export class ArchTaskManagerService {
         private eventsService: ArchEventsService,
     ) {}
 
+    /** Elimina una ruta activa */
     removeTask(route?: Route) {
         let routes = this.router.config;
+        // Obtiene el id de sesión.
+        let idSession: string;
         if (route) {
-            let idSession = route.name.substring(0, route.name.indexOf('~'));
-            let newRoutes = [];
-            for (let rou of routes) {  
-                if (rou.name.indexOf(idSession) === -1) {
-                    newRoutes.push(rou);
-                }
-            }
-            this.go('XXX');
+            idSession = route.name.substring(0, route.name.indexOf('~'));
         } else {
-
+            idSession = this.activeTaskName.substring(0, this.activeTaskName.indexOf('~'));    
         }
+        // Localiza el indice de la tarea a eliminar
+        let taskToDeleteIndex = _.findIndex(this.activeTasks, {name: route.name || this.activeTaskName});
+        this.activeTasks.splice(taskToDeleteIndex, 1);
+        // Recorre las rutas, y almacena todas las rutas que no tengan ese id de sesión
+        let newRoutes = [];
+        for (let rou of routes) {  
+            if (rou.name.indexOf(idSession) === -1) {
+                newRoutes.push(rou);
+            }
+        }
+        this.router.resetConfig(newRoutes);
+        /** 
+         * @TODO
+         * Comportamiento esperado, si estamos en la misma tarea que se cierra, navegamos a una
+         * ventana en blanco. De lo contrario nos quedamos en el mismo estado que estamos.
+         */
+        this.go('TODO')
     }
 
     /**
@@ -77,6 +91,7 @@ export class ArchTaskManagerService {
         let routes = this.router.config;
         let route = _.find(routes, {name: stateName});
         this.tracesService.writeDebug(`go: Navegando a "${route.name}" corresponde con url "${route.path}"`);
+        this.activeTaskName = stateName;
         return this.router.navigate([route.path]);
     }
 

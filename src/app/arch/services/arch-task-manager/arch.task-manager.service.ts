@@ -23,19 +23,18 @@ export class ArchTaskManagerService {
     removeTask(route?: Route) {
         let routes = this.router.config;
         // Obtiene el id de sesión.
-        let idSession: string;
-        if (route) {
-            idSession = route.name.substring(0, route.name.indexOf('~'));
-        } else {
-            idSession = this.activeTaskName.substring(0, this.activeTaskName.indexOf('~'));    
-        }
+        let activeTaskIdSession: string = this.activeTaskName.substring(this.activeTaskName.indexOf('~'));    
+        let routeIdSession: string = (route)? route.name.substring(route.name.indexOf('~')) : activeTaskIdSession;
+  
         // Localiza el indice de la tarea a eliminar
         let taskToDeleteIndex = _.findIndex(this.activeTasks, {name: route.name || this.activeTaskName});
         this.activeTasks.splice(taskToDeleteIndex, 1);
         // Recorre las rutas, y almacena todas las rutas que no tengan ese id de sesión
         let newRoutes = [];
-        for (let rou of routes) {  
-            if (rou.name.indexOf(idSession) === -1) {
+        let name: string = null;
+        for (let rou of routes) {
+            name = rou.name;
+            if (!name || name.indexOf(routeIdSession) === -1) {
                 newRoutes.push(rou);
             }
         }
@@ -45,7 +44,8 @@ export class ArchTaskManagerService {
          * Comportamiento esperado, si estamos en la misma tarea que se cierra, navegamos a una
          * ventana en blanco. De lo contrario nos quedamos en el mismo estado que estamos.
          */
-        this.go('TODO')
+        let destinateState = (activeTaskIdSession === routeIdSession)? this.go('blank') : console.info('No se navega') ;
+
     }
 
     /**

@@ -42,7 +42,7 @@ import { Component } from '@angular/core';
 </nav>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-1" style="background-color: black;">
+    <div class="col-md-1" style="background-color: #6A1B9A;">
       <arch-task-list></arch-task-list>
     </div>
     <div class="col-md-11">
@@ -52,3 +52,9 @@ import { Component } from '@angular/core';
 </div>`
 })
 export class AppComponent  {}
+
+@Component({
+  selector: 'blank',
+  template: '<!-- Vista Vacia -->',
+})
+export class BlankComponent {}

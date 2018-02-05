@@ -7,7 +7,7 @@ import { TestTransactions } from './test-transactions/test.transactions.componen
 import { TestTraces } from './test-traces/test.traces.component';
 import { TestExcel } from './test-excel/test.excel.component';
 import { TestComponent} from './test.component';
-import { TestNavigatioOne } from './test-navigation/test.navigation.component';
+import { TestNavigatioOne, TestNavigatioTwo } from './test-navigation/test.navigation.component';
 
 const testRoutes: Routes = [
   {
@@ -15,8 +15,8 @@ const testRoutes: Routes = [
     component: TestComponent,
   }, {
     path: 'test/test-table',
-    name: 'testTable',
     component: TestTable,
+    name: 'testTable',
   }, {
     path: 'test/test-modal',
     component: TestModal
@@ -32,9 +32,16 @@ const testRoutes: Routes = [
     component: TestExcel,
   },
   {
-    path: 'test/test-navigation',
+    path: 'test/test-navigation-one',
     sticky: true,
     component: TestNavigatioOne,
+    name: 'testNavigationOne'
+  },
+  {
+    path: 'test/test-navigation-two',
+    sticky: true,
+    component: TestNavigatioTwo,
+    name: 'testNavigationTwo'
   }
 ];
 

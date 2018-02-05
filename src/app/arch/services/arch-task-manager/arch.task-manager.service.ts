@@ -34,18 +34,25 @@ export class ArchTaskManagerService {
         }
     }
 
-    newTask = (taskRoute: string) => {
+    /**
+     * Abre una nueva tarea, con su propio identificador.
+     * @param taskName Nombre de la tarea abrir.
+     */
+    newTask = (taskName: string) => {
         try {
             if (this.taskNumber === this.MAX_TASK) { return }
             let routes = this.router.config;
-            let route = _.find(routes, {name: taskRoute})
+            let route = _.find(routes, {name: taskName})
             if (!route) { 
                 // @TODO Modal
-                throw { message: 'No se ha encontrado la ruta' + taskRoute}
+                throw { message: 'No se ha encontrado la ruta' + taskName}
             }
+            this.taskNumber++;
             // Clona la ruta actual
             let newRoute = _.cloneDeep(route);
             newRoute.name = route.name + '~' + this.utilsService.uuidv4();
+            newRoute.path = route.path + '~' + this.utilsService.uuidv4();
+
             // La añade a las rutas actuales
             routes.unshift(newRoute);
             this.router.resetConfig(routes);
@@ -58,10 +65,14 @@ export class ArchTaskManagerService {
             // Navega
             return this.go(newRoute.name);
         } catch (e) {
-            this.tracesService.writeError('newTask: Error en la apertura de tarea', taskRoute)
+            this.tracesService.writeError('newTask: Error en la apertura de tarea', taskName)
         }
     }
 
+    /**
+     * Realiza una navegación a una determinada ruta
+     * @param stateName El nombre de la ruta en cuestión
+     */
     go = (stateName: string)  => {
         let routes = this.router.config;
         let route = _.find(routes, {name: stateName});

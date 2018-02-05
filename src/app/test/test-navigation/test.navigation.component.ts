@@ -6,12 +6,12 @@ import { ArchEventsService } from './../../arch/services/arch-events/arch.events
   selector: 'test-navigation-one',
   template: `
     <ul>
-        <li *ngFor="let task of activeTasks"> {{task.name}} </li>
+        <li *ngFor="let task of activeTasks" (click)="go(task.name)" > {{task.name}} </li>
     </ul>
-    <button class="btn btn-default" (click)="navigate()">Navegar a Ventana Dos </button>
+    <button class="btn btn-default" (click)="navigate()"> Nueva Tarea </button>
     `,
 })
-export class TestNavigatioOne{
+export class TestNavigatioOne {
 
     activeTasks: any;
   constructor (
@@ -24,8 +24,36 @@ export class TestNavigatioOne{
             this.activeTasks = actTask[0];
         });
     }
-
-    navigate() {
-        this.taskManagerService.newTask('testTable')
+    navigate(taskName: string) {
+        taskName = taskName || 'testNavigationTwo';
+        this.taskManagerService.newTask(taskName);
+    }
+    go(taskName: string) {
+        taskName = taskName || 'testNavigationOne';
+        this.taskManagerService.go(taskName);
     }
 }
+
+@Component({
+    selector: 'test-navigation-two',
+    template: `
+        <div class="form-group">
+            <label>Debe preservarse al volver</label>
+            <input class="form-control" type="text"/>
+        </div>
+        <button class="btn btn-default" (click)="navigate()"> Volver </button>
+      `,
+  })
+  export class TestNavigatioTwo {
+      activeTasks: any;
+    constructor (
+        private taskManagerService: ArchTaskManagerService,
+        private eventsService: ArchEventsService,
+      )  {
+        console.log('Solo debe ejecutarse la primera vez vez')
+      }
+      navigate() {
+          this.taskManagerService.go('testNavigationOne');
+      }
+  }
+  

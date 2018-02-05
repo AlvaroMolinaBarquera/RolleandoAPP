@@ -28,7 +28,7 @@ export class TestComponent  {
     },
     {
       text: 'Navegacion',
-      path: 'test-navigation'
+      path: 'test-navigation-one'
     } 
   ];
   COMPONENTS_ARRAY: Array<{text: string; path: string}> = [

@@ -15,6 +15,7 @@ import { ArchDiceRoller }  from './components/arch-dice-roller/arch.dice-roller.
 import { ArchTable }  from './components/arch-table/arch.table.component';
 import { ArchGameSelector }  from './components/arch-game-selector/arch.game-selector.component';
 import { ArchGenericModal } from './components/arch-generic-modal/arch.generic-modal.component';
+import { ArchTaskList } from './components/arch-task-list/arch.task-list.component';
 
 // Servicios
 import { ArchDiceRollerService} from './services/arch.dice-roller.service';
@@ -38,8 +39,8 @@ import { ArchAuthGuard } from './guards/arch.auth.guard';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, HttpModule ],
-  declarations: [ ArchDiceRoller, ArchOrderBy, ArchTable, ArchGameSelector, ArchGenericModal ],
-  exports:      [ ArchDiceRoller, ArchOrderBy, ArchTable, ArchGameSelector, ArchGenericModal ],
+  declarations: [ ArchDiceRoller, ArchOrderBy, ArchTable, ArchGameSelector, ArchGenericModal, ArchTaskList ],
+  exports:      [ ArchDiceRoller, ArchOrderBy, ArchTable, ArchGameSelector, ArchGenericModal, ArchTaskList ],
   providers: [
     ArchConfigurationService,
     { provide: APP_INITIALIZER, useFactory: (config: ArchConfigurationService) => () => config.load(), deps: [ArchConfigurationService], multi: true },

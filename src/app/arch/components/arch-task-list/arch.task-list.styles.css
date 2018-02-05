@@ -1,0 +1,15 @@
+.block-clickable {
+    display: block;
+}
+
+.task-list{
+    min-width: 15em;
+}
+.task-list li a {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.task-list .task-list-button {
+    display: inline-block;
+}

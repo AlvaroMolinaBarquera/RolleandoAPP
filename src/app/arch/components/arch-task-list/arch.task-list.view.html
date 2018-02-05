@@ -1,0 +1,13 @@
+<ng-template #tasks >
+    <ul class="list-group" class="task-list">
+        <li  class="list-group-item" *ngFor="let task of taskList">
+            <a (click)="taskManagerService.go(task.name)"> {{task.name}} </a>
+            <button type="button" class="close task-list-button" aria-label="Close" (click)="taskManagerService.removeTask(task)">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </li>
+    </ul>
+</ng-template>
+<button type="button" class="btn btn-outline-secondary" [ngbPopover]="tasks" popoverTitle="Tareas Activas" placement="right">
+    <i class="fa fa-tasks"></i>
+</button>

@@ -2,8 +2,8 @@
     display: block;
 }
 
-.task-list{
-    min-width: 15em;
+.task-list li {
+    overflow: hidden;
 }
 .task-list li a {
     cursor: pointer;
@@ -12,4 +12,10 @@
 }
 .task-list .task-list-button {
     display: inline-block;
+}
+
+.popover {
+    min-width: 30em;
+    word-wrap: normal;
+    word-break: keep-all;
 }

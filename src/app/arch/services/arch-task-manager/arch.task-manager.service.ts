@@ -21,30 +21,35 @@ export class ArchTaskManagerService {
 
     /** Elimina una ruta activa */
     removeTask(route?: Route) {
-        let routes = this.router.config;
-        // Obtiene el id de sesión.
-        let activeTaskIdSession: string = this.activeTaskName.substring(this.activeTaskName.indexOf('~'));    
-        let routeIdSession: string = (route)? route.name.substring(route.name.indexOf('~')) : activeTaskIdSession;
-  
-        // Localiza el indice de la tarea a eliminar
-        let taskToDeleteIndex = _.findIndex(this.activeTasks, {name: route.name || this.activeTaskName});
-        this.activeTasks.splice(taskToDeleteIndex, 1);
-        // Recorre las rutas, y almacena todas las rutas que no tengan ese id de sesión
-        let newRoutes = [];
-        let name: string = null;
-        for (let rou of routes) {
-            name = rou.name;
-            if (!name || name.indexOf(routeIdSession) === -1) {
-                newRoutes.push(rou);
+        try {
+            let routes = this.router.config;
+            // Obtiene el id de sesión.
+            let activeTaskIdSession: string = this.activeTaskName.substring(this.activeTaskName.indexOf('~'));    
+            let routeIdSession: string = (route)? route.name.substring(route.name.indexOf('~')) : activeTaskIdSession;
+              // Localiza el indice de la tarea a eliminar
+            let taskToDeleteIndex = _.findIndex(this.activeTasks, {name: route.name || this.activeTaskName});
+            this.activeTasks.splice(taskToDeleteIndex, 1);
+            // Recorre las rutas, y almacena todas las rutas que no tengan ese id de sesión
+            let newRoutes = [];
+            let name: string = null;
+            for (let rou of routes) {
+                name = rou.name;
+                if (!name || name.indexOf(routeIdSession) === -1) {
+                    newRoutes.push(rou);
+                }
             }
+            this.router.resetConfig(newRoutes);
+            /** 
+             * Comportamiento esperado, si estamos en la misma tarea que se cierra, navegamos a una
+             * ventana en blanco. De lo contrario nos quedamos en el mismo estado que estamos.
+             */
+            let destinateState = (activeTaskIdSession === routeIdSession)? 
+                this.go('blank') :
+                this.tracesService.writeDebug('La tarea eliminada es diferente de la tarea actual, no se navega') ;
+        } catch (e) {
+            this.tracesService.writeError('removeTask: Se ha producido un error al eliminar la tarea')
         }
-        this.router.resetConfig(newRoutes);
-        /** 
-         * @TODO
-         * Comportamiento esperado, si estamos en la misma tarea que se cierra, navegamos a una
-         * ventana en blanco. De lo contrario nos quedamos en el mismo estado que estamos.
-         */
-        let destinateState = (activeTaskIdSession === routeIdSession)? this.go('blank') : console.info('No se navega') ;
+
 
     }
 
@@ -61,16 +66,12 @@ export class ArchTaskManagerService {
                 // @TODO Modal
                 throw { message: 'No se ha encontrado la ruta' + taskName}
             }
+
             this.taskNumber++;
             // Clona la ruta actual
-            let newRoute = _.cloneDeep(route);
-            newRoute.name = route.name + '~' + this.utilsService.uuidv4();
-            newRoute.path = route.path + '~' + this.utilsService.uuidv4();
-
-            // La añade a las rutas actuales
-            routes.unshift(newRoute);
-            this.router.resetConfig(routes);
-            this.tracesService.writeDebug('Nueva tarea', newRoute);
+            let newRoute = this.cloneRoute(route);
+            // Y la añade las rutas actuales
+            this.addToCurrentRoutes(newRoute, routes);
 
             // Emite un evento para que sea recibido por las aplicaciones.
             this.activeTasks.push(newRoute);
@@ -84,15 +85,66 @@ export class ArchTaskManagerService {
     }
 
     /**
-     * Realiza una navegación a una determinada ruta
-     * @param stateName El nombre de la ruta en cuestión
+     * Realiza una navegación  a una ruta determinada. 
+     * Existen dos comportamientos:
+     *      * Si el nombre de estado incluye el id de sesión navega directamente a ese estado.
+     *      * Si el nombre de estado no incluye el id de sesión. Clona el estado y lo añade a las rutas
+     *          actuales, luego navega.
+     * @param stateName El nombre de la ruta en cuestión, puede incluir en el nombre el id de sesión.
      */
-    go = (stateName: string)  => {
-        let routes = this.router.config;
-        let route = _.find(routes, {name: stateName});
-        this.tracesService.writeDebug(`go: Navegando a "${route.name}" corresponde con url "${route.path}"`);
-        this.activeTaskName = stateName;
-        return this.router.navigate([route.path]);
+    go = (stateName: string): Promise<any>  => {
+        try {
+            // Obtiene el nombre 'puro'
+            let pureName = (this.activeTaskName.indexOf('~') === -1)? stateName : this.activeTaskName.substring(0, this.activeTaskName.indexOf('~'))
+            // Obtiene el id de sesión
+            let idSession = this.activeTaskName.substring(this.activeTaskName.indexOf('~'));
+            // Recupera las rutas
+            let routes = this.router.config;
+            // Busca en las rutas actuales el nombre del estado con el id de sesión
+            let route = _.find(routes, {name: pureName + '~' + idSession});
+            // Si no lo encuentra a va a buscarlo por el nombre sin el id de sesión
+            if (!route) {
+                route = _.find(routes, { name: pureName} );
+                // Si lo encuentra vuelve a llamar a la función de lo contrario suelta un error
+                if (route) {
+                    let newRoute = this.cloneRoute(route);
+                    this.addToCurrentRoutes(newRoute);
+                    return this.go(route.name)
+                } else {
+                    throw { message: `El estado "${stateName}" no está entre las rutas disponibles` }
+                }
+            }
+
+            this.tracesService.writeDebug(`go: Navegando a "${route.name}" corresponde con url "${route.path}"`);
+            this.activeTaskName = stateName;
+            return this.router.navigate([route.path]);
+        } catch (e) {
+            this.tracesService.writeError(`go: Error `, e.message);
+        }
+
+    }
+    /** 
+     * Clona la ruta actual
+     * @param route Ruta a clonar
+     * @return Ruta clonada (Identica a ruta original pero con el id de sesión en el nombre y la ruta)
+     */
+    cloneRoute(route: Route) {
+        let newRoute = _.cloneDeep(route);
+        newRoute.name = newRoute.name + '~' + this.utilsService.uuidv4();
+        newRoute.path = newRoute.path + '~' + this.utilsService.uuidv4();
+        return newRoute;
+    }
+
+    /**
+     * Añañde a las rutas una nueva ruta
+     * @param route Ruta a añadir
+     * @param routes Rutas, si no vienen informadas las obtiene de las rutas activas.
+     */
+    addToCurrentRoutes(route: Route, routes?: Route[]) {
+        routes = routes || this.router.config;
+        routes.unshift(route);
+        this.router.resetConfig(routes);
+        this.tracesService.writeDebug('addToCurrentRoutes: Ruta añadida a la ', route);
     }
 
 }

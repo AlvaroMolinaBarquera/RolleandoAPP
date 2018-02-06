@@ -13,23 +13,29 @@ const testRoutes: Routes = [
   {
     path: 'test',
     component: TestComponent,
+    name: 'testMain'
   }, {
     path: 'test/test-table',
     component: TestTable,
     name: 'testTable',
   }, {
     path: 'test/test-modal',
-    component: TestModal
+    component: TestModal,
+    name: 'testModal'
   }, {
     path: 'test/test-transactions',
-    component: TestTransactions
+    component: TestTransactions,
+    sticky: true,
+    name: 'testTransactions'
   }, {
     path: 'test/test-traces',
-    component: TestTraces
+    component: TestTraces,
+    name: 'testTraces'
   },
   {
     path: 'test/test-excel',
     component: TestExcel,
+    name: 'testExcel'
   },
   {
     path: 'test/test-navigation-one',

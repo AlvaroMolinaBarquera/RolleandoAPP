@@ -5,10 +5,8 @@ import { ArchEventsService } from './../../arch/services/arch-events/arch.events
 @Component({
   selector: 'test-navigation-one',
   template: `
-    <ul>
-        <li *ngFor="let task of activeTasks" (click)="go(task.name)" > {{task.name}} </li>
-    </ul>
     <button class="btn btn-default" (click)="navigate()"> Nueva Tarea </button>
+    <button class="btn btn-default" (click)="go('testNavigationTwo')"> Navegar a Estado Dos </button>
     `,
 })
 export class TestNavigatioOne {
@@ -29,7 +27,6 @@ export class TestNavigatioOne {
         this.taskManagerService.newTask(taskName);
     }
     go(taskName: string) {
-        taskName = taskName || 'testNavigationOne';
         this.taskManagerService.go(taskName);
     }
 }

@@ -116,9 +116,16 @@ export class ArchTaskManagerService {
                     throw { message: `El estado "${stateName}" no está entre las rutas disponibles` }
                 }
             }
-
             this.tracesService.writeDebug(`go: Navegando a "${route.name}" corresponde con url "${route.path}"`);
-            this.activeTaskName = stateName;
+            // Añadimos la tarea
+            this.activeTaskName = route.name;
+            // Añadimos a la lista de tareas activas
+            for (let t in this.activeTasks) {
+                let task = this.activeTasks[t];
+                if (task && task.name && task.name.endsWith(idSession)) {
+                    this.activeTasks[t] = route;
+                }
+            }
             return this.router.navigate([route.path]);
         } catch (e) {
             this.tracesService.writeError(`go: Error `, e.message);
@@ -131,7 +138,7 @@ export class ArchTaskManagerService {
      * @param idSessión Id de sesión, para añadir en caso de que no exista.
      * @return Ruta clonada (Identica a ruta original pero con el id de sesión en el nombre y la ruta)
      */
-    cloneRoute(route: Route, idSession?: string) {
+    cloneRoute(route: Route, idSession?: string): Route {
         let newRoute = _.cloneDeep(route);
         idSession = idSession || this.utilsService.uuidv4();
         newRoute.name = newRoute.name + '~' + idSession;

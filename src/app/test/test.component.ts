@@ -1,40 +1,43 @@
 import { Component } from '@angular/core';
-
+import { ArchTaskManagerService } from '../arch/services/arch-task-manager/arch.task-manager.service';
 @Component({
   selector: 'test-component',
   templateUrl: './test.view.html',
 })
 export class TestComponent  {
-  SERVICES_ARRAY: Array<{text: string; path: string}> = [
+  constructor (private taskManagerService: ArchTaskManagerService) {}
+  SERVICES_ARRAY: Array<{text: string; name: string}> = [
     {
       text: 'Trazas',
-      path: 'test-traces'
+      name: 'testTraces'
     },
     {
       text: 'Excel',
-      path: 'test-excel'
+      name: 'testExcel'
     },
     {
       text: 'Transacciones',
-      path: 'test-transactions'
+      name: 'testTransactions'
+
     },
     {
       text: 'Modal',
-      path: 'test-modal'
+      name: 'testModal'
+
     },
     {
       text: 'Eventos',
-      path: 'test-events'
+      name: 'testEvents'
     },
     {
       text: 'Navegacion',
-      path: 'test-navigation-one'
+      name: 'testNavigationOne'
     } 
   ];
-  COMPONENTS_ARRAY: Array<{text: string; path: string}> = [
+  COMPONENTS_ARRAY: Array<{text: string; name: string}> = [
     {
       text: 'Tabla',
-      path: 'test-table'
+      name: 'testTable',
     }
   ];
 }

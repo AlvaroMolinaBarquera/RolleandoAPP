@@ -11,7 +11,7 @@ export class ArchTaskManagerService {
     MAX_TASK: number = 5;
     taskNumber: number = 0;
     activeTasks: any[] = [];
-    activeTaskName: string;
+    activeTaskName: string = '';
     constructor(
         private router: Router,
         private tracesService: ArchTracesService,
@@ -94,10 +94,12 @@ export class ArchTaskManagerService {
      */
     go = (stateName: string): Promise<any>  => {
         try {
-            // Obtiene el nombre 'puro'
-            let pureName = (this.activeTaskName.indexOf('~') === -1)? stateName : this.activeTaskName.substring(0, this.activeTaskName.indexOf('~'))
+            // Obtiene el nombre 'puro' es decir sin el id de sesión.
+            let pureName = (stateName.indexOf('~') !== -1) ?  stateName.substring(0, stateName.indexOf('~')) : stateName;
             // Obtiene el id de sesión
-            let idSession = this.activeTaskName.substring(this.activeTaskName.indexOf('~'));
+            let idSession = (stateName.indexOf('~') !== -1) ? 
+                stateName.substring(stateName.indexOf('~') + 1) : 
+                this.activeTaskName.substring(this.activeTaskName.indexOf('~') + 1);
             // Recupera las rutas
             let routes = this.router.config;
             // Busca en las rutas actuales el nombre del estado con el id de sesión
@@ -107,7 +109,7 @@ export class ArchTaskManagerService {
                 route = _.find(routes, { name: pureName} );
                 // Si lo encuentra vuelve a llamar a la función de lo contrario suelta un error
                 if (route) {
-                    let newRoute = this.cloneRoute(route);
+                    let newRoute = this.cloneRoute(route, idSession);
                     this.addToCurrentRoutes(newRoute);
                     return this.go(route.name)
                 } else {
@@ -126,12 +128,14 @@ export class ArchTaskManagerService {
     /** 
      * Clona la ruta actual
      * @param route Ruta a clonar
+     * @param idSessión Id de sesión, para añadir en caso de que no exista.
      * @return Ruta clonada (Identica a ruta original pero con el id de sesión en el nombre y la ruta)
      */
-    cloneRoute(route: Route) {
+    cloneRoute(route: Route, idSession?: string) {
         let newRoute = _.cloneDeep(route);
-        newRoute.name = newRoute.name + '~' + this.utilsService.uuidv4();
-        newRoute.path = newRoute.path + '~' + this.utilsService.uuidv4();
+        idSession = idSession || this.utilsService.uuidv4();
+        newRoute.name = newRoute.name + '~' + idSession;
+        newRoute.path = newRoute.path + '~' + idSession;
         return newRoute;
     }
 

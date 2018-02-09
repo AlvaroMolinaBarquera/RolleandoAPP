@@ -24,6 +24,4 @@ export class ArchDiceRollerService {
     resturnedString += rollResultJoined;
     return resturnedString;
   }
-
-
 }

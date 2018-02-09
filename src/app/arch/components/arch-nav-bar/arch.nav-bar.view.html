@@ -9,7 +9,7 @@
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="anbf">Anima: BF</a>
+                <a class="nav-link" (click)="taskManagerService.newTask('anbf')">Anima: BF</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" (click)="taskManagerService.newTask('testMain')">Test</a>
@@ -21,11 +21,11 @@
             <div ngbDropdown class="d-inline-block nav-link">
                 <a  id="actionsDropdownds" ngbDropdownToggle>Genericas</a>
                 <div class="dropdown-menu" aria-labelledby="actionsDropdownds">
-                <button class="dropdown-item"> <a routerLink="generic-initiative-tracker">Seguimiento de Iniciativas </a></button>
-                <button class="dropdown-item" > <a routerLink="generic-dice-roller">Lanzador de Dados </a> </button>
-                <button class="dropdown-item" > <a routerLink="generic-random-name-generator">Generador de Nombres </a> </button>
-                <button class="dropdown-item" > <a routerLink="generic-character-manager"> Gestionador de Personajes </a> </button>
-                <button class="dropdown-item" > <a routerLink="sticky-notes"> Notas </a> </button>
+                    <button class="dropdown-item"> <a (click)="taskManagerService.newTask('genericInitiativeTracker')">Seguimiento de Iniciativas </a></button>
+                    <button class="dropdown-item" > <a (click)="taskManagerService.newTask('genericDiceRoller')">Lanzador de Dados </a> </button>
+                    <button class="dropdown-item" > <a (click)="taskManagerService.newTask('genericRandomNameGenerator')">Generador de Nombres </a> </button>
+                    <button class="dropdown-item" > <a (click)="taskManagerService.newTask('genericCharacterManager')"> Gestionador de Personajes </a> </button>
+                    <button class="dropdown-item" > <a (click)="taskManagerService.newTask('stickyNotes')"> Notas </a> </button>
                 </div>
             </div>
             </li>

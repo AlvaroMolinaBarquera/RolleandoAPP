@@ -10,21 +10,27 @@ import { TolsStickyNotes } from './tols-sticky-notes/tols.sticky-notes.component
 const tolsRoutes: Routes = [
   {
     path: 'generic-dice-roller',
+    name: 'genericDiceRoller',
     component: TolsDiceRoller,
   },
   {
     path: 'generic-initiative-tracker',
+    name: 'genericInitiativeTracker',
     component: TolsInitiativeTracker,
   },
   {
     path: 'generic-random-name-generator',
+    name: 'genericRandomNameGenerator',
     component: TolsRandomNameGenerator,
   },
   {
     path: 'generic-character-manager',
+    name: 'genericCharacterManager',
     component: TolsCharacterManager,
-  },{
+  },
+  {
       path: 'sticky-notes',
+      name: 'stickyNotes',
       component: TolsStickyNotes,
   },
 ];

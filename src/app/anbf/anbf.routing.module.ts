@@ -6,6 +6,7 @@ import {AnbfCombatManager} from './anbf-combat-manager/anbf.combat-manager.compo
 const animaRoutes: Routes = [
   {
     path: 'anbf',
+    name: 'anbf',
     component: AnbfCombatManager,
   }
 ];

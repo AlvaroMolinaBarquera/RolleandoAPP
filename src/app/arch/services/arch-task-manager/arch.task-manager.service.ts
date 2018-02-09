@@ -38,6 +38,7 @@ export class ArchTaskManagerService {
                     newRoutes.push(rou);
                 }
             }
+            this.taskNumber--;
             this.router.resetConfig(newRoutes);
             /** 
              * Comportamiento esperado, si estamos en la misma tarea que se cierra, navegamos a una
@@ -130,8 +131,8 @@ export class ArchTaskManagerService {
         } catch (e) {
             this.tracesService.writeError(`go: Error `, e.message);
         }
-
     }
+
     /** 
      * Clona la ruta actual
      * @param route Ruta a clonar

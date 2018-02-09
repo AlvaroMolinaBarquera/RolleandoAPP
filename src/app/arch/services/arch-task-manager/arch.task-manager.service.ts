@@ -45,7 +45,7 @@ export class ArchTaskManagerService {
              * ventana en blanco. De lo contrario nos quedamos en el mismo estado que estamos.
              */
             let destinateState = (activeTaskIdSession === routeIdSession)? 
-                this.go('blank') :
+                this.router.navigate(['blank']) :
                 this.tracesService.writeDebug('La tarea eliminada es diferente de la tarea actual, no se navega') ;
         } catch (e) {
             this.tracesService.writeError('removeTask: Se ha producido un error al eliminar la tarea')

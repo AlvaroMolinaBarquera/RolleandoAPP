@@ -112,7 +112,7 @@ export class ArchTaskManagerService {
                 if (route) {
                     let newRoute = this.cloneRoute(route, idSession);
                     this.addToCurrentRoutes(newRoute);
-                    return this.go(route.name)
+                    return this.go(newRoute.name)
                 } else {
                     throw { message: `El estado "${stateName}" no está entre las rutas disponibles` }
                 }

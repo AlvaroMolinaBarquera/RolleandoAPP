@@ -33,6 +33,7 @@ import { ArchErrorsService } from './services/arch-errors/arch.errors.service';
 import { ArchEventsService } from './services/arch-events/arch.events.service';
 import { ArchReuseStrategyService } from './services/arch-reuse-strategy/arch.reuse-strategy.service';
 import { ArchTaskManagerService } from './services/arch-task-manager/arch.task-manager.service';
+import { ArchCardShufflerService } from './services/arch-card-shuffler/arch.card-shuffler.service';
 
 // Guardias
 import { ArchAuthGuard } from './guards/arch.auth.guard';
@@ -59,6 +60,7 @@ import { ArchAuthGuard } from './guards/arch.auth.guard';
     ArchErrorsService,
     ArchEventsService,
     ArchTaskManagerService,
+    ArchCardShufflerService,
    ],
   entryComponents: [ArchGenericModal ]
 })

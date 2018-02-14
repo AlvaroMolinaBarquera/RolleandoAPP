@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+      Prueba: Barajeador
+    </div>
+    <div class="card-block">
+        <div class="form-check form-check-inline">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="true" [(ngModel)]="shuffle"> Barajear
+            </label>
+        </div>
+        <div class="form-check form-check-inline">
+        <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" value="true" [(ngModel)]="inverse"> Invertir
+        </label>
+        </div>
+        <select class="form-control" [(ngModel)]="deckSelected">
+            <option *ngFor="let deck of LIST_OF_DECKS" value="{{deck.CODE}}">{{deck.FULL}}</option>
+        </select>
+        <button class="btn btn-sucess" (click)="shuffleDeck()">Barajear</button>
+    </div>
+    <div class="card-block">
+        <pre>
+            {{ deck }}
+        </pre>
+    </div>
+</div>
+  

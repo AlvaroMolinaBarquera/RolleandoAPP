@@ -17,13 +17,15 @@ export class ArchCardShufflerService {
    * @param specialNames Nombres especiales para una carta en concreto del palo 
    * (Por ejemplo a la primera carta llamarla 'As' o a las tres ultimas 'Sota', 'Caballo'. 'Rey')
    * Los nombres deben corresponderse con su posición en el palo
+   * @return La baraja, ordenada
    */
   generateDeck(cardsPerTree: number, trees?: string[], specialNames?: string[]): string[] {
     let retArr: string[] = [];
     trees = trees || [''];
     for (let t in trees) {
         for (let c = cardsPerTree - 1; c >= 0; c--) {
-            let text = (specialNames[c])? specialNames[c] + ' de ' + trees[t] : (c + 1) + ' de ' + trees[t];
+            let text = (specialNames[c])? specialNames[c] : (c + 1);
+            text += (trees[t])? ` de ${trees[t]}` : '';
             retArr.push(text);
         }
     }
@@ -61,19 +63,25 @@ export class ArchCardShufflerService {
    * @return La baraja.
    */
   generateTarotDeck(shuffle?: boolean, inverse?: boolean) {
-    const CARDS_PER_TREE: number = 21;
-    const SPECIAL_NAMES: string[] = [];
+    const CARDS_PER_TREE: number = 22;
+    const SPECIAL_NAMES: string[] = ['El Hierofante', 'La Sacerdotisa', 'La Emperatriz', 'El Emperador', 'El Sumo Sacerdote', 'Los Enamorados', 
+    'El Carro', 'La Justicia', 'El Ermitaño', 'La Rueda de la Fortuna', 'La Fuerza', 'El Ahorcado', 'La Muerte', 
+    'La Templanza', 'El Diablo', 'La Torre', 'La Estrella', 'La Luna', 'El Sol', 'El Juicio', 'El Mundo', 'El Loco'];
     let deck = this.generateDeck(CARDS_PER_TREE, null, SPECIAL_NAMES);
     deck = (shuffle) ? this.shuffle(deck) : deck;
     deck = (inverse) ? this.inverse(deck) : deck;
     return deck;
   }
 
-  /** Invierte (o no) las cartas de una baraja (especialmente del Tarot) */
+  /** 
+   * Invierte (o no) las cartas de una baraja (especialmente del Tarot)
+   * @param deck Baraja a invertir
+   * @return Baraja invertida 
+   */
   inverse(deck: string[]) {
       for (let card in deck) {
           if (_.sample([true, false])) {
-            deck[card] = deck[card] + ' Invertida';
+            deck[card] = deck[card] + ' invertid@';
           }
       }
       return deck;

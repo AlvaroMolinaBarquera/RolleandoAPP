@@ -14,13 +14,14 @@ import { TestTransactions } from './test-transactions/test.transactions.componen
 import { TestTraces } from './test-traces/test.traces.component';
 import { TestExcel } from './test-excel/test.excel.component';
 import { TestEvents} from './test-events/test.events.component';
+import { TestCardShuffler} from './test-card-shuffler/test.card-shuffler.component';
 
 import { TestRoutingModule } from './test.routing.module';
 import { TestNavigatioOne, TestNavigatioTwo } from './test-navigation/test.navigation.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, NgbModule, ArchModule, HttpModule, TestRoutingModule ],
-  declarations: [ TestComponent, TestTable, TestModal, TestTransactions, TestTraces, TestExcel, TestEvents, TestNavigatioOne, TestNavigatioTwo ],
+  declarations: [ TestComponent, TestTable, TestModal, TestTransactions, TestTraces, TestExcel, TestEvents, TestNavigatioOne, TestNavigatioTwo, TestCardShuffler ],
   exports:      [ TestComponent ],
 })
 export class TestModule {}

@@ -32,6 +32,10 @@ export class TestComponent  {
     {
       text: 'Navegacion',
       name: 'testNavigationOne'
+    },
+    {
+      text: 'Barajeador',
+      name: 'testCardShuffler'
     } 
   ];
   COMPONENTS_ARRAY: Array<{text: string; name: string}> = [

@@ -8,6 +8,7 @@ import { TestTraces } from './test-traces/test.traces.component';
 import { TestExcel } from './test-excel/test.excel.component';
 import { TestComponent} from './test.component';
 import { TestNavigatioOne, TestNavigatioTwo } from './test-navigation/test.navigation.component';
+import { TestCardShuffler } from './test-card-shuffler/test.card-shuffler.component';
 
 const testRoutes: Routes = [
   {
@@ -48,6 +49,12 @@ const testRoutes: Routes = [
     sticky: true,
     component: TestNavigatioTwo,
     name: 'testNavigationTwo'
+  },
+  {
+    path: 'test/test-card-shuffler',
+    sticky: true,
+    component: TestCardShuffler,
+    name: 'testCardShuffler'
   }
 ];
 
